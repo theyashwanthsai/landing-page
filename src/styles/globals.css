@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'Fira Code Nerd';
+  src: url('/fonts/iosevka.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code Nerd';
+  src: url('/fonts/iosevka.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Code Nerd';
+  src: url('/fonts/iosevka.ttf') format('truetype');
+  font-weight: 1000;
+  font-style: normal;
+}
+
+:root {
+  --background: #101820;    /* Deeper blue-black */
+  --text: #E2DFD2;         /* Soft white */
+  --primary: #FFE5B4;      /* Electric indigo */
+  --secondary: #101820;    /* Rich depth */
+  --accent: #F471B5;       /* Playful pink */
+  
+  /* Font variables */
+  --font-body: 'Fira Code Nerd', monospace;
+  --font-code: 'Fira Code Nerd', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  margin: 1.5rem 0 1rem 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+code {
+  background-color: var(--secondary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-code);
+  font-size: 0.9em;
+  font-variant-ligatures: contextual;
+}
+
+pre {
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
