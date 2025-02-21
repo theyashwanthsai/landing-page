@@ -20,10 +20,10 @@
 }
 
 :root {
-  --background: #101820;    /* Deeper blue-black */
-  --text: #E2DFD2;         /* Soft white */
-  --primary: #FFE5B4;      /* Electric indigo */
-  --secondary: #101820;    /* Rich depth */
+  --background: #0C0C0C;    /* Deeper blue-black */
+  --text: #DDE6ED;         /* Soft white */
+  --primary: #D4ADFC;      /* Electric indigo */
+  --secondary: #0C0C0C;    /* Rich depth */
   --accent: #F471B5;       /* Playful pink */
   
   /* Font variables */
