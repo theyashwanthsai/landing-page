@@ -1,28 +1,15 @@
-@font-face {
-  font-family: 'Fira Code Nerd';
-  src: url('/fonts/iosevka.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'Fira Code Nerd';
-  src: url('/fonts/iosevka.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Fira Code Nerd';
-  src: url('/fonts/iosevka.ttf') format('truetype');
-  font-weight: 1000;
+  src: url('/fonts/Proxima-Nova.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
 }
 
 :root {
   --background: #0C0C0C;    /* Deeper blue-black */
-  --text: #DDE6ED;         /* Soft white */
-  --primary: #D4ADFC;      /* Electric indigo */
+  --text: #979a9a;         /* Soft white */
+  --primary: #fdfefe;      /* Electric indigo */
   --secondary: #0C0C0C;    /* Rich depth */
   --accent: #F471B5;       /* Playful pink */
   
@@ -42,7 +29,7 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.6;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 a {

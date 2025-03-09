@@ -1,16 +1,15 @@
 # About Us
 
-We're a small team passionate about building intelligent models, and also experimenting in applied ai.
+We're a small team passionate about building experimental projects in applied ai.
 
 We are currently building 🛠️ 
 
 ## People
-- [Sai Yashwanth](https://saiyashwanth.tech) 
-- [Mayank Kashyap](https://www.linkedin.com/in/mayank-kashyap-402065232/)
+- [Sai Yashwanth, Founder](https://saiyashwanth.tech) 
 
 
 ## Contact:
-You can mail us here
+You can reach out to us here
 
 - Email: taddishetty34@gmail.com
 - Twitter: @yashwanthsai29

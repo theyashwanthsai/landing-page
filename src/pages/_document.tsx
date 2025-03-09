@@ -14,6 +14,7 @@ export default function Document() {
           crossOrigin="anonymous" 
           referrerPolicy="no-referrer" 
         />
+        
       </Head>
       <body>
         <Main />

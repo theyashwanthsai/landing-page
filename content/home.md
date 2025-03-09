@@ -1,6 +1,6 @@
 # Welcome
 
-Turi Labs is an independent AI research lab fueled by curiosity and a relentless drive to innovate. We are a small, passionate team of students dedicated to pushing the boundaries of AI through open-source models and accelerated research. We embrace experimentation, learn from failures, and strive to build intelligent systems that inspire and empower.
+Turi Labs is an independent AI research lab fueled by curiosity and a relentless drive to try out something new. We are a small, passionate team of students dedicated to pushing the boundaries of AI through open-source models and accelerated research. We ideate, experiment, learn from failures, rinse and repeat.
 
 
 ## Research Focus
