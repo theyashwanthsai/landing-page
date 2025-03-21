@@ -16,7 +16,7 @@ Turi Labs is an independent AI research lab fueled by curiosity and a relentless
 
 [Github](https://github.com/Turi-Labs)
 
-[Papers (coming soon)](#)
+[Experiments (coming soon)](/experiments)
 
 
 ## Stay Connected
