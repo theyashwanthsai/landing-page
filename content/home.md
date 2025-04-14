@@ -1,18 +1,22 @@
 # Welcome
 
-Turi Labs is an independent AI research lab fueled by curiosity and a relentless drive to try out something new. We are a small, passionate team of students dedicated to pushing the boundaries of AI through open-source models and accelerated research. We ideate, experiment, learn from failures, rinse and repeat.
+Turi Labs is an independent AI playground fueled by curiosity and a relentless drive to build weird, wonderful, and sometimes outright crazy things. We're a small, passionate team of students exploring AI through open-source experiments and rapid prototyping. 
 
 
-## Research Focus
+Basically 'mad scientist's garage' 
+We thrive on ideation, experimentation, learning from spectacular failures, and diving right back in.
 
-### Applied AI
-- **AI Agents**: Building autonomous systems that can learn and adapt
-- **Content Generation**: Creating novel approaches to generative AI
 
-### Core AI
-- **Foundational Models**: Developing core architectures for AI systems
-- **Small Language Models**: Exploring efficient and lightweight LLMs
-- **SLM Benchmarks**: Creating evaluation frameworks for small language models
+## Areas of Exploration
+
+### Applied AI Shenanigans
+- **AI Agents**: Crafting autonomous systems with unpredictable (and hopefully useful) behaviors.
+- **Generative Experiments**: Twisting AI to create content you didn't know you needed (or wanted).
+
+### Core AI Tinkering
+- **Foundational Models**: Playing with the building blocks of AI, sometimes breaking the rules.
+- **Small Language Models**: Seeing how much intelligence we can cram into tiny LLMs.
+- **SLM Benchmarks**: Pitting small language models against bizarre and challenging benchmarks.
 
 [Github](https://github.com/Turi-Labs)
 
