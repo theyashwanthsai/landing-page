@@ -9,7 +9,7 @@ We thrive on ideation, experimentation, learning from spectacular failures, and 
 
 ## Areas of Exploration
 
-### Applied AI Shenanigans
+### Applied AI 
 - **AI Agents**: Crafting autonomous systems with unpredictable (and hopefully useful) behaviors.
 - **Generative Experiments**: Twisting AI to create content you didn't know you needed (or wanted).
 
