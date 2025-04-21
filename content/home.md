@@ -28,6 +28,6 @@ Basically a 'mad scientist's garage'. We thrive on ideation, experimentation, le
 # Stay Connected
 Join our newsletter to stay updated on our latest research, blog posts, and breakthroughs. We share our journey, insights, and discoveries as we navigate the ever-evolving landscape of AI.
 
-[Newsletter](/newsletter)
+[Newsletter](/content/newsletter)
 
-[Contact](/about)
+[Contact](/content/about)
