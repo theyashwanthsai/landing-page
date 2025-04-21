@@ -1,17 +1,26 @@
 
 @font-face {
   font-family: 'Fira Code Nerd';
-  src: url('/fonts/roboto.ttf') format('truetype');
-  font-weight: 400;
+  src: url('/fonts/robotoscsb.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
 }
 
+
 :root {
   --background: #000000;
-  --text: #e7e9ea;
-  --primary: #9F5EF0;
-  --secondary: #000000;
-  --accent: #9F5EF0;
+  --text: #F7F7F7;
+  --primary: #B771E5; 
+  --secondary: #000000; /* #1A1A1D */
+  --accent: #836FFF;
+  
+  /* Heading colors */
+  --h1-color: #B771E5; /* Accent orange */
+  --h2-color: #836FFF; /* Primary brown */
+  --h3-color: #B771E5; /* Lighter brown */
+  --h4-color: #836FFF; /* Gold */
+  --h5-color: #B771E5; /* Teal */
+  --h6-color: #836FFF; /* Coral */
   
   /* Font variables */
   --font-body: 'Fira Code Nerd', monospace;
@@ -43,12 +52,12 @@ a:hover {
   color: var(--primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
-  margin: 1.5rem 0 1rem 0;
-  font-family: var(--font-body);
-  font-weight: 700;
-}
+h1 { color: var(--h1-color); }
+h2 { color: var(--h2-color); }
+h3 { color: var(--h3-color); }
+h4 { color: var(--h4-color); }
+h5 { color: var(--h5-color); }
+h6 { color: var(--h6-color); }
 
 p {
   margin: 1rem 0;
