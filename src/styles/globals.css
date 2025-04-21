@@ -12,7 +12,7 @@
   --text: #F7F7F7;
   --primary: #66D2CE; 
   --secondary: #000000; /* #1A1A1D */
-  --accent: #836FFF;
+  --accent: #FF7F3E;
   
   /* Heading colors */
   --h1-color: #E69DB8; /* Accent orange */
@@ -62,6 +62,11 @@ h6 { color: var(--h6-color); }
 p {
   margin: 1rem 0;
   line-height: 1.6;
+}
+
+strong, b {
+  font-weight: 900;
+  color: var(--accent); /* Optional: makes bold text use your accent color */
 }
 
 ul, ol {
