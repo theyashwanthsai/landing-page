@@ -2,7 +2,6 @@
 
 We are a dedicated team of AI enthusiasts focused on exploring and building weird and crazy experimental projects. Our passion lies in pushing the boundaries of what's possible and what's not with AI. We also share our journey along the way, by documenting heavily.
 
-![img](image/favicon.png)
 
 We are currently building 🛠️ exciting projects at the intersection of AI and practical applications. Check our [Experiments](./experiments)!
 
