@@ -1,7 +1,7 @@
 
 @font-face {
   font-family: 'Fira Code Nerd';
-  src: url('/fonts/robotoscsb.ttf') format('truetype');
+  src: url('/fonts/iosevka.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
@@ -10,17 +10,17 @@
 :root {
   --background: #000000;
   --text: #F7F7F7;
-  --primary: #B771E5; 
+  --primary: #66D2CE; 
   --secondary: #000000; /* #1A1A1D */
   --accent: #836FFF;
   
   /* Heading colors */
-  --h1-color: #B771E5; /* Accent orange */
-  --h2-color: #836FFF; /* Primary brown */
-  --h3-color: #B771E5; /* Lighter brown */
-  --h4-color: #836FFF; /* Gold */
-  --h5-color: #B771E5; /* Teal */
-  --h6-color: #836FFF; /* Coral */
+  --h1-color: #E69DB8; /* Accent orange */
+  --h2-color: #FF7F3E; /* Primary brown */
+  --h3-color: #FF7F3E; /* Lighter brown */
+  --h4-color: #FF7F3E; /* Gold */
+  --h5-color: #FF7F3E; /* Teal */
+  --h6-color: #FF7F3E; /* Coral */
   
   /* Font variables */
   --font-body: 'Fira Code Nerd', monospace;

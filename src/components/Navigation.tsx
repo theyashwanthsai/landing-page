@@ -22,8 +22,11 @@ export default function Navigation() {
           <Link href="/about" className={`${styles.link} ${isActive('/about')}`}>
             About
           </Link>
-          <Link href="/experiments" className={`${styles.link} ${isActive('/about')}`}>
+          <Link href="/experiments" className={`${styles.link} ${isActive('/experiments')}`}>
             Experiments
+          </Link>
+          <Link href="/newsletter" className={`${styles.link} ${isActive('/newsletter')}`}>
+            Newsletter
           </Link>
         </div>
       </div>

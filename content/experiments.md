@@ -1,4 +1,4 @@
-# Experiments
+# Experiments (Work in Progress)
 
 We're a small team passionate about building experimental projects in applied ai. 
 
