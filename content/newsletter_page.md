@@ -3,7 +3,7 @@ title: Newsletter
 description: Track AI breakthroughs and keep up with the acceleration, Daily Bullet Points, 2 min read
 ---
 
-## Featured Posts
+## Archived Posts (Work in progress)
 
 [1st jan 2025](/newsletter/2025-01-01)
 

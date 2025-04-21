@@ -1,99 +1,112 @@
-// src/pages/[[...slug]].tsx
+// src/pages/[...slug].tsx
 import fs from 'fs';
 import path from 'path';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import ReactMarkdown from 'react-markdown';
-import { getMarkdownContent } from '@/utils/markdown'; // Your existing utility
-import Layout from '@/components/Layout'; // Your Layout component
+import { getMarkdownContent } from '@/utils/markdown';
+import Layout from '@/components/Layout';
 
-// Define the props type (same as before)
 interface ContentPageProps {
   content: string;
   frontmatter: {
     title: string;
     description: string;
-    // Add any other frontmatter fields you might use
   };
 }
-
-const contentDirectory = path.join(process.cwd(), 'content');
 
 // --- Helper function to recursively find all markdown files ---
-function getAllMarkdownFiles(dirPath: string, relativePathPrefix = ''): string[] {
-  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
-  let files: string[] = [];
-
-  for (const entry of entries) {
-    const currentPath = path.join(dirPath, entry.name);
-    const relativePath = relativePathPrefix ? `${relativePathPrefix}/${entry.name}` : entry.name;
-
-    if (entry.isDirectory()) {
-      // Recursively search in subdirectories
-      files = files.concat(getAllMarkdownFiles(currentPath, relativePath));
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      // Add markdown file (relative path without .md extension)
-      files.push(relativePath.replace(/\.md$/, ''));
-    }
+function getAllMarkdownFiles(dir: string, rootDir: string, fileList: string[] = []): string[] {
+  try {
+    const files = fs.readdirSync(dir);
+    
+    files.forEach(file => {
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
+      
+      if (stat.isDirectory()) {
+        getAllMarkdownFiles(filePath, rootDir, fileList);
+      } else if (file.endsWith('.md')) {
+        // Get path relative to content directory and remove .md extension
+        const relativePath = path.relative(rootDir, filePath).replace(/\.md$/, '');
+        // Replace backslashes with forward slashes for consistency across platforms
+        const normalizedPath = relativePath.split(path.sep).join('/');
+        fileList.push(normalizedPath);
+      }
+    });
+    
+    return fileList;
+  } catch (error) {
+    console.error(`Error reading directory ${dir}:`, error);
+    return fileList;
   }
-  return files;
 }
-// --- End Helper Function ---
 
-
-// Tells Next.js which paths (slugs) to pre-render, including nested ones
 export const getStaticPaths: GetStaticPaths = async () => {
-  const allSlugs = getAllMarkdownFiles(contentDirectory);
-
-  // Filter out 'home' if index.tsx handles it
-  const filteredSlugs = allSlugs.filter(slug => slug !== 'home');
-
-  // Map slugs to the required params format (slug becomes an array of segments)
-  const paths = filteredSlugs.map(slug => ({
-    params: {
-      slug: slug.split('/'), // e.g., 'newsletter/post1' becomes ['newsletter', 'post1']
-    },
-  }));
-
+  const contentDirectory = path.join(process.cwd(), 'content');
+  let paths: { params: { slug: string[] } }[] = [];
+  
+  try {
+    // Get all markdown files recursively
+    const allSlugs = getAllMarkdownFiles(contentDirectory, contentDirectory);
+    
+    // Filter out specific slugs that have their own pages
+    const filteredSlugs = allSlugs.filter(slug => 
+      slug !== 'home' && 
+      slug !== 'newsletter' && 
+      // Add any other specific pages here
+      !slug.startsWith('.') // Skip hidden files
+    );
+    
+    // Map slugs to the required params format
+    paths = filteredSlugs.map(slug => ({
+      params: {
+        slug: slug.split('/'), // Split path into segments for the catch-all route
+      },
+    }));
+    
+    // Log paths for debugging during build
+    console.log(`Generated ${paths.length} static paths for [...slug]`);
+  } catch (error) {
+    console.error('Error generating static paths:', error);
+    // Return empty paths array if there's an error
+    // This will result in no pages being pre-rendered, but won't fail the build
+  }
+  
   return {
-    paths: paths,
-    fallback: false, // Routes not generated at build time will 404
+    paths,
+    fallback: 'blocking', // Change from 'false' to 'blocking'
   };
 }
 
-// Fetches data for a specific slug (which is now an array)
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // slug is now an array of path segments, or undefined for the root path
-  // Note: The root path '/' should ideally be handled by pages/index.tsx
   const slugArray = params?.slug as string[] | undefined;
-
+  
   if (!slugArray || slugArray.length === 0) {
-    // This case should ideally not be hit if you have pages/index.tsx
-    // If you want [[...slug]].tsx to handle '/', you'd load 'home.md' here.
     return { notFound: true };
   }
-
+  
   // Join the array segments to form the relative path
-  const relativePath = slugArray.join('/'); // e.g., ['newsletter', 'post1'] becomes 'newsletter/post1'
-  const filename = `${relativePath}.md`; // e.g., 'newsletter/post1.md'
-  const fullPath = path.join(contentDirectory, filename);
-
-  // Check if the markdown file actually exists
-  if (!fs.existsSync(fullPath)) {
+  const relativePath = slugArray.join('/');
+  const filename = `${relativePath}.md`;
+  const fullPath = path.join(process.cwd(), 'content', filename);
+  
+  try {
+    // Check if file exists
+    if (!fs.existsSync(fullPath)) {
       console.warn(`Markdown file not found at: ${fullPath}`);
       return { notFound: true };
-  }
-
-  // Use your existing function to get content and frontmatter
-  try {
-    // Pass the relative filename (e.g., 'newsletter/post1.md')
-    // Ensure getMarkdownContent can handle paths like 'folder/file.md'
+    }
+    
+    // Use your existing function to get content and frontmatter
     const { content, frontmatter } = getMarkdownContent(filename);
-
+    
     return {
       props: {
         content,
         frontmatter,
       },
+      // Add revalidation to allow for content updates without full rebuild
+      revalidate: 60, // Revalidate pages every 60 seconds
     };
   } catch (error) {
     console.error(`Error processing ${filename}:`, error);
@@ -101,7 +114,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-// The page component - NO CHANGES NEEDED HERE
 export default function ContentPage({ content, frontmatter }: ContentPageProps) {
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
