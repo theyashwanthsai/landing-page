@@ -78,7 +78,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 }
 
-// In getStaticProps, modify the path resolution:
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slugArray = params?.slug as string[] | undefined;
   
@@ -88,57 +87,29 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   
   // Join the array segments to form the relative path
   const relativePath = slugArray.join('/');
-  
-  // Try multiple potential locations
-  const potentialPaths = [
-    path.join(process.cwd(), 'content', `${relativePath}.md`),
-    // For directory index files (e.g., /newsletter -> /content/newsletter/index.md)
-    path.join(process.cwd(), 'content', relativePath, 'index.md'),
-    // For nested paths
-    path.join(process.cwd(), 'content', `${relativePath}/index.md`)
-  ];
-  
-  let fullPath = '';
-  
-  // Find the first path that exists
-  for (const testPath of potentialPaths) {
-    if (fs.existsSync(testPath)) {
-      fullPath = testPath;
-      break;
-    }
-  }
-  
-  if (!fullPath) {
-    console.warn(`No markdown file found for: ${relativePath}`);
-    return { notFound: true };
-  }
+  const filename = `${relativePath}.md`;
+  const fullPath = path.join(process.cwd(), 'content', filename);
   
   try {
-    // Get the file content relative to content directory
-    const contentRelativePath = path.relative(
-      path.join(process.cwd(), 'content'),
-      fullPath
-    );
+    // Check if file exists
+    if (!fs.existsSync(fullPath)) {
+      console.warn(`Markdown file not found at: ${fullPath}`);
+      return { notFound: true };
+    }
     
-    const { content, frontmatter } = getMarkdownContent(contentRelativePath);
+    // Use your existing function to get content and frontmatter
+    const { content, frontmatter } = getMarkdownContent(filename);
     
     return {
       props: {
         content,
         frontmatter,
-        // Add debug info in development
-        ...(process.env.NODE_ENV === 'development' ? {
-          debug: {
-            path: relativePath,
-            fullPath,
-            contentRelativePath
-          }
-        } : {})
       },
-      revalidate: 60,
+      // Add revalidation to allow for content updates without full rebuild
+      revalidate: 60, // Revalidate pages every 60 seconds
     };
   } catch (error) {
-    console.error(`Error processing ${fullPath}:`, error);
+    console.error(`Error processing ${filename}:`, error);
     return { notFound: true };
   }
 }

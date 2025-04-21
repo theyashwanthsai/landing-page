@@ -4,9 +4,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-      <title>Turi Labs</title>
-      <link rel="icon" href="image/favicon.png" />
-
+        {/* Remove title from here */}
+        <link rel="icon" href="/image/favicon.png" />
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
@@ -14,7 +13,6 @@ export default function Document() {
           crossOrigin="anonymous" 
           referrerPolicy="no-referrer" 
         />
-        
       </Head>
       <body>
         <Main />
