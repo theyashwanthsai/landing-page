@@ -11,8 +11,10 @@ We are currently building 🛠️ exciting projects at the intersection of AI an
 Meet our team:
 
 - **[Sai Yashwanth](https://saiyashwanth.tech)**
-- **[Mayank Kashyap]()**
-- **[Chidu]()**
+- **[Mayank Kashyap](https://www.linkedin.com/in/mayank-kashyap-402065232/)**
+- **[Chidu](https://www.linkedin.com/in/siddharth-prakash-771596241/)**
+- **[vijayanth](https://www.linkedin.com/in/vijayant-raj-singh-raghav/)**
+- **[Supratik](https://www.linkedin.com/in/supratik-kar-99a99522b/)**
 
 
 ## Get in Touch
