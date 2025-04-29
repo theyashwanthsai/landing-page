@@ -8,19 +8,19 @@
 
 
 :root {
-  --background: #000000;
-  --text: #F7F7F7;
-  --primary: #66D2CE; 
-  --secondary: #000000; /* #1A1A1D */
-  --accent: #FF7F3E;
+  --background: #0A0A0A;
+  --text: #A0A0A0;
+  --primary: #BF7AF0; 
+  --secondary: #0A0A0A; /* #1A1A1D */
+  --accent: #F7F7F7;
   
   /* Heading colors */
-  --h1-color: #FF7F3E; /* Accent orange */
-  --h2-color: #FF7F3E; /* Primary brown */
-  --h3-color: #FF7F3E; /* Lighter brown */
-  --h4-color: #FF7F3E; /* Gold */
-  --h5-color: #FF7F3E; /* Teal */
-  --h6-color: #FF7F3E; /* Coral */
+  --h1-color: #EDEDED; /* Accent orange */
+  --h2-color: #EDEDED; /* Primary brown */
+  --h3-color: #EDEDED; /* Lighter brown */
+  --h4-color: #EDEDED; /* Gold */
+  --h5-color: #EDEDED; /* Teal */
+  --h6-color: #EDEDED; /* Coral */
   
   /* Font variables */
   --font-body: 'Fira Code Nerd', monospace;
