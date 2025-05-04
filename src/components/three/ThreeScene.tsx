@@ -39,7 +39,7 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     scene.add(networkGroup);
     
     // Create a sphere wireframe
-    const sphereGeometry = new THREE.IcosahedronGeometry(20, 3); // Radius 10, detail level 2
+    const sphereGeometry = new THREE.IcosahedronGeometry(21, 3); // Radius 10, detail level 2
     const sphereMaterial = new THREE.MeshBasicMaterial({
       color: 0x6D28D9, // Purple
       wireframe: true,
