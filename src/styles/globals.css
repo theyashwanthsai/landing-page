@@ -1,99 +1,90 @@
-
-@font-face {
-  font-family: 'Fira Code Nerd';
-  src: url('/fonts/iosevka.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #0A0A0A;
-  --text: #A0A0A0;
-  --primary: #BF7AF0; 
-  --secondary: #0A0A0A; /* #1A1A1D */
-  --accent: #F7F7F7;
-  
-  /* Heading colors */
-  --h1-color: #EDEDED; /* Accent orange */
-  --h2-color: #EDEDED; /* Primary brown */
-  --h3-color: #EDEDED; /* Lighter brown */
-  --h4-color: #EDEDED; /* Gold */
-  --h5-color: #EDEDED; /* Teal */
-  --h6-color: #EDEDED; /* Coral */
-  
-  /* Font variables */
-  --font-body: 'Fira Code Nerd', monospace;
-  --font-code: 'Fira Code Nerd', monospace;
+  color-scheme: dark;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  font-size: 18px;
+  @apply bg-black text-white font-sans;
+  overflow-x: hidden;
 }
 
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.markdown-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: var(--primary);
+.markdown-content ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-h1 { color: var(--h1-color); }
-h2 { color: var(--h2-color); }
-h3 { color: var(--h3-color); }
-h4 { color: var(--h4-color); }
-h5 { color: var(--h5-color); }
-h6 { color: var(--h6-color); }
-
-p {
-  margin: 1rem 0;
-  line-height: 1.6;
+.markdown-content li {
+  margin-bottom: 0.5rem;
 }
 
-strong, b {
-  font-weight: 900;
-  color: var(--accent); /* Optional: makes bold text use your accent color */
+.markdown-content p {
+  margin-bottom: 1rem;
 }
 
-ul, ol {
-  margin: 1rem 0;
-  padding-left: 2rem;
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-code {
-  background-color: var(--secondary);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: var(--font-code);
-  font-size: 0.9em;
-  font-variant-ligatures: contextual;
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(75, 0, 130, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(75, 0, 130, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-pre {
-  background-color: var(--secondary);
-  padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-pre code {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  font-size: 0.9em;
-  line-height: 1.5;
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.7);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.5) #0a0a0a;
+}
+
+/* Gradient text classes */
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600;
+}
+
+.text-gradient-blue {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600;
+}
+
+.text-gradient-primary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500;
 }
