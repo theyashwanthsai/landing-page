@@ -13,7 +13,7 @@ const NewsletterPostPage: React.FC = () => {
 
   useEffect(() => {
     if (post) {
-      fetch(`/src/content/newsletters/${post.slug}.md`)
+      fetch(`/content/newsletters/${post.slug}.md`)
         .then(res => res.text())
         .then(text => {
           // Better frontmatter handling
