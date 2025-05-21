@@ -25,7 +25,7 @@ const Experiments: React.FC = () => {
   };
 
   const experiments = [
-    { name: "Pokemong LLM League", link: "#" },
+    { name: "LLM Pokemon League", link: "#" },
     { name: "MREB", link: "#" },
     { name: "Devyan", link: "#" },
     { name: "Yantrakarma", link: "#" },
