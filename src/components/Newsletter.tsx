@@ -213,6 +213,7 @@ const Newsletter = () => {
             <h3 className="text-xl font-semibold text-white mb-6 text-center">Recent Posts</h3>
             <div className="space-y-4">
               {newsletters.map((post) => (
+                
                 <motion.a
                   key={post.id}
                   href={`/newsletters/${post.slug}`}

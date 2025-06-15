@@ -32,11 +32,12 @@ const NewsletterPostPage: React.FC = () => {
   return (
     <main className="min-h-[calc(100vh-64px)] py-24">
       <div className="container mx-auto px-4 max-w-3xl">
+        {/* <h1>hello</h1> */}
         <article className="prose prose-invert prose-lg mx-auto">
           <h1 className="text-4xl md:text-5xl font-display bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-500 mb-4">
             {post.title}
           </h1>
-          <break></break>
+          <br />
           <div className="markdown-content">
             <div className="backdrop-filter backdrop-blur-md bg-blue-500/10 border border-purple-500/50 rounded-lg p-6 shadow-lg">
               <ReactMarkdown
