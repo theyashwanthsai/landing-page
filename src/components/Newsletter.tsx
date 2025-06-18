@@ -107,7 +107,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section id="newsletter" className="py-24 bg-gradient-to-b from-purple-950/20 to-black">
+    <section id="newsletter" className="py-24 bg-gradient-to-b black">
       <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           ref={ref}

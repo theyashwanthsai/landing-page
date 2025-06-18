@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <a 
               href="#top" 
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-400"
+              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-100"
             >
               Turi Labs
             </a>

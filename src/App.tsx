@@ -13,7 +13,9 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-black text-white">
-        <Navbar />
+        <div className="relative z-50 mb-20">
+          <Navbar />
+        </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

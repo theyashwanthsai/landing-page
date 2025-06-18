@@ -27,24 +27,24 @@ const Navbar: React.FC = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/80 backdrop-blur-md py-2' 
-          : 'bg-transparent py-4'
-      }`}
+          ? 'bg-black/10 backdrop-blur-md py-8' 
+          : 'bg-black/10 py-8'
+      } border border-gray-800 rounded-lg mx-20 mt-4`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-10 flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200 hover:from-purple-500 hover:to-purple-700 transition-all duration-300"
+          className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-100 hover:from-purple-500 hover:to-purple-700 transition-all duration-300"
         >
           Turi Labs
         </Link>
         
-        <div className="hidden md:flex space-x-8 items-center">
+        <div className="hidden md:flex space-x-10 items-center">
           {navItems.map((item) => (
             <Link 
               key={item.path}
               to={item.path}
-              className={`text-gray-300 hover:text-purple-400 transition-colors duration-300 text-sm tracking-wide ${
+              className={`text-gray-300 hover:text-purple-400 transition-colors duration-300 text-base tracking-wide ${
                 location.pathname === item.path ? 'text-purple-400' : ''
               }`}
             >
@@ -57,18 +57,18 @@ const Navbar: React.FC = () => {
           className="md:hidden text-gray-300 hover:text-purple-400"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
       
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 mt-4">
+          <div className="container mx-auto px-6 py-6 flex flex-col space-y-6">
             {navItems.map((item) => (
               <Link 
                 key={item.path}
                 to={item.path}
-                className={`text-gray-300 hover:text-purple-400 transition-colors duration-300 text-lg py-2 ${
+                className={`text-gray-300 hover:text-purple-400 transition-colors duration-300 text-xl py-2 ${
                   location.pathname === item.path ? 'text-purple-400' : ''
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
