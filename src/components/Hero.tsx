@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <ThreeScene />
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-purple-500/10 to-black pointer-events-none"></div>
+      <div className="absolute inset-0 pointer-events-none"></div>
 
       <div className="container mx-auto px-4 z-10 max-w-5xl">
         <motion.div
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         >
           <motion.h1
             className="text-xl sm:text-2xl md:text-6xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent 
-            bg-gradient-to-r from-white to-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+            bg-gradient-to-r from-purple-500 to-purple-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -48,9 +48,14 @@ const Hero: React.FC = () => {
           >
             <Link
               to="/experiments"
-              className="group px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white font-medium rounded-md hover:from-purple-700 hover:to-purple-900 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+              className="group px-6 sm:px-8 py-3 bg-pink-100 text-gray-800 font-medium rounded-md 
+              hover:scale-105 hover:bg-pink-100 flex items-center justify-center gap-2 
+              transition-all duration-300 transform shadow-[0_0_15px_rgba(236,182,203,0.3)]"
             >
-              <span>See Our Experiments</span>
+              <div className="absolute inset-0 rounded-md">
+                <div className="absolute inset-0" style={{ maskImage: 'linear-gradient(to right, transparent, black, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black, transparent)' }}></div>
+              </div>
+              <span>View our research</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

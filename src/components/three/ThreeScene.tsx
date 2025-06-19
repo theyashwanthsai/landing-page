@@ -7,7 +7,6 @@ interface ThreeSceneProps {
 
 const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mousePosition = useRef({ x: 0, y: 0 });
   console.log('ThreeScene component initialized');
   
   useEffect(() => {
@@ -39,9 +38,9 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     scene.add(networkGroup);
     
     // Create a sphere wireframe
-    const sphereGeometry = new THREE.IcosahedronGeometry(21, 3); // Radius 10, detail level 2
+    const sphereGeometry = new THREE.IcosahedronGeometry(21, 3);
     const sphereMaterial = new THREE.MeshBasicMaterial({
-      color: 0x6D28D9, // Purple
+      color: 0x6D28D9,
       wireframe: true,
       transparent: true,
       opacity: 0.5
@@ -54,7 +53,7 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     const positions = sphereGeometry.attributes.position;
     const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
     const nodeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x8B5CF6, // Lighter purple
+      color: 0x8B5CF6,
       transparent: true,
       opacity: 0.5
     });
@@ -79,7 +78,7 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     
     // Create additional connections between nodes
     const connectionsMaterial = new THREE.LineBasicMaterial({
-      color: 0xA78BFA, // Light purple
+      color: 0xA78BFA,
       transparent: true,
       opacity: 0.2,
       blending: THREE.AdditiveBlending,
@@ -128,14 +127,6 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
     networkGroup.add(glowMesh);
     
-    // Mouse move event
-    const onMouseMove = (event: MouseEvent) => {
-      mousePosition.current.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mousePosition.current.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
-    
-    window.addEventListener('mousemove', onMouseMove);
-    
     // Handle resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
@@ -152,12 +143,10 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
       
       frame += 0.01;
       
-      // Rotate network based on mouse position
-      networkGroup.rotation.y += (mousePosition.current.x * 0.5 - networkGroup.rotation.y) * 0.05;
-      networkGroup.rotation.x += (mousePosition.current.y * 0.5 - networkGroup.rotation.x) * 0.05;
-      
-      // Add subtle rotation
-      networkGroup.rotation.y += 0.001;
+      // Continuous rotation on multiple axes
+      networkGroup.rotation.y += 0.002;
+      networkGroup.rotation.x = Math.sin(frame * 0.5) * 0.3;
+      networkGroup.rotation.z = Math.cos(frame * 0.3) * 0.2;
       
       // Pulse the glow
       const pulseScale = 1 + Math.sin(frame * 2) * 0.05;
@@ -179,7 +168,6 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
         containerRef.current.removeChild(renderer.domElement);
       }
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('mousemove', onMouseMove);
       
       // Dispose of geometries and materials
       scene.traverse((object) => {
