@@ -23,12 +23,12 @@ const Hero: React.FC = () => {
         >
           <motion.h1
             className="text-xl sm:text-2xl md:text-6xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent 
-            bg-gradient-to-r from-purple-500 to-purple-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+            bg-gradient-to-r from-purple-300 to-pink-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Turi Labs
+            TuriLabs
           </motion.h1>
 
           <motion.p

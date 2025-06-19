@@ -51,11 +51,12 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     
     // Create nodes at each vertex
     const positions = sphereGeometry.attributes.position;
-    const nodeGeometry = new THREE.SphereGeometry(0.001, 16, 16);
+    const nodeGeometry = new THREE.BoxGeometry(0.02, 0.02, 0.02);
     const nodeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x000000,
+      color: 0xffffff,
       transparent: true,
-      opacity: 0.5
+      opacity: 0.5,
+      side: THREE.DoubleSide
     });
     
     const nodes = new THREE.Group();
@@ -116,7 +117,7 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     createConnections();
     
     // Add pulsing inner sphere for glow effect
-    const glowGeometry = new THREE.SphereGeometry(10, 35, 35);
+    const glowGeometry = new THREE.SphereGeometry(0, 35, 35);
     const glowMaterial = new THREE.MeshBasicMaterial({
       color: 0x6D28D9,
       transparent: true,

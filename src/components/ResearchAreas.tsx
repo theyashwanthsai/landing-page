@@ -149,7 +149,8 @@ const ResearchAreas: React.FC = () => {
           className="space-y-12 sm:space-y-16"
         >
           <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-500">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent 
+            bg-gradient-to-r from-purple-100 to-pink-300">
               Areas of Exploration
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-3xl mx-auto px-2">

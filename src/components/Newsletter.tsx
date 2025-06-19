@@ -108,133 +108,129 @@ const Newsletter = () => {
 
   return (
     <section id="newsletter" className="py-24 bg-gradient-to-b black">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="bg-gray-900/40 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-purple-900/30"
-        >
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-white">
-              Stay Connected
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Track AI breakthroughs and keep up with the acceleration. 
-              Daily Bullet Points, 2 min read.
-            </p>
-          </div>
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+        className="bg-black backdrop-blur-md p-8 md:p-12 rounded-2xl mx-4"
+      >
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent 
+          bg-gradient-to-r from-white to-white">
+            Stay Connected
+          </h2>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Track AI breakthroughs and keep up with the acceleration. 
+            Daily Bullet Points, 2 min read.
+          </p>
+        </div>
 
-          {/* Brevo Form Integration */}
-          <div className="max-w-md mx-auto">
-            <div className="sib-form">
-              <div id="sib-form-container" className="sib-form-container">
-                <div id="error-message" className="sib-form-message-panel" style={{
-                  fontSize: "16px",
-                  textAlign: "center",
-                  fontFamily: "'Inter', sans-serif",
-                  color: "#34d77c",
-                  padding: "16px",
-                  margin: "16px auto",
-                  maxWidth: "540px",
-                  boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
-                  display: "none"
-                }}>
-                  <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
-                    <span className="sib-form-message-panel__inner-text" style={{
-                      fontWeight: "500",
-                      lineHeight: "1.5"
-                    }}>
-                      Thank you for subscribing!
-                    </span>
+        {/* Brevo Form Integration */}
+        <div className="max-w-md mx-auto">
+          <div className="sib-form">
+            <div id="sib-form-container" className="sib-form-container">
+              <div id="error-message" className="sib-form-message-panel" style={{
+                fontSize: "16px",
+                textAlign: "center",
+                fontFamily: "'Inter', sans-serif",
+                color: "#34d77c",
+                padding: "16px",
+                margin: "16px auto",
+                maxWidth: "540px",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.05)",
+                display: "none"
+              }}>
+                <div className="sib-form-message-panel__text sib-form-message-panel__text--center">
+                  <span className="sib-form-message-panel__inner-text" style={{
+                    fontWeight: "500",
+                    lineHeight: "1.5"
+                  }}>
+                    Thank you for subscribing!
+                  </span>
+                </div>
+              </div>
+              <div id="success-message" className="sib-form-message-panel" style={{
+                fontSize: "16px",
+                textAlign: "center",
+                fontFamily: "Helvetica, sans-serif",
+                color: "#FF0000",
+                padding: "15px",
+                margin: "10px 0",
+                maxWidth: "540px",
+                display: "none",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
+              }}>
+                <div className="sib-form-message-panel__text">
+                  <span className="sib-form-message-panel__inner-text" style={{
+                    fontWeight: "500"
+                  }}>
+                    Your subscription could not be saved. Please try again.
+                  </span>
+                </div>
+              </div>
+              <div id="sib-container" className="sib-container--large sib-container--vertical" style={{textAlign:"center", backgroundColor:"transparent", maxWidth:"540px", borderRadius:"5px", borderWidth:"0px", direction:"ltr"}}>
+                <form 
+                  id="sib-form" 
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  method="POST" 
+                  action="https://sibforms.com/serve/MUIFAFl1qpQtAaD49AhtKnQvynH1YCriCHQQQINVyoEkPdTRS-9JXcHrQM6abG5sFMTTX1EyNZTJRYO3cZg42FR6-Xp6nh3_9DpxgXAj0mPfW5YM5yUmhSN7Eh0FeGsYjdvpxqvWYq8xx_qHcvd4vcdu0wApbqBGqkDolKYDRV7ymjKDX5fHV2mSor8_v7Exk8TzX6nXmXbijqYT" 
+                  data-type="subscription"
+                >
+                  <div className="relative">
+                    <input
+                      className="w-full px-4 py-3 bg-gray-800/70 text-white rounded-lg border border-purple-900/40 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/30 transition-all duration-300"
+                      type="email"
+                      id="EMAIL"
+                      name="EMAIL"
+                      autoComplete="off"
+                      placeholder="Enter your email address"
+                      data-required="true"
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-purple-600 text-white p-2 rounded-md hover:from-purple-700 hover:to-purple-700 transition-all duration-300"
+                    >
+                      {isSubmitted ? (
+                        <CheckCircle size={20} />
+                      ) : (
+                        <Send size={20} />
+                      )}
+                    </button>
                   </div>
-                </div>
-                <div id="success-message" className="sib-form-message-panel" style={{
-                  fontSize: "16px",
-                  textAlign: "center",
-                  fontFamily: "Helvetica, sans-serif",
-                  color: "#FF0000",
-                  padding: "15px",
-                  margin: "10px 0",
-                  maxWidth: "540px",
-                  display: "none",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)"
-                }}>
-                  <div className="sib-form-message-panel__text">
-                    <span className="sib-form-message-panel__inner-text" style={{
-                      fontWeight: "500"
-                    }}>
-                      Your subscription could not be saved. Please try again.
-                    </span>
-                  </div>
-                </div>
-                <div id="sib-container" className="sib-container--large sib-container--vertical" style={{textAlign:"center", backgroundColor:"transparent", maxWidth:"540px", borderRadius:"5px", borderWidth:"0px", direction:"ltr"}}>
-                  <form 
-                    id="sib-form" 
-                    ref={formRef}
-                    onSubmit={handleSubmit}
-                    method="POST" 
-                    action="https://sibforms.com/serve/MUIFAFl1qpQtAaD49AhtKnQvynH1YCriCHQQQINVyoEkPdTRS-9JXcHrQM6abG5sFMTTX1EyNZTJRYO3cZg42FR6-Xp6nh3_9DpxgXAj0mPfW5YM5yUmhSN7Eh0FeGsYjdvpxqvWYq8xx_qHcvd4vcdu0wApbqBGqkDolKYDRV7ymjKDX5fHV2mSor8_v7Exk8TzX6nXmXbijqYT" 
-                    data-type="subscription"
-                  >
-                    <div className="relative">
-                      <input
-                        className="w-full px-4 py-3 bg-gray-800/70 text-white rounded-lg border border-purple-900/40 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/30 transition-all duration-300"
-                        type="email"
-                        id="EMAIL"
-                        name="EMAIL"
-                        autoComplete="off"
-                        placeholder="Enter your email address"
-                        data-required="true"
-                        required
-                      />
-                      <button
-                        type="submit"
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-purple-600 text-white p-2 rounded-md hover:from-purple-700 hover:to-purple-700 transition-all duration-300"
-                      >
-                        {isSubmitted ? (
-                          <CheckCircle size={20} />
-                        ) : (
-                          <Send size={20} />
-                        )}
-                      </button>
-                    </div>
-                    <input type="text" name="email_address_check" value="" className="input--hidden" />
-                    <input type="hidden" name="locale" value="en" />
-                  </form>
-                </div>
+                  <input type="text" name="email_address_check" value="" className="input--hidden" />
+                  <input type="hidden" name="locale" value="en" />
+                </form>
               </div>
             </div>
           </div>
-          
+        </div>
 
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-white mb-6 text-center">Recent Posts</h3>
-            <div className="space-y-4">
-              {newsletters.map((post) => (
-                
-                <motion.a
-                  key={post.id}
-                  href={`/newsletters/${post.slug}`}
-                  className="block p-4 bg-gray-800/40 rounded-lg hover:bg-gray-800/60 transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      {/* <span className="text-purple-400">{post.date}</span> */}
-                      <h4 className="text-white mt-1">{post.title}</h4>
-                    </div>
-                    <span className="text-gray-400 text-sm">Read →</span>
+        <div className="mt-12">
+          <h3 className="text-xl font-semibold text-white mb-6 text-center">Recent Posts</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsletters.map((post) => (
+              <motion.a
+                key={post.id}
+                href={`/newsletters/${post.slug}`}
+                className="block p-6 bg-gray-800/40 rounded-lg hover:bg-gray-800/60 transition-all duration-300 hover:scale-105"
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className="flex flex-col h-full">
+                  <h4 className="text-white text-lg font-semibold mb-3">{post.title}</h4>
+                  <div className="mt-auto flex justify-end">
+                    <span className="text-purple-400 text-sm">Read →</span>
                   </div>
-                </motion.a>
-              ))}
-            </div>
+                </div>
+              </motion.a>
+            ))}
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

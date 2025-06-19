@@ -28,15 +28,16 @@ const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-black/10 backdrop-blur-md py-8' 
-          : 'bg-black/10 py-8'
-      } border border-gray-800 rounded-lg mx-20 mt-4`}
+          : 'bg-black/10 backdrop-blur-md py-8'
+      } border border-gray-800 rounded-2xl mx-10 mt-4`}
     >
-      <div className="container mx-auto px-10 flex justify-between items-center">
+      <div className="container mx-auto px-2 flex justify-between items-center">
         <Link 
-          to="/" 
-          className="text-lg sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-100 hover:from-purple-500 hover:to-purple-700 transition-all duration-300"
+          to="#top" 
+          className="text-lg sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r 
+          from-purple-100 to-purple-100 hover:from-purple-100 hover:to-purple-400 transition-all duration-300"
         >
-          Turi Labs
+          TuriLabs
         </Link>
         
         <div className="hidden md:flex space-x-10 items-center">

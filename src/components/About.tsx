@@ -43,7 +43,8 @@ const About: React.FC = () => {
           className="space-y-16"
         >
           <motion.div variants={itemVariants} className="space-y-8">
-            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-400">
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent 
+            bg-gradient-to-r from-purple-100 to-pink-300">
               About Us
             </h2>
             <p className="text-gray-300 text-lg">
@@ -58,24 +59,28 @@ const About: React.FC = () => {
             </p>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6">
+          {/* <motion.div variants={itemVariants} className="space-y-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white">Our Team</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.map((member, index) => (
                 <a
                   key={index}
                   href={member.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg border border-purple-900/30 hover:border-purple-600/50 transition-colors block"
+                  className="group p-6 rounded-xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 hover:from-gray-800/60 hover:to-gray-900/60 transition-all duration-300 border border-gray-800/50 hover:border-purple-500/30 hover:shadow-lg hover:shadow-purple-500/10"
                 >
-                  <div className="text-lg text-white hover:text-purple-400 transition-colors">
-                    {member.name}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-pink-200">{member.name[0]}</span>
+                    </div>
+                    <span className="text-white text-lg font-medium mb-2">{member.name}</span>
+                    <span className="text-purple-400 text-sm group-hover:text-purple-300 transition-colors duration-300">View Profile →</span>
                   </div>
                 </a>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div variants={itemVariants} className="space-y-6">
             <h2 className="text-2xl md:text-3xl font-bold text-white">Get in Touch</h2>
