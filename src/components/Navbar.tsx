@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-10 flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-lg sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-100 hover:from-purple-500 hover:to-purple-700 transition-all duration-300"
+          className="text-lg sm:text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-purple-100 hover:from-purple-500 hover:to-purple-700 transition-all duration-300"
         >
           Turi Labs
         </Link>
