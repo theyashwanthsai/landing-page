@@ -51,9 +51,9 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ className }) => {
     
     // Create nodes at each vertex
     const positions = sphereGeometry.attributes.position;
-    const nodeGeometry = new THREE.SphereGeometry(0.15, 16, 16);
+    const nodeGeometry = new THREE.SphereGeometry(0.001, 16, 16);
     const nodeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x8B5CF6,
+      color: 0x000000,
       transparent: true,
       opacity: 0.5
     });
