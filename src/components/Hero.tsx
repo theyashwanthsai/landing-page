@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
            max-w-3xl mx-auto"
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-7xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent 
+            className="text-4xl sm:text-lg md:text-xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent 
             bg-gradient-to-r from-white to-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

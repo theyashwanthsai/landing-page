@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ExternalLink } from 'lucide-react';
+import { experiments } from '../data/projects';
 
 const Experiments: React.FC = () => {
   const [ref, inView] = useInView({
@@ -24,16 +25,6 @@ const Experiments: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const experiments = [
-    { name: "LLM Pokemon League", link: "#" },
-    { name: "MREB", link: "#" },
-    { name: "Devyan", link: "#" },
-    { name: "Yantrakarma", link: "#" },
-    { name: "Yaaf", link: "#" },
-    { name: "Research Copilot", link: "#" },
-    { name: "Ambient Newsletter Agent", link: "#" },
-    { name: "AI Pet", link: "#" },
-  ];
 
   return (
     <section id="experiments" className="py-24 bg-black relative">
@@ -57,8 +48,9 @@ const Experiments: React.FC = () => {
           className="space-y-16"
         >
           <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-400">
-              Experiments (Still a work in progress)
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent 
+            bg-gradient-to-r from-purple-200 to-purple-200">
+              Experiments (work in progress)
             </h2>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">
               We're a small team passionate about building experimental projects in applied AI.
@@ -68,23 +60,40 @@ const Experiments: React.FC = () => {
 
           <motion.div 
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
           >
             {experiments.map((experiment, index) => (
               <motion.a
                 key={index}
                 href={experiment.link}
                 variants={itemVariants}
-                className="group bg-gradient-to-br from-gray-900/80 to-purple-950/40 backdrop-blur-sm p-6 rounded-lg border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300 flex items-center justify-between"
+                className="group block bg-gradient-to-br from-gray-900/80 to-purple-950/40 backdrop-blur-sm p-6 rounded-lg border border-purple-900/30 hover:border-purple-500/50 transition-all duration-300"
                 whileHover={{ 
                   scale: 1.03,
-                  boxShadow: "0 0 15px rgba(139, 92, 246, 0.2)" 
+                  boxShadow: "0 0 20px rgba(139, 92, 246, 0.3)" 
                 }}
               >
-                <h3 className="text-lg font-medium text-white group-hover:text-purple-400 transition-colors">
-                  {experiment.name}
-                </h3>
-                <ExternalLink size={18} className="text-gray-500 group-hover:text-purple-400 transition-colors" />
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
+                    {experiment.name}
+                  </h3>
+                  <ExternalLink size={20} className="text-gray-500 group-hover:text-purple-400 transition-colors" />
+                </div>
+                
+                <p className="text-gray-400 text-sm mb-4">
+                  {experiment.description}
+                </p>
+
+                <div className="flex gap-2">
+                  {experiment.tags.map((tag, tagIndex) => (
+                    <span 
+                      key={tagIndex} 
+                      className="px-2 py-1 bg-purple-900/30 rounded-md text-xs text-purple-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </motion.a>
             ))}
           </motion.div>
