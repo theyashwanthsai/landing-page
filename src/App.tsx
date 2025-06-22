@@ -41,8 +41,9 @@ function App() {
             </div>
 
             {isMenuOpen && (
-              <div className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn">
-                <div className="flex flex-col items-center justify-center h-full space-y-8">
+              <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-3xl"></div>
+                <div className="flex flex-col items-center py-8 space-y-8 relative">
                   <Link to="/research" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Research</Link>
                   <Link to="/about" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>About Us</Link>
                   <Link to="/newsletter" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Newsletter</Link>
