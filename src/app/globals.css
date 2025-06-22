@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply min-h-screen;
+    background-color: #000;
+    background-image: 
+      linear-gradient(to bottom right, rgba(0, 255, 255, 0.15), rgba(0, 0, 0, 1)),
+      linear-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px);
+    background-size: 
+      100% 100%,
+      40px 40px,
+      40px 40px;
+    background-position: 
+      0 0,
+      -0.75px -0.75px,
+      -0.75px -0.75px;
+    /* animation: gradientMove 15s ease infinite; */
+  }
+
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 hover:from-blue-700 hover:via-purple-700 hover:to-blue-700 
+           px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-500 
+           hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 bg-[length:200%_auto]
+           hover:animate-[gradientMove_3s_linear_infinite];
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg 
+           transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10 active:scale-95
+           relative overflow-hidden;
+  }
+
+  .btn-secondary::after {
+    @apply content-[''] absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-1000
+           bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  }
+
+  .nav-link {
+    @apply relative hover:text-blue-400 transition-colors duration-300 
+           after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 
+           after:bg-gradient-to-r after:from-blue-400 after:to-purple-400
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .social-icon {
+    @apply text-gray-400 hover:text-white transition-all duration-500 
+           hover:scale-110 hover:-translate-y-1 hover:animate-[pulse_2s_ease-in-out_infinite];
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl
+           hover:border-white/20 transition-all duration-500 hover:shadow-lg hover:shadow-blue-500/10;
+  }
+
+  .hero-image {
+    @apply animate-[float_6s_ease-in-out_infinite];
+  }
+
+  .feature-icon {
+    @apply animate-[pulse_3s_ease-in-out_infinite];
+  }
+}
