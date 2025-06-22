@@ -22,7 +22,7 @@ function App() {
               className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               onClick={() => window.scrollTo(0, 0)}
             >
-              <Brain className="w-8 h-8 text-blue-500 feature-icon" />
+              <img src="/images/favicon.png" className="w-10 h-10 feature-icon" alt="TuriLabs Logo" />
               <span className="text-xl font-bold">TuriLabs</span>
             </Link>
             
@@ -76,7 +76,7 @@ function App() {
           <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
               <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-                <Brain className="w-6 h-6 text-blue-500 feature-icon" />
+              <img src="/images/favicon.png" className="w-10 h-10 feature-icon" alt="TuriLabs Logo" />
                 <span className="font-bold">TuriLabs</span>
               </Link>
               <div className="flex gap-6">
