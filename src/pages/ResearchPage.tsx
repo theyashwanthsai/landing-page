@@ -5,7 +5,7 @@ import { ResearchGrid } from '../components/ResearchGrid';
 
 export function ResearchPage() {
   return (
-    <div className="min-h-screen text-white relative mt-20">
+    <div className="min-h-screen text-white relative mt-10">
       <div className="absolute inset-0  pointer-events-none"></div>
       
       <div className="relative">

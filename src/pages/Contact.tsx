@@ -15,7 +15,7 @@ const products = [
 
 export function ContactPage() {
   return (
-    <div className="min-h-screen text-white relative mt-20">
+    <div className="min-h-screen text-white relative mt-10">
       <div className="absolute inset-0 pointer-events-none"></div>
       <div className="relative">
         <div className="container mx-auto px-4 sm:px-6 py-8 text-center">

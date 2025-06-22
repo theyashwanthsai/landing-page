@@ -41,21 +41,24 @@ function App() {
             </div>
 
             {isMenuOpen && (
-              <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-3xl"></div>
-                <div className="flex flex-col items-center py-8 space-y-8 relative">
-                  <Link to="/research" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Research</Link>
-                  <Link to="/about" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-                  <Link to="/newsletter" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Newsletter</Link>
-                  <Link to="/contact" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
-                  <button 
-                    className="absolute top-8 right-4 transition-transform duration-300 hover:scale-110"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
+              <>
+                <div 
+                  className="fixed inset-0 z-40 bg-transparent"
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{height: '100vh'}}
+                />
+                <div 
+                  className="md:hidden fixed top-[72px] left-0 right-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-xl"></div>
+                  <div className="flex flex-col items-center py-6 space-y-4 relative">
+                    <Link to="/research" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Research</Link>
+                    <Link to="/about" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>About Us</Link>
+                    <Link to="/newsletter" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Newsletter</Link>
+                    <Link to="/contact" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
+                  </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         </header>
