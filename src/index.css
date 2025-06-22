@@ -40,9 +40,9 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-purple-400 via-purple-500 to-purple-400 hover:from-purple-500 hover:via-purple-600 hover:to-purple-500
+    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 hover:from-blue-500 hover:via-blue-600 hover:to-blue-500
            px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-500
-           hover:scale-105 hover:shadow-lg hover:shadow-white/30 active:scale-95 bg-[length:200%_auto]
+           hover:scale-105 hover:shadow-lg hover:shadow-blue-300/30 active:scale-95 bg-[length:200%_auto]
            hover:animate-[gradientMove_3s_linear_infinite];
   }
 
