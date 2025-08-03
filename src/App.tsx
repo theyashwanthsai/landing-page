@@ -13,15 +13,14 @@ function App() {
 
 
 
-
   return (
     <Router>
-      <div className="min-h-screen w-full relative bg-black">
+      <div className="min-h-screen w-full bg-[#020617] relative">
   {/* Radial Gradient Background from Bottom */}
   <div
     className="absolute inset-0 z-0"
     style={{
-      background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.25), transparent 70%), #000000",
+      backgroundImage: `radial-gradient(circle 500px at 50% 100px, rgba(139,92,246,0.4), transparent)`,
     }}
   />
   {/* Your Content/Components */}
