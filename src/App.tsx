@@ -11,8 +11,21 @@ import { NewsletterArticlePage } from './pages/NewsletterArticlePage';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+
+
   return (
     <Router>
+      <div className="min-h-screen w-full relative bg-black">
+  {/* Radial Gradient Background from Bottom */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139, 92, 246, 0.25), transparent 70%), #000000",
+    }}
+  />
+  {/* Your Content/Components */}
+
       <div className="min-h-screen text-white bg-gradient-to-b from-black/40 to-black/70">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/10">
@@ -101,6 +114,7 @@ function App() {
             </div>
           </div>
         </footer>
+      </div>
       </div>
     </Router>
   );

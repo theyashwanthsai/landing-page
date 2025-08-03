@@ -5,20 +5,7 @@
 @layer base {
   body {
     @apply min-h-screen;
-    background-color: #000;
-    background-image: 
-      linear-gradient(to bottom right, rgba(0, 255, 255, 0.15), rgba(255, 0, 255, 0.15)),
-      linear-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px);
-    background-size: 
-      100% 100%,
-      40px 40px,
-      40px 40px;
-    background-position: 
-      0 0,
-      -0.75px -0.75px,
-      -0.75px -0.75px;
-    /* animation: gradientMove 15s ease infinite; */
+    /* background: radial-gradient(125% 125% at 50% 90%, #fff 40%, #7c3aed 100%); */
   }
 
   @keyframes float {
@@ -40,7 +27,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 hover:from-blue-500 hover:via-blue-600 hover:to-blue-500
+    @apply bg-gradient-to-r from-purple-500 via-purple-500 to-purple-400 hover:from-blue-500 hover:via-blue-600 hover:to-blue-500
            px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-500
            hover:scale-105 hover:shadow-lg hover:shadow-blue-300/30 active:scale-95 bg-[length:200%_auto]
            hover:animate-[gradientMove_3s_linear_infinite];

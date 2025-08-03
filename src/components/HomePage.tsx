@@ -19,7 +19,7 @@ export function HomePage() {
             <div className="flex-1 space-y-8 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Building the weird and wonderful of
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-[length:200%_auto] animate-[gradientMove_3s_linear_infinite]"> AI</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-400 bg-[length:200%_auto] animate-[gradientMove_3s_linear_infinite]"> AI</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
                 Indie AI Research Lab dedicated to build weird, wonderful, and sometimes outright crazy things. We're driven by curiosity and a desire to explore the next generation of intelligent systems that can learn, adapt, and evolve.
