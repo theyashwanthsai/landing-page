@@ -94,7 +94,7 @@ export function HomePage() {
               </div>
               <div className="flex flex-col items-center gap-2">
                 <span className="text-2xl">📣</span>
-                <p className="text-gray-300">Share via tweets & blogs to attract collaborators</p>
+                <p className="text-gray-300">Share via tweets & blogs</p>
               </div>
               <div className="flex flex-col items-center gap-2">
                 <span className="text-2xl">🤝</span>
