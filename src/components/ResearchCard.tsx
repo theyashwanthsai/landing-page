@@ -7,28 +7,29 @@ interface ResearchCardProps {
   description: string;
   category: string;
   link: string;
+  image: string;
+  authors: string;
 }
 
-export function ResearchCard({ title, description, category, link }: ResearchCardProps) {
+
+
+export function ResearchCard({ title, description, image, link, authors }: ResearchCardProps) {
+  const temp = "/images/temp.jpg"
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex flex-col bg-gray-900 rounded-xl overflow-hidden group hover:bg-gray-800 transition-all duration-300 p-6"
-    >
-      <div className="flex flex-col">
-        <div className="flex items-center justify-between mb-3">
-          <span className="inline-block px-2.5 py-0.5 bg-purple-500/20 text-purple-400 text-xs font-medium rounded-md">
-            {category}
-          </span>
+    <a href={link} target="_blank" rel="noopener noreferrer" className="block hover:scale-105 transition-transform duration-300">
+      <div className="flex flex-col h-[32rem] bg-gray-900/90 rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm">
+        <div className="relative h-64">
+          <img src={image || temp} alt={title} className="absolute top-0 left-0 w-full h-full object-cover" />
         </div>
-        <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300">{title}</h3>
-        <p className="text-gray-400 text-sm mb-4">{description}</p>
-        <span className="text-blue-400 group-hover:text-purple-300 flex items-center gap-1.5 text-sm font-medium">
-          Learn more
-          <ChevronRight className="w-4 h-4" />
-        </span>
+        <div className="p-6 flex flex-col flex-1">
+          <h3 className="text-2xl font-semibold mb-3 text-white line-clamp-2 min-h-[4rem]">{title}</h3>
+          <p className="text-gray-400 text-base mb-4 line-clamp-4 flex-1">{description}</p>
+          {authors && (
+            <div className="text-sm text-blue-300 mt-auto">
+              Contributors: {authors}
+            </div>
+          )}
+        </div>
       </div>
     </a>
   );

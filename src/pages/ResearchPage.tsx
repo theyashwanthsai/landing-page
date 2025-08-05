@@ -11,9 +11,9 @@ export function ResearchPage() {
       <div className="relative">
         <div className="container mx-auto px-4 sm:px-6 py-8 text-center">
 
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Our Experiments (Work in Progress)</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Our Work</h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Some of our research experiments. We are building ideas which might not be profitable, but are worth exploring. We focus (not limited to) on AI Agents, Benchmarks, RL, etc. 
+            We pursue innovative ideas driven by curiosity rather than profit. Our work spans across AI Agents, Benchmarks, Reinforcement Learning, and Genetic Algorithms.
           </p>
         </div>
 

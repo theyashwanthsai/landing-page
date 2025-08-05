@@ -12,15 +12,13 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
-
   return (
     <Router>
-      <div className="min-h-screen w-full bg-[#020617] relative">
-  {/* Radial Gradient Background from Bottom */}
+      <div className="min-h-screen w-full  relative">
   <div
     className="absolute inset-0 z-0"
     style={{
-      backgroundImage: `radial-gradient(circle 500px at 50% 100px, rgba(139,92,246,0.4), transparent)`,
+      background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
     }}
   />
   {/* Your Content/Components */}
