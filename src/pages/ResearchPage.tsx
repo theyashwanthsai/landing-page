@@ -12,8 +12,14 @@ export function ResearchPage() {
         <div className="container mx-auto px-4 sm:px-6 py-8 text-center">
 
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Our Work</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We pursue innovative ideas driven by curiosity rather than profit. Our work spans across AI Agents, Benchmarks, Reinforcement Learning, and Genetic Algorithms.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto text-left">
+            We pursue innovative ideas driven by curiosity rather than profit. Our projects are documented through various mediums including:
+            <ul className="list-disc list-inside my-4 text-left">
+              <li>Research papers for academic contributions</li>
+              <li>Blog posts for detailed explanations</li>
+              <li>Demo videos for practical demonstrations</li>
+            </ul>
+            Our work primarily focuses around Multi-Agent Systems, Language Model Benchmarking, Reinforcement Learning, and Genetic Algorithms, and more.
           </p>
         </div>
 

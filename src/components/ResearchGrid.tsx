@@ -6,7 +6,6 @@ interface ResearchItem {
   image: string;
   title: string;
   description: string;
-  category: string;
   link: string;
   authors: string;
 }
@@ -20,16 +19,14 @@ const researchData: ResearchItem[] = [
   {
     image: "/images/pokemon_llm.png",
     title: "LLM Pokemon League",
-    description: "A Pokemon League where LLMs battle each other to become the best Pokemon trainer.",
-    category: "AI Experimental",
+    description: "A Pokemon tournament where LLMs battle each other to come out on top.",
     link: "https://arxiv.org/abs/2508.01623",
     authors: "Sai Yashwanth, Dhatri C"
   },
   {
     image: "",
     title: "Yet Another Agentic Framework",
-    description: "Our Inhouse Framework to create custom AI Agents with ease and zero coupling. Uses Openai assistants under the hood",
-    category: "Agentic Framework",
+    description: "Our framework to create custom AI Agents with ease. Built to be lean and zero coupling.",
     link: "https://github.com/Turi-Labs/YAAF",
     authors: "Sai Yashwanth, Vijayant"
   },
@@ -37,7 +34,6 @@ const researchData: ResearchItem[] = [
     image: "",
     title: "MREB",
     description: "An open source benchmark for small language models.",
-    category: "AI Experimental",
     link: "#",
     authors: "Sai Yashwanth, Dhatri C"
   },
@@ -45,15 +41,13 @@ const researchData: ResearchItem[] = [
     image: "",
     title: "Newsletter Agents",
     description: "Official team of agents which run the turilabs newsletter",
-    category: "AI Experimental",
     link: "#",
     authors: "Sai Yashwanth"
   },
   {
-    image: "",
+    image: "/images/devyan.png",
     title: "Devyan",
     description: "Building a Software Dev Team. Experimental Project to orchestrate a team of agents to solve programming tasks.",
-    category: "Multi Agent System",
     link: "https://github.com/Turi-Labs/Devyan",
     authors: "Sai Yashwanth"
   },
