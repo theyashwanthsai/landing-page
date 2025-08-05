@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Brain, Atom, Globe2, Users, ChevronRight, Github, Twitter, BookOpen, Newspaper, Mail, Menu, X } from 'lucide-react';
+import { Brain, Atom, Globe2, Users, ChevronRight, Github, Twitter, BookOpen, Newspaper, Mail, Menu, X, Sparkles, Gamepad2 } from 'lucide-react';
 import { ResearchGrid } from './ResearchGrid';
 import { FoundersSection } from './FoundersSection';
 import { Link } from 'react-router-dom';
@@ -22,7 +22,8 @@ export function HomePage() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-pink-400 bg-[length:200%_auto] animate-[gradientMove_3s_linear_infinite]"> AI</span>
               </h1>
               <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
-                Indie AI Research Lab dedicated to build weird, wonderful, and sometimes outright crazy things. We're driven by curiosity and a desire to explore the next generation of intelligent systems that can learn, adapt, and evolve.
+              Turilabs is a lean, indie AI research lab dedicated to build weird, wonderful, and sometimes outright crazy things. 
+                We're driven by raw curiosity to explore the next generation of intelligent systems that can learn, adapt, and evolve.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/research" className="btn-primary">
@@ -46,11 +47,18 @@ export function HomePage() {
         </header>
 
         <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our North Star</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+            We believe the future of intelligence won't come from scaling bigger models. It will come from smaller systems that learn, reason, and evolve.
+            We exist to explore the frontier of agentic AI, self-learning neural systems, and simulation-based evaluation.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Atom, title: "AI Agents", desc: "Crafting autonomous systems with unpredictable (and hopefully useful) behaviors.", color: "blue" },
-              { icon: Globe2, title: "SLM Benchmarks", desc: "Pitting small language models against bizarre and challenging benchmarks.", color: "purple" },
-              { icon: Users, title: "Generative AI", desc: "Twisting AI to create content you didn't know you needed (or wanted).", color: "green" }
+              { icon: Brain, title: "AI Agents", desc: "Building frameworks, runtimes, and infrastructures that power reasoning agents.", color: "blue" },
+              { icon: Sparkles, title: "Self-Learning Systems", desc: "From neuroevolution to RL, we explore models that learn by doing.", color: "purple" },
+              { icon: Gamepad2, title: "Simulated Worlds", desc: "Environments where we evaluate decision-making, emergence, and reasoning.", color: "green" }
             ].map((feature, i) => (
               <div key={i} className="glass-card p-8 group hover:shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <feature.icon className={`w-12 h-12 text-${feature.color}-500 mb-4 feature-icon`} />
@@ -58,6 +66,45 @@ export function HomePage() {
                 <p className="text-gray-400">{feature.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
+            <p className="text-gray-300 max-w-3xl mx-auto">
+              We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we build what we're curious about and ship what works. 
+              This is a home for hackers, thinkers, and experimentalists who want to push the boundaries of AI.
+            </p>
+            <p className="text-gray-300 max-w-2xl mx-auto mt-6 italic">
+              We're building the kind of research lab we wish existed!
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12 max-w-4xl mx-auto text-sm">
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🔍</span>
+                <p className="text-gray-300">Experiment with wild ideas in agents, evolution, learning</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🧪</span>
+                <p className="text-gray-300">Build working artifacts: tools, benchmarks, frameworks</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🧠</span>
+                <p className="text-gray-300">Write papers, preprints and posts</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">📣</span>
+                <p className="text-gray-300">Share via tweets & blogs to attract collaborators</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🤝</span>
+                <p className="text-gray-300">Welcome community contributions</p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🚀</span>
+                <p className="text-gray-300">Repeat the cycle, faster each time</p>
+              </div>
+            </div>
           </div>
         </section>
 
