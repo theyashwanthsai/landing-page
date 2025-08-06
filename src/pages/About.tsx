@@ -6,7 +6,7 @@ export function AboutPage() {
   const team = [
     { name: "Sai Yashwanth", link: "https://saiyashwanth.tech" },
     { name: "Vijayant", link: "https://www.linkedin.com/in/vijayant-raj-singh-raghav/" },
-    { name: "Dhatri C", link: "https://www.linkedin.com/in/dhatri-c-5b1b20297/" }
+    { name: "Dhatri C", link: "https://www.linkedin.com/in/dhatri-c-5b1b20297/" },
     { name: "Mayank Kashyap", link: "https://www.linkedin.com/in/mayank-kashyap-402065232/" },
     { name: "Chidu", link: "https://www.linkedin.com/in/siddharth-prakash-771596241/" },
     { name: "Supratik", link: "https://www.linkedin.com/in/supratik-kar-99a99522b/" },
