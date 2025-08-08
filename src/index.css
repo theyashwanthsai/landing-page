@@ -31,11 +31,12 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-purple-500 via-purple-500 to-purple-400 hover:from-blue-500 hover:via-blue-600 hover:to-blue-500
+    @apply bg-gradient-to-r from-white via-white to-gray-100 hover:from-gray-100 hover:via-white hover:to-white
            px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-500
-           hover:scale-105 hover:shadow-lg hover:shadow-blue-300/30 active:scale-95 bg-[length:200%_auto]
-           hover:animate-[gradientMove_3s_linear_infinite];
-  }
+           hover:scale-105 hover:shadow-lg hover:shadow-white/30 active:scale-95 bg-[length:200%_auto]
+           hover:animate-[gradientMove_3s_linear_infinite]
+           text-black font-semibold;
+    }
 
   .btn-secondary {
     @apply bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg 

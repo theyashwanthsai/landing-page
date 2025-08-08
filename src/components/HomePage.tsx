@@ -26,7 +26,7 @@ export function HomePage() {
                 We're driven by raw curiosity to explore the next generation of intelligent systems that can learn, adapt, and evolve.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/research" className="btn-primary">
+                <Link to="/research" className="btn-primary text-black font-semibold text-lg">
                   View Our Experiments <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link to="/product" className="btn-secondary">
@@ -36,12 +36,15 @@ export function HomePage() {
             </div>
             <div className="flex-1 relative w-full max-w-xl lg:max-w-none">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-3xl"></div>
-              <img
-                // src="https://images.unsplash.com/photo-1693520999631-6ac145c1dd15?auto=format&fit=crop&q=80"
-                src="/images/game_of_life_smaller.gif"
-                alt="AI Visualization"
-                className="relative rounded-3xl shadow-2xl w-3/4 mx-auto hero-image hover:scale-105 hover:-translate-y-2 transition-all duration-500"
-              />
+              <div className="text-center">
+                <img
+                  // src="https://images.unsplash.com/photo-1693520999631-6ac145c1dd15?auto=format&fit=crop&q=80"
+                  src="/images/game_of_life_smaller.gif"
+                  alt="Conway's Game of Life Simulation"
+                  className="relative rounded-3xl shadow-2xl w-3/4 mx-auto hero-image hover:scale-105 hover:-translate-y-2 transition-all duration-500"
+                />
+                <p className="mt-4 text-white text-sm font-mono tracking-wide">Conway's Game of Life: A classic example of emergent behavior</p>
+              </div>
             </div>
           </div>
         </header>

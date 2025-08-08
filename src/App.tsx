@@ -47,7 +47,7 @@ function App() {
               <Link to="/research" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Research</Link>
               <Link to="/about" className="nav-link" onClick={() => window.scrollTo(0, 0)}>About Us</Link>
               <Link to="/newsletter" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Newsletter</Link>
-              <Link to="/contact" className="nav-link btn-primary" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
+              <Link to="/contact" className="nav-link btn-primary text-black font-semibold text-lg" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
             </div>
 
             {isMenuOpen && (
