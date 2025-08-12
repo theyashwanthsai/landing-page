@@ -82,56 +82,29 @@ export function HomePage() {
             <p className="text-gray-300 max-w-2xl mx-auto mt-6 italic">
               We're building the kind of research lab we wish existed!
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12 max-w-4xl mx-auto text-sm">
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">🔍</span>
-                <p className="text-gray-300">Experiment with wild ideas in agents, evolution, learning</p>
+            {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm">
+              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
+                <span className="text-2xl">🤔</span>
+                <p className="text-gray-300 text-center">Identify interesting problems in AI reasoning and learning</p>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">🧪</span>
-                <p className="text-gray-300">Build working artifacts: tools, benchmarks, frameworks</p>
+              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
+                <span className="text-2xl">🔬</span>
+                <p className="text-gray-300 text-center">Run controlled experiments to test hypotheses</p>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">🧠</span>
-                <p className="text-gray-300">Write papers, preprints and posts</p>
+              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
+                <span className="text-2xl">📊</span>
+                <p className="text-gray-300 text-center">Generate reproducible results and benchmarks</p>
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">📣</span>
-                <p className="text-gray-300">Share via tweets & blogs</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">🤝</span>
-                <p className="text-gray-300">Welcome community contributions</p>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl">🚀</span>
-                <p className="text-gray-300">Repeat the cycle, faster each time</p>
+              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
+                <span className="text-2xl">✍️</span>
+                <p className="text-gray-300 text-center">Document findings in papers and blog posts</p>
               </div>
             </div>
           </div>
         </section>
-
-
         
-        {/* <FoundersSection /> */}
-        
-        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
-        <Link 
-          to="/newsletter" 
-          onClick={() => window.scrollTo(0, 0)}
-        >  
-        <div className="glass-card p-6 sm:p-12 transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/20">
-            <div className="max-w-2xl mx-auto text-center">
-              <Mail className="w-12 sm:w-16 h-12 sm:h-16 text-blue-400 mx-auto mb-6 feature-icon" />
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">Official TuriLabs Newsletter</h2>
-              <p className="text-gray-300 mb-8">We wanted to stay updated with AI advancements, so we delegated this task to a team of AI Agents. Click here to learn more.</p> 
-              
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            </div>
-            </div>
-          </div>
-          </Link>
-        </section>
+
       </div>
     </div>
   );

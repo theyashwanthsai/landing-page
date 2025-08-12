@@ -5,8 +5,7 @@ import { HomePage } from './components/HomePage';
 import { ResearchPage } from './pages/ResearchPage';
 import { ContactPage } from './pages/Contact';
 import { AboutPage } from './pages/About';
-import { NewsletterPage } from './pages/NewsletterPage';
-import { NewsletterArticlePage } from './pages/NewsletterArticlePage';
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +17,7 @@ function App() {
   <div
     className="absolute inset-0 z-0"
     style={{
-      background: "radial-gradient(125% 125% at 50% 100%, #000000 40%, #010133 100%)",
+      background: "radial-gradient(125% 125% at 50% 100%, #000000 30%, #010133 100%)",
     }}
   />
   {/* Your Content/Components */}
@@ -46,7 +45,6 @@ function App() {
             <div className="hidden md:flex items-center gap-8">
               <Link to="/research" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Research</Link>
               <Link to="/about" className="nav-link" onClick={() => window.scrollTo(0, 0)}>About Us</Link>
-              <Link to="/newsletter" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Newsletter</Link>
               <Link to="/contact" className="nav-link btn-primary text-black font-semibold text-lg" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
             </div>
 
@@ -64,7 +62,6 @@ function App() {
                   <div className="flex flex-col items-center py-6 space-y-4 relative">
                     <Link to="/research" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Research</Link>
                     <Link to="/about" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>About Us</Link>
-                    <Link to="/newsletter" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Newsletter</Link>
                     <Link to="/contact" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
                   </div>
                 </div>
@@ -79,8 +76,6 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/newsletter" element={<NewsletterPage />} />
-            <Route path="/newsletter/article/:articleName" element={<NewsletterArticlePage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
