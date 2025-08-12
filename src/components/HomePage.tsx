@@ -29,7 +29,7 @@ export function HomePage() {
                 <Link to="/research" className="btn-primary text-black font-semibold text-lg">
                   View Our Experiments <ChevronRight className="w-4 h-4" />
                 </Link>
-                <Link to="/product" className="btn-secondary">
+                <Link to="/contact" className="btn-secondary">
                   Contact Us
                 </Link>
               </div>
