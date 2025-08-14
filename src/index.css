@@ -7,9 +7,9 @@
 
 
 @layer base {
-
   body {
-    @apply min-h-screen;
+    @apply min-h-screen text-base;
+    /* font-family: 'Nunito', sans-serif; */
   }
 
   @keyframes float {
