@@ -29,7 +29,7 @@ export function PricingSection() {
     <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Pricing Plans</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto">
+        <p className="text-secondary max-w-2xl mx-auto">
           We work with a limited number of clients to ensure the highest quality of service and attention to detail.
         </p>
       </div>
@@ -47,17 +47,17 @@ export function PricingSection() {
                 <h3 className="text-2xl font-bold mb-2 text-blue-400">
                   Custom AI Automation Solution
                 </h3>
-                <p className="text-gray-400 mb-6">
+                <p className="text-muted mb-6">
                   Tailored AI automation solutions designed specifically for your business needs
                 </p>
-                <div className="inline-block bg-blue-500/10 text-blue-400 px-4 py-2 rounded-full text-lg font-semibold">
+                <div className="inline-block bg-primary-10 text-blue-400 px-4 py-2 rounded-full text-lg font-semibold">
                   Custom Quote
                 </div>
               </div>
 
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3 text-gray-300">
+                  <div key={index} className="flex items-center gap-3 text-secondary">
                     <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
                     <span>{feature}</span>
                   </div>
@@ -68,8 +68,8 @@ export function PricingSection() {
                 <h4 className="text-lg font-semibold mb-4 text-center">Our Process</h4>
                 <div className="space-y-3">
                   {plan.process.map((step, index) => (
-                    <div key={index} className="flex items-center gap-3 text-gray-300">
-                      <div className="w-6 h-6 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center flex-shrink-0">
+                    <div key={index} className="flex items-center gap-3 text-secondary">
+                      <div className="w-6 h-6 rounded-full bg-primary-10 text-blue-400 flex items-center justify-center flex-shrink-0">
                         {index + 1}
                       </div>
                       <span>{step}</span>
@@ -79,7 +79,7 @@ export function PricingSection() {
               </div>
 
               <div className="text-center mt-8">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition-colors duration-300 font-semibold">
+                <button className="btn-pricing px-8 py-3 rounded-full font-semibold">
                   Schedule Free Consultation
                 </button>
               </div>

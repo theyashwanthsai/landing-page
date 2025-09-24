@@ -15,28 +15,28 @@ const products = [
 
 export function ContactPage() {
   return (
-    <div className="min-h-screen text-white relative mt-10">
+    <div className="min-h-screen text-primary relative mt-10">
       <div className="absolute inset-0 pointer-events-none"></div>
       <div className="relative">
         <div className="container mx-auto px-4 sm:px-6 py-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary max-w-2xl mx-auto">
             Want to connect, collaborate, or just say hi? Reach out to us via email, socials, or book a call below.
           </p>
         </div>
         <main className="container mx-auto px-4 sm:px-6 py-16">
           <div className="max-w-2xl mx-auto glass-card p-8 flex flex-col items-center">
             <div className="mb-8 text-center">
-              <div className="text-lg text-gray-400 mb-2">Email us at</div>
+              <div className="text-lg text-muted mb-2">Email us at</div>
               <a
                 href="mailto:hello@turilabs.ai"
-                className="text-blue-400 hover:text-blue-500 underline text-xl font-medium"
+                className="link-primary text-xl font-medium"
               >
                 taddishetty34@gmail.com
               </a>
             </div>
             <div className="mb-8 text-center">
-              <div className="text-lg text-gray-400 mb-2">Find us on</div>
+              <div className="text-lg text-muted mb-2">Find us on</div>
               <div className="flex justify-center gap-8">
                 <a
                   href="https://x.com/turilabs"
@@ -59,7 +59,7 @@ export function ContactPage() {
               </div>
             </div>
             <div className="mb-4 text-center">
-              <div className="text-lg text-gray-400 mb-2">Book a call with us</div>
+              <div className="text-lg text-muted mb-2">Book a call with us</div>
               <a
                 href="https://cal.com/sai-yashwanth/15min"
                 target="_blank"

@@ -35,8 +35,8 @@ const Stats = () => {
               <stat.icon className="w-6 h-6 text-blue-400" />
               <span className="text-blue-400 text-sm font-mono">{stat.change}</span>
             </div>
-            <h3 className="text-3xl font-bold text-white mb-2">{stat.value}</h3>
-            <p className="text-gray-300">{stat.label}</p>
+            <h3 className="text-3xl font-bold text-primary mb-2">{stat.value}</h3>
+            <p className="text-secondary">{stat.label}</p>
           </div>
         </div>
       ))}

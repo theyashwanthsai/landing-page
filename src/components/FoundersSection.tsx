@@ -30,7 +30,7 @@ export function FoundersSection() {
     <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">People behind Turi Labs</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto">
+        <p className="text-secondary max-w-2xl mx-auto">
           This lab was started as a fun project to bring our ideas to life. 
         </p>
       </div>
@@ -50,7 +50,7 @@ export function FoundersSection() {
                 {founder.name}
               </h3>
               <p className="text-blue-400 mb-4">{founder.role}</p>
-              <p className="text-gray-300 mb-6">{founder.bio}</p>
+              <p className="text-secondary mb-6">{founder.bio}</p>
               <div className="flex gap-4">
                 <a href={founder.social.twitter} className="social-icon">
                   <Twitter className="w-5 h-5" />

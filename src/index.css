@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color Scheme Variables */
+:root {
+  /* Primary Colors */
+  --color-primary: #475569; /* very subtle blue-gray for text */
+  --color-primary-hover: #334155; /* slightly darker blue-gray */
+  --color-primary-light: #64748B; /* light blue-gray */
+  --color-primary-dark: #1E293B; /* medium blue */
+  
+  /* Secondary Colors */
+  --color-secondary: #64748B; /* blue-gray-500 */
+  --color-secondary-light: #94A3B8; /* blue-gray-400 */
+  --color-accent: #f179bb; /* light pink accent */
+  --color-accent-light: #DBEAFE; /* barely there blue accent */
+  
+  /* Background Colors */
+  --color-bg-primary: #FDFDFE; /* whisper of blue in white */
+  --color-bg-secondary: #FBFCFE; /* barely noticeable blue tint */
+  --color-bg-tertiary: #F9FBFE; /* subtle blue-tinted white */
+  --color-bg-glass: rgba(253, 253, 254, 0.8);
+  --color-bg-glass-hover: rgba(251, 252, 254, 0.9);
+  
+  /* Text Colors */
+  --color-text-primary: #1E293B; /* lighter blue-gray for text */
+  --color-text-secondary: #475569; /* medium blue-gray */
+  --color-text-muted: #64748B; /* blue-gray-500 */
+  --color-text-disabled: #94A3B8; /* blue-gray-400 */
+  
+  /* Border Colors */
+  --color-border-light: rgba(191, 219, 254, 0.3); /* whisper-light blue with opacity */
+  --color-border-medium: rgba(191, 219, 254, 0.4);
+  --color-border-strong: rgba(191, 219, 254, 0.6);
+  
+  /* Gradient Colors */
+  --gradient-primary: var(--color-accent);
+  --gradient-secondary: var(--color-accent-light);
+  
+  /* Shadow Colors */
+  --shadow-primary: rgba(191, 219, 254, 0.02); /* barely visible blue shadow */
+  --shadow-secondary: rgba(148, 163, 184, 0.015); /* nearly invisible shadow */
+  --shadow-strong: rgba(191, 219, 254, 0.04);
+}
+
 
 
 
@@ -31,22 +73,54 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-white via-white to-gray-100 hover:from-gray-100 hover:via-white hover:to-white
-           px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-all duration-500
-           hover:scale-105 hover:shadow-lg hover:shadow-white/30 active:scale-95 bg-[length:200%_auto]
-           hover:animate-[gradientMove_3s_linear_infinite]
-           text-black font-semibold;
-    }
+    background: var(--gradient-primary);
+    color: var(--color-bg-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 1px solid var(--color-border-light);
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px var(--shadow-primary), 0 4px 6px -2px var(--shadow-primary);
+    border-color: var(--color-border-strong);
+  }
 
   .btn-secondary {
-    @apply bg-white/10 backdrop-blur-sm border border-white/20 hover:border-white/40 px-6 py-3 rounded-lg 
-           transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-white/10 active:scale-95
-           relative overflow-hidden;
+    background-color: var(--color-bg-glass);
+    backdrop-filter: blur(16px);
+    border: 2px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-secondary:hover {
+    transform: scale(1.05);
+    border-color: var(--color-border-strong);
+    box-shadow: 0 10px 15px -3px var(--shadow-secondary), 0 4px 6px -2px var(--shadow-secondary);
   }
 
   .btn-secondary::after {
-    @apply content-[''] absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-1000
-           bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    transition: transform 1s;
+    background: linear-gradient(to right, transparent, var(--color-bg-glass-hover), transparent);
+  }
+
+  .btn-secondary:hover::after {
+    transform: translateX(100%);
   }
 
   .nav-link {
@@ -57,13 +131,29 @@
   }
 
   .social-icon {
-    @apply text-gray-400 hover:text-white transition-all duration-500 
-           hover:scale-110 hover:-translate-y-1 hover:animate-[pulse_2s_ease-in-out_infinite];
+    color: var(--color-text-muted);
+    transition: all 0.5s;
+  }
+
+  .social-icon:hover {
+    color: var(--color-text-primary);
+    transform: scale(1.1) translateY(-4px);
+    animation: pulse 2s ease-in-out infinite;
   }
 
   .glass-card {
-    @apply bg-white/5 border border-white/10 rounded-xl
-           hover:border-white/50 transition-all duration-100 hover:shadow-lg hover:shadow-blue-500/10;
+    background-color: var(--color-bg-glass);
+    border: 1px solid var(--color-border-light);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 20px 25px -5px var(--shadow-primary), 0 10px 10px -5px var(--shadow-primary);
+    backdrop-filter: blur(24px);
+    transform: translateY(-2px);
   }
 
   .hero-image {
@@ -168,5 +258,117 @@
     @apply absolute inset-0 z-0;
     background-image: var(--bg-gradient);
     background-size: var(--bg-size, auto);
+  }
+
+  /* Custom Background Classes using CSS Variables */
+  .bg-primary {
+    background-color: var(--color-bg-primary);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+
+  /* Text Color Classes */
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  /* Border Classes */
+  .border-light {
+    border-color: var(--color-border-light);
+  }
+
+  .border-medium {
+    border-color: var(--color-border-medium);
+  }
+
+  /* Pricing Button Class */
+  .btn-pricing {
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-pricing:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  /* Research Card Background */
+  .research-card-bg {
+    background-color: var(--color-bg-secondary); /* Light gray background for light theme */
+    border: 1px solid var(--color-border-light);
+  }
+
+  /* Additional Color Classes */
+  .text-blue-300 {
+    color: var(--color-primary-light);
+  }
+
+  .text-blue-400 {
+    color: var(--color-primary);
+  }
+
+  .text-blue-500 {
+    color: var(--color-primary);
+  }
+
+  .text-gray-300 {
+    color: var(--color-text-secondary);
+  }
+
+  .text-gray-400 {
+    color: var(--color-text-muted);
+  }
+
+  .text-gray-500 {
+    color: var(--color-text-disabled);
+  }
+
+  .text-green-400 {
+    color: var(--color-secondary-light);
+  }
+
+  .border-gray-700 {
+    border-color: var(--color-bg-tertiary);
+  }
+
+  .bg-blue-500 {
+    background-color: var(--color-primary);
+  }
+
+  /* Background with opacity */
+  .bg-primary-10 {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .bg-gradient-blue-subtle {
+    background: var(--color-bg-tertiary);
+  }
+
+  /* Additional background variants */
+  .bg-gradient-text-ai {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  /* Link styling */
+  .link-primary {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .link-primary:hover {
+    color: var(--color-primary-hover);
   }
 }

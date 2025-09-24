@@ -12,7 +12,7 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
               <Link to="/" className="flex items-center gap-2">
                 <Brain className="w-6 h-6 text-blue-500 feature-icon" />
-                <span className="font-bold text-white">Turi Labs</span>
+                <span className="font-bold text-primary">Turi Labs</span>
               </Link>
           <div className="flex gap-6">
             {[
@@ -27,7 +27,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-8 text-center text-gray-500">
+        <div className="mt-8 text-center text-muted">
           © 2024 Turi Labs. All rights reserved.
         </div>
       </div>

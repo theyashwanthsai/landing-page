@@ -10,7 +10,7 @@ export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-primary">
       {/* <div className="absolute inset-0  pointer-events-none"></div> */}
       <div className="relative">
         <header className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
@@ -19,14 +19,14 @@ export function HomePage() {
             <div className="flex-1 space-y-8 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Building the weird and wonderful of
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-green-400 bg-[length:200%_auto] animate-[gradientMove_3s_linear_infinite]"> AI</span>
+                <span className="bg-gradient-text-ai"> AI</span>
               </h1>
-              <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl text-secondary max-w-2xl mx-auto lg:mx-0">
               Turilabs is a lean, indie AI research lab dedicated to build weird, wonderful, and sometimes outright crazy things. 
                 We're driven by raw curiosity to explore the next generation of intelligent systems that can learn, adapt, and evolve.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/research" className="btn-primary text-black font-semibold text-lg">
+                <Link to="/research" className="btn-primary font-semibold text-lg">
                   View Our Experiments <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link to="/contact" className="btn-secondary">
@@ -35,7 +35,7 @@ export function HomePage() {
               </div>
             </div>
             <div className="flex-1 relative w-full max-w-xl lg:max-w-none">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-blue-purple rounded-lg filter blur-3xl"></div>
               <div className="text-center">
                 <img
                   // src="https://images.unsplash.com/photo-1693520999631-6ac145c1dd15?auto=format&fit=crop&q=80"
@@ -43,7 +43,7 @@ export function HomePage() {
                   alt="Conway's Game of Life Simulation"
                   className="relative rounded-3xl shadow-2xl w-3/4 mx-auto hero-image hover:scale-105 hover:-translate-y-2 transition-all duration-500"
                 />
-                <p className="mt-4 text-white text-sm font-mono tracking-wide">Conway's Game of Life: A classic example of emergent behavior</p>
+                <p className="mt-4 text-primary text-sm font-mono tracking-wide">Conway's Game of Life: A classic example of emergent behavior</p>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@ export function HomePage() {
         <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our North Star</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-secondary max-w-2xl mx-auto">
             We believe the future of intelligence won't come from scaling bigger models. It will come from smaller systems that learn, reason, and evolve.
             We exist to explore the frontier of agentic AI, self-learning neural systems, and simulation-based evaluation.
             </p>
@@ -66,7 +66,7 @@ export function HomePage() {
               <div key={i} className="glass-card p-8 group hover:shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <feature.icon className={`w-12 h-12 text-${feature.color}-500 mb-4 feature-icon`} />
                 <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-gray-400">{feature.desc}</p>
+                <p className="text-muted">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -75,30 +75,30 @@ export function HomePage() {
         <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">
+            <p className="text-secondary max-w-3xl mx-auto">
               We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we build what we're curious about and ship what works. 
               This is a home for hackers, thinkers, and experimentalists who want to push the boundaries of AI.
             </p>
-            <p className="text-gray-300 max-w-2xl mx-auto mt-6 italic">
+            <p className="text-secondary max-w-2xl mx-auto mt-6 italic">
               We're building the kind of research lab we wish existed!
             </p>
             {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm">
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <span className="text-2xl">🤔</span>
-                <p className="text-gray-300 text-center">Identify interesting problems in AI reasoning and learning</p>
+                <p className="text-secondary text-center">Identify interesting problems in AI reasoning and learning</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <span className="text-2xl">🔬</span>
-                <p className="text-gray-300 text-center">Run controlled experiments to test hypotheses</p>
+                <p className="text-secondary text-center">Run controlled experiments to test hypotheses</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <span className="text-2xl">📊</span>
-                <p className="text-gray-300 text-center">Generate reproducible results and benchmarks</p>
+                <p className="text-secondary text-center">Generate reproducible results and benchmarks</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <span className="text-2xl">✍️</span>
-                <p className="text-gray-300 text-center">Document findings in papers and blog posts</p>
+                <p className="text-secondary text-center">Document findings in papers and blog posts</p>
               </div>
             </div>
           </div>

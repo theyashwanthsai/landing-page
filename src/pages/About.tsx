@@ -13,7 +13,7 @@ export function AboutPage() {
 
   ];
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="min-h-screen text-primary relative">
       <div className="absolute inset-0 pointer-events-none"></div>
       
       <div className="relative">
@@ -24,7 +24,7 @@ export function AboutPage() {
             <div className="px-4 sm:px-6 py-8">
               <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">About Us</h1>
               
-              <p className="text-xl text-gray-300 max-w-2xl">
+              <p className="text-xl text-secondary max-w-2xl">
                 We are part time researchers who love building experimental projects.
                 TuriLabs began as a space to get all our experiments in one place. Soon, our friends showed interest to collaborate, and thus our team grew.
                 <br />
@@ -38,10 +38,10 @@ export function AboutPage() {
                 
                 <br />
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4">Our Team</h2>
-                <p className="text-gray-300 max-w-2xl">People of TuriLabs, in no particular order:</p> <br/>
+                <p className="text-secondary max-w-2xl">People of TuriLabs, in no particular order:</p> <br/>
                 {team.map((member) => (
-                  <div key={member.name} className="text-blue-300 max-w-2xl">
-                    <a href={member.link} target="_blank" rel="noopener noreferrer">
+                  <div key={member.name} className="max-w-2xl">
+                    <a href={member.link} target="_blank" rel="noopener noreferrer" className="link-primary">
                       {member.name}
                     </a>
                   </div>

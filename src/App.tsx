@@ -7,21 +7,28 @@ import { ContactPage } from './pages/Contact';
 import { AboutPage } from './pages/About';
 
 
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Router>
-      <div className="min-h-screen w-full bg-black relative">
-  <div
-    className="absolute inset-0 z-0"
-    style={{
-      background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6, 182, 212, 0.25), transparent 70%), #000000",
-    }}
-  />
-  {/* Your Content/Components */}
+      <div className="min-h-screen w-full bg-white relative">
+        {/* Grid Background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `
+            linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+            linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)
+          `,
+            backgroundSize: "40px 40px",
+            filter: "blur(2px)",
+          }}
+        />
+        {/* Your Content/Components */}
 
-      <div className="min-h-screen text-white bg-gradient-to-b from-black/40 to-black/70">
+      <div className="min-h-screen text-primary relative">
         {/* Header */}
         <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-white/10">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -44,20 +51,19 @@ function App() {
             <div className="hidden md:flex items-center gap-8">
               <Link to="/research" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Research</Link>
               <Link to="/about" className="nav-link" onClick={() => window.scrollTo(0, 0)}>About Us</Link>
-              <Link to="/contact" className="nav-link btn-primary text-black font-semibold text-lg" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
+              <Link to="/contact" className="nav-link btn-primary font-semibold text-lg" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
             </div>
 
             {isMenuOpen && (
               <>
                 <div 
-                  className="fixed inset-0 z-40 bg-transparent"
+                  className="fixed inset-0 z-40 bg-transparent h-screen"
                   onClick={() => setIsMenuOpen(false)}
-                  style={{height: '100vh'}}
                 />
                 <div 
                   className="md:hidden fixed top-[72px] left-0 right-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg filter blur-xl"></div>
+                  <div className="absolute inset-0 bg-gradient-blue-subtle rounded-lg filter blur-xl"></div>
                   <div className="flex flex-col items-center py-6 space-y-4 relative">
                     <Link to="/research" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>Research</Link>
                     <Link to="/about" className="text-xl nav-link" onClick={() => setIsMenuOpen(false)}>About Us</Link>
@@ -80,12 +86,12 @@ function App() {
         </main>
 
         {/* Footer */}
-        <footer className="mt-16 sm:mt-24 bg-gradient-to-b from-black/40 to-black/70 border-t border-white/10 backdrop-blur-xl">
+        <footer className="mt-16 sm:mt-24 backdrop-blur-xl border-t border-white/10">
           <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
               <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
               <img src="/images/favicon.png" className="w-10 h-10 feature-icon" alt="TuriLabs Logo" />
-                <span className="font-bold">TuriLabs</span>
+                <span className="font-bold text-primary">TuriLabs</span>
               </Link>
               <div className="flex gap-6">
                 {[
@@ -100,7 +106,7 @@ function App() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 text-center text-gray-500">
+            <div className="mt-8 text-center text-muted">
               © 2025  TuriLabs. All rights reserved.
             </div>
           </div>
