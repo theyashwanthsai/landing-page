@@ -61,7 +61,7 @@ function App() {
                   onClick={() => setIsMenuOpen(false)}
                 />
                 <div 
-                  className="md:hidden fixed top-[72px] left-0 right-0 bg-black/95 backdrop-blur-md z-50 animate-fadeIn"
+                  className="md:hidden fixed top-[72px] left-0 right-0 backdrop-blur-xl z-50 animate-fadeIn"
                 >
                   <div className="absolute inset-0 bg-gradient-blue-subtle rounded-lg filter blur-xl"></div>
                   <div className="flex flex-col items-center py-6 space-y-4 relative">
