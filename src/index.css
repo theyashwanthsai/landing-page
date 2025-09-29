@@ -88,8 +88,8 @@
 
   .btn-primary:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 15px -3px var(--shadow-primary), 0 4px 6px -2px var(--shadow-primary);
-    border-color: var(--color-border-strong);
+    /* box-shadow: 0 10px 15px -3px var(--shadow-primary), 0 4px 6px -2px var(--shadow-primary); */
+    /* border-color: var(--color-border-strong); */
   }
 
   .btn-secondary {
@@ -161,8 +161,8 @@
 
   .glass-card {
     background-color: var(--color-bg-glass);
-    border: 1px solid var(--color-border-light);
-    border-radius: 0.75rem;
+    border: 1px solid var(--color-text-primary);
+    border-radius: 1rem;
     backdrop-filter: blur(20px);
     transition: all 0.3s ease;
   }

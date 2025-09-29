@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Brain, Atom, Globe2, Users, ChevronRight, Github, Twitter, BookOpen, Newspaper, Mail, Menu, X, Sparkles, Gamepad2 } from 'lucide-react';
 import { ResearchGrid } from './ResearchGrid';
 import { FoundersSection } from './FoundersSection';
+import { BlogsSection } from './BlogsSection';
 import { Link } from 'react-router-dom';
 import { PricingSection } from './PricingSection';
+import { AnnouncementBanner } from './AnnouncementBanner';
 
 
 export function HomePage() {
@@ -13,10 +15,13 @@ export function HomePage() {
     <div className="min-h-screen text-primary">
       {/* <div className="absolute inset-0  pointer-events-none"></div> */}
       <div className="relative">
+        
         <header className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
 
           <div className="flex flex-col lg:flex-row items-center gap-12">
+            
             <div className="flex-1 space-y-8 text-center lg:text-left">
+            <AnnouncementBanner/>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Building the weird and wonderful of
                 <span className="bg-gradient-text-ai"> AI</span>
@@ -83,7 +88,7 @@ export function HomePage() {
               We're building the kind of research lab we wish existed!
             </p>
             {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm ">
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
                 <span className="text-2xl">🤔</span>
                 <p className="text-secondary text-center">Identify interesting problems in AI reasoning and learning</p>
@@ -103,6 +108,8 @@ export function HomePage() {
             </div>
           </div>
         </section>
+
+        <BlogsSection limit={3} />
         
 
       </div>

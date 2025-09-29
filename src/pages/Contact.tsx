@@ -25,7 +25,7 @@ export function ContactPage() {
           </p>
         </div>
         <main className="container mx-auto px-4 sm:px-6 py-16">
-          <div className="max-w-2xl mx-auto glass-card p-8 flex flex-col items-center">
+          <div className="max-w-2xl mx-auto glass-card p-8 flex flex-col items-center border border-black">
             <div className="mb-8 text-center">
               <div className="text-lg text-muted mb-2">Email us at</div>
               <a
