@@ -8,6 +8,7 @@ interface ResearchItem {
   description: string;
   link: string;
   authors: string;
+  badge?: string; // Optional badge for special recognition
 }
 
 // Define props interface for ResearchGrid
@@ -18,10 +19,11 @@ interface ResearchGridProps {
 const researchData: ResearchItem[] = [
   {
     image: "/images/pokemon_llm.png",
-    title: "LLM Pokemon League",
+    title: "A Multi-Agent Pokemon Tournament for Evaluating Strategic Reasoning of Large Language Models",
     description: "A Pokemon tournament where LLMs battle each other to come out on top.",
     link: "https://arxiv.org/abs/2508.01623",
-    authors: "Sai Yashwanth, Dhatri C"
+    authors: "Sai Yashwanth, Dhatri C",
+    badge: "NeurIPS 2025 Workshop"
   },
   {
     image: "",
@@ -39,8 +41,8 @@ const researchData: ResearchItem[] = [
   },
   {
     image: "",
-    title: "Newsletter Agents",
-    description: "Official team of agents which run the turilabs newsletter",
+    title: "A Probabilistic Model of Floating-Point Noise Propagation and Prediction Divergence in Transformer Inference",
+    description: "",
     link: "#",
     authors: "Sai Yashwanth"
   },

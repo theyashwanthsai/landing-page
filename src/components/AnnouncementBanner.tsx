@@ -16,7 +16,7 @@ export function AnnouncementBanner({
   emoji = "🎉"
 }: AnnouncementBannerProps) {
   return (
-    <div className="fixed top-[72px] left-0 right-0 z-40 bg-white bg-opacity-80 backdrop-blur-sm border-b border-white">
+    <div className="relative z-40 bg-white bg-opacity-80 backdrop-blur-sm border-b border-white">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-center gap-3">
           <div className="flex items-center gap-2">

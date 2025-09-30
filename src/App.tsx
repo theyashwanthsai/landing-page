@@ -31,10 +31,13 @@ function App() {
 
       <div className="min-h-screen text-primary relative">
         <Navbar />
-        {/* <AnnouncementBanner /> */}
+
+        {/* <div className="pt-20">
+          <AnnouncementBanner />
+        </div> */}
 
         {/* Main Content */}
-        <main className="pt-32 ">
+        <main className="pt-20">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/research" element={<ResearchPage />} />

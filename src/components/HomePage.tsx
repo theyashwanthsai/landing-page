@@ -15,13 +15,13 @@ export function HomePage() {
     <div className="min-h-screen text-primary">
       {/* <div className="absolute inset-0  pointer-events-none"></div> */}
       <div className="relative">
-        
+      <AnnouncementBanner/>
         <header className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
 
           <div className="flex flex-col lg:flex-row items-center gap-12">
             
             <div className="flex-1 space-y-8 text-center lg:text-left">
-            <AnnouncementBanner/>
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Building the weird and wonderful of
                 <span className="bg-gradient-text-ai"> AI</span>
@@ -109,7 +109,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <BlogsSection limit={3} />
+        {/* <BlogsSection limit={3} /> */}
         
 
       </div>
