@@ -77,14 +77,14 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <section className="container mx-auto px-4 sm:px-6 py-14 sm:py-14">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
             <p className="text-secondary max-w-3xl mx-auto">
               We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we build what we're curious about and ship what works. 
               This is a home for hackers, thinkers, and experimentalists who want to push the boundaries of AI.
             </p>
-            <p className="text-secondary max-w-2xl mx-auto mt-6 italic">
+            <p className="text-pink-500 max-w-2xl mx-auto mt-6 font-bold">
               We're building the kind of research lab we wish existed!
             </p>
             {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
@@ -110,7 +110,15 @@ export function HomePage() {
         </section>
 
         {/* <BlogsSection limit={3} /> */}
-        
+        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-14">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Latest Research</h2>
+            <p className="text-secondary max-w-3xl mx-auto">
+              Explore our cutting-edge research in AI agents, strategic reasoning, and machine learning frameworks.
+            </p>
+          </div>
+          <ResearchGrid limit={2} />
+        </section>
 
       </div>
     </div>

@@ -21,7 +21,7 @@ export function AboutPage() {
           <div className="flex flex-col items-center gap-8">
 
 
-            <div className="px-4 sm:px-6 py-8">
+            <div className="px-4 sm:px-6 py-2">
               <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center">About Us</h1>
               
               <p className="text-xl text-secondary max-w-2xl">

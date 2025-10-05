@@ -23,7 +23,7 @@ export function AnnouncementBanner({
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pink-50 text-pink-600">
               {emoji} {badge}
             </span>
-            <span className="text-sm font-medium text-pink-600">
+            <span className="text-sm font-medium text-primary">
               {message}
             </span>
             <a 

@@ -1,50 +1,67 @@
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, FileText, Calendar, ExternalLink } from 'lucide-react';
 
 interface ResearchCardProps {
-  // image: string; // Removed image prop
   title: string;
   description: string;
-  category: string;
   link: string;
   image: string;
   authors: string;
   badge?: string; // Optional badge for special recognition
 }
 
-
-
 export function ResearchCard({ title, description, image, link, authors, badge }: ResearchCardProps) {
   const temp = "/images/temp.jpg"
+  
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" className="block group">
-      <div className="flex flex-col h-[32rem] research-card-bg 
-      rounded-2xl overflow-hidden backdrop-blur-sm shadow-md hover:shadow-lg transition-all
-       duration-500 ease-out group-hover:translate-y-[-4px] border border-gray-200 hover:border-gray-300">
-        <div className="relative h-64 border-b border-gray-200">
-          <img src={image || temp} alt={title} className="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-          {badge && (
-            <div className="absolute top-4 right-4 z-10">
-              <div className="relative">
-                <div className="absolute inset-0 bg-pink-200 rounded-lg blur-sm opacity-75"></div>
-                <span className="relative inline-flex items-center px-4 py-2 rounded-lg text-xs font-bold bg-pink-500 text-white shadow-xl border border-white/20 backdrop-blur-sm">
-                  <span className="mr-1.5 text-yellow-300">🏆</span>
-                  {badge}
-                </span>
-              </div>
-            </div>
-          )}
+    <a href={link} target="_blank" rel="noopener noreferrer" className="block group h-full">
+      <div className="border-2 hover:border-pink-500/50 transition-all hover:shadow-xl group overflow-hidden rounded-lg bg-card h-full flex flex-col"
+           style={{ boxShadow: 'var(--shadow-card)' }}>
+        <div className="overflow-hidden">
+          <img 
+            src={image || temp} 
+            alt={title}
+            className="w-full h-full object-scale-down group-hover:scale-105 transition-transform duration-300"
+          />
         </div>
-        <div className="p-6 flex flex-col flex-1 border-t-0">
-          <h3 className="text-2xl font-semibold mb-3 text-primary line-clamp-none">{title}</h3>
-          <p className="text-muted text-base mb-4 line-clamp-4 flex-1">{description}</p>
-          {authors && (
-            <div className="text-sm text-blue-700 mt-auto border-t border-gray-100 pt-2">
-              Contributors: {authors}
+        
+        <div className="p-6 space-y-3 flex-1 flex flex-col">
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex-1">
+              <h3 className="text-xl leading-tight group-hover:text-primary transition-colors font-semibold">
+                {title}
+              </h3>
+            </div>
+            <FileText className="h-5 w-5 text-primary flex-shrink-0" />
+          </div>
+          
+          {badge && (
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Calendar className="h-4 w-4" />
+              <span className="font-semibold text-primary">{badge}</span>
             </div>
           )}
+          
+          {authors && (
+            <div className="text-sm text-muted-foreground">
+              {authors}
+            </div>
+          )}
+          
+          <div className="flex-1">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {description}
+            </p>
+          </div>
+          
+          <div className="mt-auto pt-4">
+            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group/btn">
+              Read Paper
+              <ExternalLink className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </div>
+          </div>
         </div>
       </div>
     </a>
-  );
+  )
 }

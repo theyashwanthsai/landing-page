@@ -4,7 +4,7 @@ import { Github, Twitter, BookOpen, Newspaper } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="mt-16 sm:mt-24 backdrop-blur-xl border-t border-white/10">
+    <footer className="mt-16 sm:mt-24 backdrop-blur-xl border border-gray-10">
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
           <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">

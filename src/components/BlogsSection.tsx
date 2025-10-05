@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Calendar, Clock, User, ArrowRight } from 'lucide-react';
 
 interface BlogPost {
@@ -16,36 +17,36 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "The Future of Agentic AI: Beyond Language Models",
-    excerpt: "Exploring how AI agents are evolving from simple language processors to sophisticated reasoning systems that can learn, adapt, and make decisions in complex environments.",
+    title: "Why start a research lab?",
+    excerpt: "Exploring the motivations, challenges, and vision behind starting an independent AI research collective.",
     author: "Sai Yashwanth",
-    date: "2024-12-15",
-    readTime: "8 min read",
+    date: "2025-09-25",
+    readTime: "3 min read",
     image: "/images/temp.jpg",
-    tags: ["AI Agents", "Machine Learning", "Future Tech"],
-    link: "#"
+    tags: ["Research Lab", "Vision", "Journey"],
+    link: "/blog/why-start-research-lab"
   },
   {
     id: "2",
-    title: "Building Effective Multi-Agent Systems",
-    excerpt: "A deep dive into the architecture and design patterns that make multi-agent systems effective, including coordination mechanisms and communication protocols.",
+    title: "Our Research Philosophy",
+    excerpt: "The principles and methodologies that guide our research at TuriLabs.",
     author: "Sai Yashwanth",
-    date: "2024-12-10",
-    readTime: "12 min read",
+    date: "2025-10-3",
+    readTime: "4 min read",
     image: "/images/temp.jpg",
-    tags: ["Multi-Agent", "Systems Design", "AI"],
-    link: "#"
+    tags: ["Philosophy", "Methodology", "Research"],
+    link: "/blog/research-philosophy"
   },
   {
     id: "3",
-    title: "Simulation-Based AI Evaluation: A New Paradigm",
-    excerpt: "Why traditional benchmarks fall short and how simulation environments provide better insights into AI capabilities and limitations.",
+    title: "Our first research. Accepted at neurips workshop",
+    excerpt: "Celebrating our debut research acceptance at NeurIPS workshop and what it means for TuriLabs.",
     author: "Sai Yashwanth",
-    date: "2024-12-05",
-    readTime: "6 min read",
-    image: "/images/temp.jpg",
-    tags: ["Evaluation", "Simulation", "Research"],
-    link: "#"
+    date: "2025-10-05",
+    readTime: "4 min read",
+    image: "/images/neurips.jpeg",
+    tags: ["NeurIPS", "Publication", "Milestone"],
+    link: "/blog/neurips-workshop-acceptance"
   }
 ];
 
@@ -57,19 +58,19 @@ export function BlogsSection({ limit }: BlogsSectionProps) {
   const displayPosts = limit ? blogPosts.slice(0, limit) : blogPosts;
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-5">
       <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-primary">Latest from our Blog</h2>
+        <h2 className="text-3xl sm:text-5xl font-bold mb-4 text-primary">Latest from our Blog</h2>
         <p className="text-secondary max-w-2xl mx-auto">
-          Insights, thoughts, and discoveries from our research journey. Exploring the frontiers of AI, one post at a time.
+          Insights, thoughts, and mental models from our research journey.
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {displayPosts.map((post) => (
-          <a
+          <Link
             key={post.id}
-            href={post.link}
+            to={post.link}
             className="block hover:scale-105 transition-transform duration-300"
           >
             <article className="glass-card p-6 h-full flex flex-col">
@@ -77,7 +78,7 @@ export function BlogsSection({ limit }: BlogsSectionProps) {
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
               
@@ -96,11 +97,11 @@ export function BlogsSection({ limit }: BlogsSectionProps) {
                 ))}
               </div>
 
-              <h3 className="text-xl font-bold mb-3 text-primary line-clamp-2 min-h-[3rem]">
+              <h3 className="text-xl font-bold mb-1 text-primary line-clamp-2 min-h-[3rem]">
                 {post.title}
               </h3>
               
-              <p className="text-secondary text-sm mb-4 line-clamp-3 flex-1">
+              <p className="text-secondary text-sm mb-2 flex-1">
                 {post.excerpt}
               </p>
 
@@ -121,19 +122,19 @@ export function BlogsSection({ limit }: BlogsSectionProps) {
                 </div>
               </div>
             </article>
-          </a>
+          </Link>
         ))}
       </div>
 
       {limit && (
         <div className="text-center mt-12">
-          <a
-            href="/blogs"
+          <Link
+            to="/blogs"
             className="inline-flex items-center gap-2 btn-secondary px-6 py-3"
           >
             View All Posts
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       )}
     </section>

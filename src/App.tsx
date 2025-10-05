@@ -4,6 +4,7 @@ import { ResearchPage } from './pages/ResearchPage';
 import { ContactPage } from './pages/Contact';
 import { AboutPage } from './pages/About';
 import { BlogsPage } from './pages/BlogsPage';
+import { BlogPost } from './pages/BlogPost';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { AnnouncementBanner } from './components/AnnouncementBanner';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/research" element={<ResearchPage />} />
             <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>

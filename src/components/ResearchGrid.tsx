@@ -26,33 +26,31 @@ const researchData: ResearchItem[] = [
     badge: "NeurIPS 2025 Workshop"
   },
   {
-    image: "",
-    title: "Yet Another Agentic Framework",
-    description: "Our framework to create custom AI Agents with ease. Built to be lean and zero coupling.",
+    image: "/images/yaaf.png",
+    title: "YaAF: Yet Another Agentic Framework",
+    description: "Our framework to create custom AI Agents with ease. Built to be lean and has zero coupling. Benchmarked against industry standars like Crewai",
     link: "https://github.com/Turi-Labs/YAAF",
-    authors: "Sai Yashwanth, Vijayant"
-  },
-  {
-    image: "",
-    title: "MREB",
-    description: "An open source benchmark for small language models.",
-    link: "#",
-    authors: "Sai Yashwanth, Dhatri C"
+    authors: "Sai Yashwanth, Vijayant",
+    badge: "Currently in Progress"
   },
   {
     image: "",
     title: "A Probabilistic Model of Floating-Point Noise Propagation and Prediction Divergence in Transformer Inference",
     description: "",
     link: "#",
-    authors: "Sai Yashwanth"
+    authors: "Sai Yashwanth",
+    badge: "Currently in Progress"
   },
   {
-    image: "/images/devyan.png",
-    title: "Devyan",
-    description: "Building a Software Dev Team. Experimental Project to orchestrate a team of agents to solve programming tasks.",
-    link: "https://github.com/Turi-Labs/Devyan",
-    authors: "Sai Yashwanth"
+    image: "",
+    title: "MREB",
+    description: "An open source benchmark for small language models.",
+    link: "#",
+    authors: "Sai Yashwanth, Dhatri C",
+    badge: "Currently in Progress"
   },
+
+
 ];
 
 
