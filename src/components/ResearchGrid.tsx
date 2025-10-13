@@ -42,6 +42,14 @@ const researchData: ResearchItem[] = [
     badge: "Currently in Progress"
   },
   {
+    image: "/images/neuralnexus.png",
+    title: "Neural Nexus: Evaluating Strategic Reasoning in Large Language Models Through Competitive Board Games",
+    description: "",
+    link: "#",
+    authors: "Siddharth Prakash",
+    badge: "Currently in Progress"
+  },
+  {
     image: "",
     title: "MREB",
     description: "An open source benchmark for small language models.",
