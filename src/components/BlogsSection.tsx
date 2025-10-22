@@ -32,7 +32,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "The principles and methodologies that guide our research at TuriLabs.",
     author: "Sai Yashwanth",
     date: "2025-10-03",
-    readTime: "4 min read",
+    readTime: "3 min read",
     image: "/images/philosophy.png",
     tags: ["Philosophy", "Methodology", "Research"],
     link: "/blog/research-philosophy"
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Celebrating our debut research acceptance at NeurIPS workshop and what it means for TuriLabs.",
     author: "Sai Yashwanth",
     date: "2025-10-05",
-    readTime: "4 min read",
+    readTime: "2 min read",
     image: "/images/neurips.jpeg",
     tags: ["NeurIPS", "Publication", "Milestone"],
     link: "/blog/neurips-workshop-acceptance"
