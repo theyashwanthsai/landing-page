@@ -26,19 +26,19 @@ const researchData: ResearchItem[] = [
     badge: "NeurIPS 2025 Workshop"
   },
   {
+    image: "/images/matmul.png",
+    title: "On the Structure of Floating-Point Non-Determinism in GPU Matrix Multiplication",
+    description: "We challenge the common assumption that GPU floating-point errors behave as random noise.",
+    link: "#",
+    authors: "Sai Yashwanth",
+    badge: "Currently in Progress"
+  },
+  {
     image: "/images/yaaf.png",
     title: "YaAF: Yet Another Agentic Framework",
     description: "Our framework to create custom AI Agents with ease. Built to be lean and has zero coupling. Benchmarked against industry standars like Crewai",
     link: "https://github.com/Turi-Labs/YAAF",
     authors: "Sai Yashwanth, Vijayant",
-    badge: "Currently in Progress"
-  },
-  {
-    image: "",
-    title: "A Probabilistic Model of Floating-Point Noise Propagation and Prediction Divergence in Transformer Inference",
-    description: "",
-    link: "#",
-    authors: "Sai Yashwanth",
     badge: "Currently in Progress"
   },
   {

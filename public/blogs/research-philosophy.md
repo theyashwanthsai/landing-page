@@ -1,7 +1,3 @@
-# Our Research Philosophy
-
-*Published on October 3, 2025 by Sai Yashwanth*
-
 I didn’t start TuriLabs to build products. I started it to explore the world of ML
 
 In a world optimizing for speed, valuation, and virality, we chose understanding. Understanding systems, intelligence, and why some ideas work while others fade away. Basically we are seeking “Tasteful Research”. 
@@ -20,3 +16,8 @@ Here's a sample glimpse:
 1. Read, Read, Read.
 2. Discuss with peers and experienced researchers.
 3. Reflect periodically.
+
+## Change in Vision
+Turilabs was first started as a hub for our side projects and freelance gigs. While the freelance work briefly shaped us into an agency, I soon shelved that idea. As time passed, my mentality changed, and I developed a deep passion for research. Turilabs naturally evolved alongside this, becoming a hub for our research projects. This marked the true start of the lab, and soon, friends joined in to collaborate.
+
+Of course, in the future, we might shift from random exploration to concentrated exploitation to maximize our reward (growing the lab). But we are committed to preserving our core ethos. We hope to always maintain a space for "random exploration," a role that future interns and new researchers can help champion.

@@ -14,9 +14,9 @@ interface BlogPostData {
 
 const blogMetadata: { [key: string]: Omit<BlogPostData, 'content'> } = {
   'why-start-research-lab': {
-    title: 'Why start a research lab?',
+    title: 'Why Start a Research Lab?',
     author: 'Sai Yashwanth',
-    date: '2025-09-25',
+    date: '2025-10-22',
     readTime: '3 min read'
   },
   'research-philosophy': {

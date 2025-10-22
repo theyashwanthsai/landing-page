@@ -17,12 +17,12 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "Why start a research lab?",
+    title: "Why Start a Research Lab?",
     excerpt: "Exploring the motivations, challenges, and vision behind starting an independent AI research collective.",
     author: "Sai Yashwanth",
-    date: "2025-09-25",
+    date: "2025-10-22",
     readTime: "3 min read",
-    image: "/images/temp.jpg",
+    image: "/images/team.png",
     tags: ["Research Lab", "Vision", "Journey"],
     link: "/blog/why-start-research-lab"
   },
@@ -31,9 +31,9 @@ const blogPosts: BlogPost[] = [
     title: "Our Research Philosophy",
     excerpt: "The principles and methodologies that guide our research at TuriLabs.",
     author: "Sai Yashwanth",
-    date: "2025-10-3",
+    date: "2025-10-03",
     readTime: "4 min read",
-    image: "/images/temp.jpg",
+    image: "/images/philosophy.png",
     tags: ["Philosophy", "Methodology", "Research"],
     link: "/blog/research-philosophy"
   },
