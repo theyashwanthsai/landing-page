@@ -29,9 +29,9 @@ const researchData: ResearchItem[] = [
     image: "/images/matmul.png",
     title: "On the Structure of Floating-Point Non-Determinism in GPU Matrix Multiplication",
     description: "We challenge the common assumption that GPU floating-point errors behave as random noise.",
-    link: "#",
+    link: "https://arxiv.org/abs/2511.00025",
     authors: "Sai Yashwanth",
-    badge: "Currently in Progress"
+    badge: "Pre Print"
   },
   {
     image: "/images/yaaf.png",

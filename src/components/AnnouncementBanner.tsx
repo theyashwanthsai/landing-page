@@ -17,7 +17,7 @@ export function AnnouncementBanner({
     <div className="relative z-40 bg-black border-b">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-center gap-3">
-          <span className="text-sm font-medium text-white">
+          <span className="text-sm font-medium text-pink-300">
             {message}
           </span>
           <a 

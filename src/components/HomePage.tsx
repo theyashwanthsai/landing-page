@@ -81,28 +81,28 @@ export function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
             <p className="text-secondary max-w-3xl mx-auto">
-              We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we build what we're curious about and ship what works. 
+              We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we believe in 80% random exploration and 20% greedy exploitation. 
               This is a home for hackers, thinkers, and experimentalists who want to push the boundaries of AI.
             </p>
-            <p className="text-pink-500 max-w-2xl mx-auto mt-6 font-bold">
+            <p className="text-pink-700 max-w-2xl mx-auto mt-6 font-bold">
               We're building the kind of research lab we wish existed!
             </p>
             {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm ">
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-2xl">🤔</span>
+                <span className="text-xl">Brainstorm</span>
                 <p className="text-secondary text-center">Identify interesting problems in AI reasoning and learning</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-2xl">🔬</span>
+                <span className="text-xl">Experiment</span>
                 <p className="text-secondary text-center">Run controlled experiments to test hypotheses</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-2xl">📊</span>
+                <span className="text-xl">Implement</span>
                 <p className="text-secondary text-center">Generate reproducible results and benchmarks</p>
               </div>
               <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-2xl">✍️</span>
+                <span className="text-xl">Document</span>
                 <p className="text-secondary text-center">Document findings in papers and blog posts</p>
               </div>
             </div>
