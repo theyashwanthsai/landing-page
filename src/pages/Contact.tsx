@@ -32,7 +32,7 @@ export function ContactPage() {
                 href="mailto:hello@turilabs.ai"
                 className="link-primary text-xl font-medium"
               >
-                taddishetty34@gmail.com
+                sai@turilabs.in
               </a>
             </div>
             <div className="mb-8 text-center">
