@@ -50,7 +50,7 @@ We invite you to join us as a seed supporter of Turilabs. Let’s schedule a cal
 ### Contact  
 Tadisetty Sai Yashwanth. Founder, Turilabs  
 
-- Email: taddishetty34@gmail.com
+- Email: sai@turilabs.in
 - Website: saiyashwanth.com
 - LinkedIn: https://www.linkedin.com/in/saiyashwanth29/
 - X: https://x.com/yashwanthsai29
