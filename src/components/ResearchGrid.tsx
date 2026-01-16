@@ -37,7 +37,7 @@ const researchData: ResearchItem[] = [
     image: "/images/yaaf.png",
     title: "YaAF: Yet Another Agentic Framework",
     description: "Our framework to create custom AI Agents with ease. Built to be lean and has zero coupling. Benchmarked against industry standars like Crewai",
-    link: "https://github.com/Turi-Labs/YAAF",
+    link: "",
     authors: "Sai Yashwanth, Vijayant",
     badge: "Currently in Progress"
   },
@@ -45,7 +45,7 @@ const researchData: ResearchItem[] = [
     image: "/images/neuralnexus.png",
     title: "Neural Nexus: Evaluating Strategic Reasoning in Large Language Models Through Competitive Board Games",
     description: "",
-    link: "#",
+    link: "",
     authors: "Siddharth Prakash",
     badge: "Currently in Progress"
   },
@@ -53,7 +53,7 @@ const researchData: ResearchItem[] = [
     image: "",
     title: "MREB",
     description: "An open source benchmark for small language models.",
-    link: "#",
+    link: "",
     authors: "Sai Yashwanth, Dhatri C",
     badge: "Currently in Progress"
   },

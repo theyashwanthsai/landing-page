@@ -56,8 +56,10 @@ export function ResearchCard({ title, description, image, link, authors, badge }
           
           <div className="mt-auto pt-4">
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group/btn">
-              Read Paper
-              <ExternalLink className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              {link ? "Read Paper" : "Coming Soon"}
+              {link && (
+                <ExternalLink className="h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+              )}
             </div>
           </div>
         </div>

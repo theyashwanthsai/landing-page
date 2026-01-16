@@ -15,7 +15,7 @@ export function HomePage() {
     <div className="min-h-screen text-primary">
       {/* <div className="absolute inset-0  pointer-events-none"></div> */}
       <div className="relative">
-      <AnnouncementBanner/>
+      {/* <AnnouncementBanner/> */}
         <header className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
 
           <div className="flex flex-col lg:flex-row items-center gap-12">
