@@ -10,7 +10,9 @@ export function AboutPage() {
     { name: "Mayank Kashyap", link: "https://www.linkedin.com/in/mayank-kashyap-402065232/" },
     { name: "Chidu", link: "https://www.linkedin.com/in/siddharth-prakash-771596241/" },
     { name: "Supratik", link: "https://www.linkedin.com/in/supratik-kar-99a99522b/" },
-
+    { name: "Sagnik", link: "" },
+    { name: "Srinivas", link: "" },
+    { name: "Akshay", link: "" },
   ];
   return (
     <div className="min-h-screen text-primary relative">
@@ -41,9 +43,13 @@ export function AboutPage() {
                 <p className="text-secondary max-w-2xl">People of TuriLabs, in no particular order:</p> <br/>
                 {team.map((member) => (
                   <div key={member.name} className="max-w-2xl">
-                    <a href={member.link} target="_blank" rel="noopener noreferrer" className="link-primary">
-                      {member.name}
-                    </a>
+                    {member.link ? (
+                      <a href={member.link} target="_blank" rel="noopener noreferrer" className="link-primary">
+                        {member.name}
+                      </a>
+                    ) : (
+                      <span className="text-secondary">{member.name}</span>
+                    )}
                   </div>
                 ))}
               </p>

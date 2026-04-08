@@ -1,38 +1,28 @@
-import React, { useState } from 'react';
-import { Brain, Atom, Globe2, Users, ChevronRight, Github, Twitter, BookOpen, Newspaper, Mail, Menu, X, Sparkles, Gamepad2 } from 'lucide-react';
+import React from 'react';
+import { Brain, ChevronRight, Sparkles, Gamepad2 } from 'lucide-react';
 import { ResearchGrid } from './ResearchGrid';
-import { FoundersSection } from './FoundersSection';
-import { BlogsSection } from './BlogsSection';
 import { Link } from 'react-router-dom';
-import { PricingSection } from './PricingSection';
-import { AnnouncementBanner } from './AnnouncementBanner';
-
 
 export function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen text-primary">
-      {/* <div className="absolute inset-0  pointer-events-none"></div> */}
       <div className="relative">
-      {/* <AnnouncementBanner/> */}
-        <header className="container mx-auto px-4 sm:px-6 py-8 sm:py-16">
 
+        {/* Hero */}
+        <header className="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            
-            <div className="flex-1 space-y-8 text-center lg:text-left">
-
+            <div className="flex-1 space-y-6 text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Building the weird and wonderful of
                 <span className="bg-gradient-text-ai"> AI</span>
               </h1>
               <p className="text-lg sm:text-xl text-secondary max-w-2xl mx-auto lg:mx-0">
-              Turilabs is a lean, indie AI research lab dedicated to build weird, wonderful, and sometimes outright crazy things. 
-                We're driven by raw curiosity to explore the next generation of intelligent systems that can learn, adapt, and evolve.
+                A lean, indie research lab driven by raw curiosity. We explore the next generation
+                of intelligent systems — agents, self-learning models, and simulated environments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link to="/research" className="btn-primary font-semibold text-lg">
-                  View Our Experiments <ChevronRight className="w-4 h-4" />
+                  View Research <ChevronRight className="w-4 h-4" />
                 </Link>
                 <Link to="/contact" className="btn-secondary">
                   Contact Us
@@ -43,81 +33,80 @@ export function HomePage() {
               <div className="absolute inset-0 bg-gradient-blue-purple rounded-lg filter blur-3xl"></div>
               <div className="text-center">
                 <img
-                  // src="https://images.unsplash.com/photo-1693520999631-6ac145c1dd15?auto=format&fit=crop&q=80"
                   src="/images/game_of_life_smaller.gif"
                   alt="Conway's Game of Life Simulation"
                   className="relative rounded-3xl shadow-2xl w-3/4 mx-auto hero-image hover:scale-105 hover:-translate-y-2 transition-all duration-500"
                 />
-                <p className="mt-4 text-primary text-sm font-mono tracking-wide">Conway's Game of Life: A classic example of emergent behavior</p>
+                <p className="mt-4 text-secondary text-xs font-mono tracking-wide">
+                  Conway's Game of Life — emergent complexity from simple rules
+                </p>
               </div>
             </div>
           </div>
         </header>
 
-        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <div className="text-center mb-12">
+        {/* Focus areas */}
+        <section className="container mx-auto px-4 sm:px-6 py-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our North Star</h2>
             <p className="text-secondary max-w-2xl mx-auto">
-            We believe the future of intelligence won't come from scaling bigger models. It will come from smaller systems that learn, reason, and evolve.
-            We exist to explore the frontier of agentic AI, self-learning neural systems, and simulation-based evaluation.
+              The future of intelligence won't come from scaling bigger models. It will come from
+              smaller systems that learn, reason, and evolve.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Brain, title: "AI Agents", desc: "Building frameworks, runtimes, and infrastructures that power reasoning agents.", color: "blue" },
-              { icon: Sparkles, title: "Self-Learning Systems", desc: "From neuroevolution to RL, we explore models that learn by doing.", color: "purple" },
-              { icon: Gamepad2, title: "Simulated Worlds", desc: "Environments where we evaluate decision-making, emergence, and reasoning.", color: "green" }
+              { icon: Brain, title: "AI Agents", desc: "Frameworks, runtimes, and infrastructure that power reasoning agents.", color: "blue" },
+              { icon: Sparkles, title: "Self-Learning Systems", desc: "From neuroevolution to RL — models that learn by doing.", color: "purple" },
+              { icon: Gamepad2, title: "Simulated Worlds", desc: "Environments for evaluating decision-making, emergence, and reasoning.", color: "green" }
             ].map((feature, i) => (
-              <div key={i} className="glass-card p-8 group hover:shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <feature.icon className={`w-12 h-12 text-${feature.color}-500 mb-4 feature-icon`} />
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-muted">{feature.desc}</p>
+              <div key={i} className="glass-card p-7 group hover:shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
+                <feature.icon className={`w-10 h-10 text-${feature.color}-500 mb-4 feature-icon`} />
+                <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
+                <p className="text-secondary text-sm">{feature.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="container mx-auto px-4 sm:px-6 py-14 sm:py-14">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
-            <p className="text-secondary max-w-3xl mx-auto">
-              We're not bound by publication cycles or corporate roadmaps. At TuriLabs, we believe in 80% random exploration and 20% greedy exploitation. 
-              This is a home for hackers, thinkers, and experimentalists who want to push the boundaries of AI.
-            </p>
-            <p className="text-pink-700 max-w-2xl mx-auto mt-6 font-bold">
-              We're building the kind of research lab we wish existed!
-            </p>
-            {/* <h3 className="text-2xl font-semibold mb-8 text-center">Our Manifesto</h3> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto text-sm ">
-              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-xl">Brainstorm</span>
-                <p className="text-secondary text-center">Identify interesting problems in AI reasoning and learning</p>
-              </div>
-              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-xl">Experiment</span>
-                <p className="text-secondary text-center">Run controlled experiments to test hypotheses</p>
-              </div>
-              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-xl">Implement</span>
-                <p className="text-secondary text-center">Generate reproducible results and benchmarks</p>
-              </div>
-              <div className="glass-card p-6 flex flex-col items-center gap-3 hover:shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <span className="text-xl">Document</span>
-                <p className="text-secondary text-center">Document findings in papers and blog posts</p>
-              </div>
+        {/* How we work */}
+        <section className="container mx-auto px-4 sm:px-6 py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-10 text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
+              <p className="text-secondary max-w-2xl mx-auto">
+                Not bound by publication cycles or corporate roadmaps. We run on 80% exploration, 20% exploitation —
+                a home for hackers, thinkers, and experimentalists.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+              {[
+                { step: "01", title: "Brainstorm", desc: "Find interesting problems in AI reasoning and learning" },
+                { step: "02", title: "Experiment", desc: "Run controlled experiments to test hypotheses" },
+                { step: "03", title: "Implement", desc: "Build reproducible results and benchmarks" },
+                { step: "04", title: "Document", desc: "Publish findings as papers and blog posts" },
+              ].map((item) => (
+                <div key={item.step} className="glass-card p-5 flex flex-col gap-2">
+                  <span className="text-xs font-mono text-blue-400">{item.step}</span>
+                  <span className="font-semibold">{item.title}</span>
+                  <p className="text-secondary text-xs">{item.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* <BlogsSection limit={3} /> */}
-        <section className="container mx-auto px-4 sm:px-6 py-16 sm:py-14">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Latest Research</h2>
-            <p className="text-secondary max-w-3xl mx-auto">
-              Explore our cutting-edge research in AI agents, strategic reasoning, and machine learning frameworks.
-            </p>
+        {/* Latest research */}
+        <section className="container mx-auto px-4 sm:px-6 py-16">
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="text-3xl sm:text-4xl font-bold">Latest Research</h2>
+              <Link to="/research" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
+                View all →
+              </Link>
+            </div>
+            <ResearchGrid limit={3} />
           </div>
-          <ResearchGrid limit={2} />
         </section>
 
       </div>

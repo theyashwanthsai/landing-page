@@ -25,7 +25,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 text-center text-muted">
-          © 2025  TuriLabs. All rights reserved.
+          © 2026 TuriLabs. All rights reserved.
         </div>
       </div>
     </footer>
