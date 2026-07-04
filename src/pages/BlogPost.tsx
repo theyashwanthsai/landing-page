@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 
 interface BlogPostData {
   title: string;
@@ -17,20 +17,20 @@ const blogMetadata: { [key: string]: Omit<BlogPostData, 'content'> } = {
     title: 'Why Start a Research Lab?',
     author: 'Sai Yashwanth',
     date: '2025-10-22',
-    readTime: '3 min read'
+    readTime: '3 min read',
   },
   'research-philosophy': {
     title: 'Our Research Philosophy',
     author: 'Sai Yashwanth',
     date: '2025-10-03',
-    readTime: '4 min read'
+    readTime: '4 min read',
   },
   'neurips-workshop-acceptance': {
-    title: 'Our first research. Accepted at neurips workshop',
+    title: 'Our First Paper, Accepted at a NeurIPS Workshop',
     author: 'Sai Yashwanth',
     date: '2025-10-05',
-    readTime: '4 min read'
-  }
+    readTime: '4 min read',
+  },
 };
 
 export function BlogPost() {
@@ -41,32 +41,20 @@ export function BlogPost() {
 
   useEffect(() => {
     const loadBlogPost = async () => {
-      if (!slug) {
-        setError('Blog post not found');
-        setLoading(false);
-        return;
-      }
-
-      const metadata = blogMetadata[slug];
-      if (!metadata) {
+      const metadata = slug ? blogMetadata[slug] : undefined;
+      if (!slug || !metadata) {
         setError('Blog post not found');
         setLoading(false);
         return;
       }
 
       try {
-        // Fetch the markdown file from public directory
         const response = await fetch(`/blogs/${slug}.md`);
         if (!response.ok) {
           throw new Error('Failed to fetch blog post');
         }
-        
         const content = await response.text();
-        
-        setBlogPost({
-          ...metadata,
-          content
-        });
+        setBlogPost({ ...metadata, content });
       } catch (err) {
         console.error('Error loading blog post:', err);
         setError('Failed to load blog post');
@@ -80,242 +68,62 @@ export function BlogPost() {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 sm:px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded mb-4"></div>
-            <div className="h-4 bg-gray-200 rounded mb-2"></div>
-            <div className="h-4 bg-gray-200 rounded mb-8"></div>
-            <div className="space-y-4">
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded"></div>
-              <div className="h-4 bg-gray-200 rounded"></div>
-            </div>
-          </div>
-        </div>
+      <div className="container-page py-20">
+        <p className="text-faint">Loading…</p>
       </div>
     );
   }
 
   if (error || !blogPost) {
     return (
-      <div className="container mx-auto px-4 sm:px-6 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-primary mb-4">Blog Post Not Found</h1>
-          <p className="text-secondary mb-8">{error || 'The requested blog post could not be found.'}</p>
-          <Link
-            to="/blogs"
-            className="inline-flex items-center gap-2 btn-primary px-6 py-3"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Blogs
-          </Link>
-        </div>
+      <div className="container-page py-20 text-center">
+        <h1 className="text-3xl font-bold">Blog post not found</h1>
+        <p className="mt-4 text-secondary">
+          {error || 'The requested blog post could not be found.'}
+        </p>
+        <Link to="/blogs" className="btn-primary mt-8 inline-flex">
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          Back to blog
+        </Link>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 py-16">
-      <div className="max-w-4xl mx-auto">
-        {/* Back to blogs link */}
-        <Link
-          to="/blogs"
-          className="inline-flex items-center gap-2 text-primary hover:text-accent mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Blogs
-        </Link>
+    <div className="container-page max-w-3xl py-16 sm:py-20">
+      <Link to="/blogs" className="link-underline inline-flex items-center gap-1.5 text-sm">
+        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+        Back to blog
+      </Link>
 
-        {/* Blog post header */}
-        <header className="mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-6 leading-tight">
-            {blogPost.title}
-          </h1>
-          
-          <div className="flex flex-wrap items-center gap-6 text-sm text-muted">
-            <div className="flex items-center gap-2">
-              <User className="w-4 h-4" />
-              <span>{blogPost.author}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>{new Date(blogPost.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              <span>{blogPost.readTime}</span>
-            </div>
-          </div>
-        </header>
+      <header className="mt-8 mb-12">
+        <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">{blogPost.title}</h1>
+        <p className="mt-4 text-sm text-faint">
+          {blogPost.author}
+          {' · '}
+          {new Date(blogPost.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+          {' · '}
+          {blogPost.readTime}
+        </p>
+      </header>
 
-        {/* Blog post content */}
-        <article className="max-w-none markdown-content">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: ({ children }) => (
-                <h1 style={{ color: 'var(--color-text-primary)', fontSize: '1.875rem', fontWeight: 'bold', marginTop: '3rem', marginBottom: '1.5rem' }}>
-                  {children}
-                </h1>
-              ),
-              h2: ({ children }) => (
-                <h2 style={{ color: 'var(--color-text-primary)', fontSize: '1.5rem', fontWeight: 'bold', marginTop: '2.5rem', marginBottom: '1rem' }}>
-                  {children}
-                </h2>
-              ),
-              h3: ({ children }) => (
-                <h3 style={{ color: 'var(--color-text-primary)', fontSize: '1.25rem', fontWeight: 'bold', marginTop: '2rem', marginBottom: '0.75rem' }}>
-                  {children}
-                </h3>
-              ),
-              p: ({ children }) => (
-                <p className="text-secondary leading-relaxed mb-6">
-                  {children}
-                </p>
-              ),
-              ul: ({ children }) => (
-                <ul className="text-secondary mb-6 pl-6 space-y-2 list-disc">
-                  {children}
-                </ul>
-              ),
-              ol: ({ children }) => (
-                <ol className="text-secondary mb-6 pl-6 space-y-2 list-decimal">
-                  {children}
-                </ol>
-              ),
-              li: ({ children }) => (
-                <li className="leading-relaxed text-secondary">
-                  {children}
-                </li>
-              ),
-              blockquote: ({ children }) => (
-                <blockquote className="border-l-4 border-accent pl-6 my-6 italic text-secondary">
-                  {children}
-                </blockquote>
-              ),
-              code: ({ children, className }) => {
-                const isInline = !className;
-                if (isInline) {
-                  return (
-                    <code className="bg-gray-100 px-2 py-1 rounded text-sm font-mono text-primary">
-                      {children}
-                    </code>
-                  );
-                }
-                return (
-                  <code className={className}>
-                    {children}
-                  </code>
-                );
-              },
-              pre: ({ children }) => (
-                <pre className="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto mb-6">
-                  {children}
-                </pre>
-              ),
-              a: ({ children, href }) => (
-                <a
-                  href={href}
-                  className="text-accent hover:text-primary transition-colors underline"
-                  target={href?.startsWith('http') ? '_blank' : undefined}
-                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  {children}
-                </a>
-              ),
-              strong: ({ children }) => (
-                <strong className="font-bold text-primary">
-                  {children}
-                </strong>
-              ),
-              em: ({ children }) => (
-                <em className="italic text-secondary">
-                  {children}
-                </em>
-              ),
-              hr: () => (
-                <hr className="border-t border-light my-12" />
-              ),
-              // Add table support
-              table: ({ children }) => (
-                <div className="overflow-x-auto mb-6">
-                  <table className="min-w-full border-collapse border border-light">
-                    {children}
-                  </table>
-                </div>
-              ),
-              thead: ({ children }) => (
-                <thead className="bg-gray-50">
-                  {children}
-                </thead>
-              ),
-              tbody: ({ children }) => (
-                <tbody>
-                  {children}
-                </tbody>
-              ),
-              tr: ({ children }) => (
-                <tr className="border-b border-light">
-                  {children}
-                </tr>
-              ),
-              th: ({ children }) => (
-                <th className="border border-light px-4 py-2 text-left font-bold text-primary">
-                  {children}
-                </th>
-              ),
-              td: ({ children }) => (
-                <td className="border border-light px-4 py-2 text-secondary">
-                  {children}
-                </td>
-              ),
-              // Handle task lists
-              input: ({ type, checked, disabled }) => {
-                if (type === 'checkbox') {
-                  return (
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      disabled={disabled}
-                      className="mr-2"
-                      readOnly
-                    />
-                  );
-                }
-                return <input type={type} />;
-              }
-            }}
-          >
-            {blogPost.content}
-          </ReactMarkdown>
-        </article>
+      <article className="prose">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{blogPost.content}</ReactMarkdown>
+      </article>
 
-        {/* Call to action */}
-        <div className="mt-16 pt-8 border-t border-light">
-          <div className="text-center">
-            <p className="text-secondary mb-6">
-              Enjoyed this post? Check out our other blog posts or get in touch with our team.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="/blogs"
-                className="btn-secondary px-6 py-3"
-              >
-                More Blog Posts
-              </Link>
-              <Link
-                to="/contact"
-                className="btn-primary px-6 py-3"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
+      <div className="mt-16 border-t pt-12 text-center" style={{ borderColor: 'var(--border)' }}>
+        <p className="text-secondary">Enjoyed this post? Read more or get in touch.</p>
+        <div className="mt-6 flex flex-wrap justify-center gap-4">
+          <Link to="/blogs" className="btn-ghost">
+            More posts
+          </Link>
+          <Link to="/contact" className="btn-primary">
+            Get in touch
+          </Link>
         </div>
       </div>
     </div>

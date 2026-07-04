@@ -1,77 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Brain, ChevronLeft, Cpu, Twitter, Shield, Code, Github } from 'lucide-react';
-
-const products = [
-
-  {
-    icon: Twitter,
-    name: "Tactical Twitter",
-    description: "An AI Agent which tweets everything about football.",
-    features: ["Twitter account managed by an AI Agent", "Fully Automated", "Footbal Tweets"],
-    image: "/images/tactictwitter.jpeg"
-  }
-];
+import { Github, Twitter } from 'lucide-react';
 
 export function ContactPage() {
   return (
-    <div className="min-h-screen text-primary relative mt-10">
-      <div className="absolute inset-0 pointer-events-none"></div>
-      <div className="relative">
-        <div className="container mx-auto px-4 sm:px-6 py-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-secondary max-w-2xl mx-auto">
-            Want to connect, collaborate, or just say hi? Reach out to us via email, socials, or book a call below.
-          </p>
-        </div>
-        <main className="container mx-auto px-4 sm:px-6 py-16">
-          <div className="max-w-2xl mx-auto glass-card p-8 flex flex-col items-center border border-black">
-            <div className="mb-8 text-center">
-              <div className="text-lg text-muted mb-2">Email us at</div>
-              <a
-                href="mailto:hello@turilabs.ai"
-                className="link-primary text-xl font-medium"
-              >
-                sai@turilabs.in
-              </a>
-            </div>
-            <div className="mb-8 text-center">
-              <div className="text-lg text-muted mb-2">Find us on</div>
-              <div className="flex justify-center gap-8">
-                <a
-                  href="https://x.com/turilabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-8 h-8" />
-                </a>
-                <a
-                  href="https://github.com/turi-labs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-8 h-8" />
-                </a>
-              </div>
-            </div>
-            <div className="mb-4 text-center">
-              <div className="text-lg text-muted mb-2">Book a call with us</div>
-              <a
-                href="https://cal.com/sai-yashwanth/15min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block btn-primary px-6 py-3 rounded-lg font-semibold text-lg hover:scale-105 transition-transform duration-200"
-              >
-                Schedule on Cal.com
-              </a>
-            </div>
-          </div>
-        </main>
+    <div className="container-page py-16 sm:py-20">
+      <span className="section-label">Contact</span>
+      <h1 className="text-4xl font-extrabold sm:text-5xl">Talk to the lab</h1>
+      <p className="mt-5 max-w-xl text-lg text-secondary">
+        Collaborations, contributions, questions, or just curiosity. Email us, find us on
+        socials, or book a 15-minute call below. No pitch, no commitment.
+      </p>
+
+      <div className="mt-10 flex flex-wrap items-center gap-4">
+        <a href="mailto:sai@turilabs.in" className="btn-primary">
+          sai@turilabs.in
+        </a>
+        <a
+          href="https://github.com/turi-labs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost"
+        >
+          <Github className="h-4 w-4" aria-hidden="true" />
+          GitHub
+        </a>
+        <a
+          href="https://x.com/turilabs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-ghost"
+        >
+          <Twitter className="h-4 w-4" aria-hidden="true" />
+          X
+        </a>
       </div>
+
+      <section id="book" className="mt-16">
+        <h2 className="mb-6 text-2xl font-bold">Book a call</h2>
+        <iframe
+          src="https://cal.com/sai-yashwanth/15min?embed=true&theme=dark"
+          title="Book a call with Turi Labs"
+          className="w-full rounded-xl border-0"
+          style={{ height: '700px' }}
+        />
+      </section>
     </div>
   );
 }

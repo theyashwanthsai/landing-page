@@ -1,115 +1,238 @@
-import React from 'react';
-import { Brain, ChevronRight, Sparkles, Gamepad2 } from 'lucide-react';
-import { ResearchGrid } from './ResearchGrid';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import { PublicationList } from './PublicationList';
+import { acceptedPublications } from '../data/publications';
+
+const stats = [
+  { value: '6', label: 'Workshop papers accepted' },
+  { value: '3', label: 'A* conferences: NeurIPS, ICLR, ICML' },
+  { value: '9', label: 'Part-time researchers' },
+  { value: '100%', label: 'Independent and self-funded' },
+];
+
+const news = [
+  {
+    date: 'July 2026',
+    text: 'Three papers accepted for poster presentation at ICML 2026 workshops: RLRank, Executable Ground Truth, and Compositional Skill Acquisition.',
+  },
+  {
+    date: 'February 2026',
+    text: 'Two papers accepted at ICLR 2026 workshops, on floating-point noise in GPU matrix multiplication and logical reasoning inconsistencies in local LLMs.',
+  },
+  {
+    date: 'October 2025',
+    text: 'Our first paper, on strategic reasoning in competitive Pokémon battles, accepted at the NeurIPS 2025 ER workshop.',
+  },
+];
+
+const focusAreas = [
+  {
+    title: 'Reinforcement Learning',
+    description:
+      'Training small models with RL to close the gap with much larger ones: document reranking, agentic tasks, and skill acquisition.',
+  },
+  {
+    title: 'Agentic Systems',
+    description:
+      'Frameworks, training methods, and evaluations for agents that plan, act, and repair real systems instead of just talking about them.',
+  },
+  {
+    title: 'Evaluation & Benchmarks',
+    description:
+      'Closed-loop, execution-grounded benchmarks that measure what models actually do, not what they say they can do.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Explore',
+    description:
+      'Every project starts as a curiosity, not a grant proposal. We chase questions that are interesting before they are fashionable.',
+  },
+  {
+    title: 'Experiment',
+    description:
+      'Small, controlled experiments with clear hypotheses. Most die quickly. The ones that survive earn more attention and compute.',
+  },
+  {
+    title: 'Build',
+    description:
+      'Reproducible code, open benchmarks, and frameworks others can use. If it only runs on one laptop, it is not done.',
+  },
+  {
+    title: 'Publish',
+    description:
+      'Findings become papers, posters, and blog posts. Six have been accepted at NeurIPS, ICLR, and ICML workshops so far.',
+  },
+];
 
 export function HomePage() {
   return (
-    <div className="min-h-screen text-primary">
-      <div className="relative">
+    <div>
+      {/* Hero */}
+      <section className="container-page pt-24 pb-16 sm:pt-32 sm:pb-20">
+        <Link to="/research" className="pill mb-8 transition-colors hover:border-[var(--accent)]">
+          <span className="pill-dot" />
+          3 papers accepted at ICML 2026 workshops
+          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+        </Link>
 
-        {/* Hero */}
-        <header className="container mx-auto px-4 sm:px-6 py-12 sm:py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 space-y-6 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Building the weird and wonderful of
-                <span className="bg-gradient-text-ai"> AI</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-secondary max-w-2xl mx-auto lg:mx-0">
-                A lean, indie research lab driven by raw curiosity. We explore the next generation
-                of intelligent systems — agents, self-learning models, and simulated environments.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to="/research" className="btn-primary font-semibold text-lg">
-                  View Research <ChevronRight className="w-4 h-4" />
-                </Link>
-                <Link to="/contact" className="btn-secondary">
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-            <div className="flex-1 relative w-full max-w-xl lg:max-w-none">
-              <div className="absolute inset-0 bg-gradient-blue-purple rounded-lg filter blur-3xl"></div>
-              <div className="text-center">
-                <img
-                  src="/images/game_of_life_smaller.gif"
-                  alt="Conway's Game of Life Simulation"
-                  className="relative rounded-3xl shadow-2xl w-3/4 mx-auto hero-image hover:scale-105 hover:-translate-y-2 transition-all duration-500"
-                />
-                <p className="mt-4 text-secondary text-xs font-mono tracking-wide">
-                  Conway's Game of Life — emergent complexity from simple rules
-                </p>
-              </div>
-            </div>
-          </div>
-        </header>
+        <h1 className="max-w-3xl text-[clamp(2.5rem,6vw,4.25rem)] font-extrabold">
+          Independent AI research, <em className="em-serif">published where it counts.</em>
+        </h1>
 
-        {/* Focus areas */}
-        <section className="container mx-auto px-4 sm:px-6 py-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our North Star</h2>
-            <p className="text-secondary max-w-2xl mx-auto">
-              The future of intelligence won't come from scaling bigger models. It will come from
-              smaller systems that learn, reason, and evolve.
-            </p>
+        <p className="mt-6 max-w-xl text-lg text-secondary">
+          Turi Labs is a community of part-time researchers working on reinforcement learning,
+          agents, and evaluation. Six papers accepted at NeurIPS, ICLR, and ICML workshops so far.
+        </p>
+
+        <div className="mt-9 flex flex-wrap gap-4">
+          <Link to="/research" className="btn-primary">
+            Read the research
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+          <Link to="/contact" className="btn-ghost">
+            Work with us
+          </Link>
+        </div>
+
+        <dl
+          className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-xl border md:grid-cols-4"
+          style={{ borderColor: 'var(--border)', background: 'var(--border)' }}
+        >
+          {stats.map((stat) => (
+            <div key={stat.label} className="p-6" style={{ background: 'var(--bg)' }}>
+              <dd className="text-3xl font-extrabold tracking-tight">{stat.value}</dd>
+              <dt className="mt-1 text-sm text-faint">{stat.label}</dt>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {/* Venue bar */}
+      <section className="border-y" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page flex flex-wrap items-center justify-center gap-x-12 gap-y-3 py-8">
+          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-faint">
+            Research accepted at
+          </span>
+          {['NeurIPS 2025', 'ICLR 2026', 'ICML 2026'].map((venue) => (
+            <span key={venue} className="text-lg font-bold tracking-tight text-secondary">
+              {venue}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* News */}
+      <section className="container-page py-16 sm:py-20">
+        <span className="section-label">News</span>
+        <div className="divide-y" style={{ borderColor: 'var(--border)' }}>
+          {news.map((item) => (
+            <div key={item.date} className="flex flex-col gap-1 py-5 first:pt-0 last:pb-0 sm:flex-row sm:gap-8">
+              <span className="w-36 flex-shrink-0 text-sm font-medium text-faint">{item.date}</span>
+              <p className="text-[0.9375rem] text-secondary">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Selected publications */}
+      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page py-16 sm:py-20">
+          <div className="mb-10 flex items-end justify-between gap-4">
+            <div>
+              <span className="section-label">Publications</span>
+              <h2 className="text-3xl font-bold sm:text-4xl">Peer-reviewed work</h2>
+            </div>
+            <Link to="/research" className="link-underline hidden text-sm sm:block">
+              View all research
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              { icon: Brain, title: "AI Agents", desc: "Frameworks, runtimes, and infrastructure that power reasoning agents.", color: "blue" },
-              { icon: Sparkles, title: "Self-Learning Systems", desc: "From neuroevolution to RL — models that learn by doing.", color: "purple" },
-              { icon: Gamepad2, title: "Simulated Worlds", desc: "Environments for evaluating decision-making, emergence, and reasoning.", color: "green" }
-            ].map((feature, i) => (
-              <div key={i} className="glass-card p-7 group hover:shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-blue-500/10">
-                <feature.icon className={`w-10 h-10 text-${feature.color}-500 mb-4 feature-icon`} />
-                <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
-                <p className="text-secondary text-sm">{feature.desc}</p>
+          <PublicationList items={acceptedPublications} />
+          <Link to="/research" className="link-underline mt-8 inline-block text-sm sm:hidden">
+            View all research
+          </Link>
+        </div>
+      </section>
+
+      {/* Focus areas */}
+      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page py-16 sm:py-20">
+          <span className="section-label">Focus</span>
+          <h2 className="mb-10 text-3xl font-bold sm:text-4xl">What we work on</h2>
+          <div className="grid gap-px overflow-hidden rounded-xl border md:grid-cols-3"
+            style={{ borderColor: 'var(--border)', background: 'var(--border)' }}
+          >
+            {focusAreas.map((area, i) => (
+              <div key={area.title} className="p-8" style={{ background: 'var(--bg)' }}>
+                <span className="text-sm font-semibold text-accent">0{i + 1}</span>
+                <h3 className="mt-3 text-xl font-bold">{area.title}</h3>
+                <p className="mt-3 text-[0.9375rem] text-secondary">{area.description}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* How we work */}
-        <section className="container mx-auto px-4 sm:px-6 py-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="mb-10 text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why We're Indie</h2>
-              <p className="text-secondary max-w-2xl mx-auto">
-                Not bound by publication cycles or corporate roadmaps. We run on 80% exploration, 20% exploitation —
-                a home for hackers, thinkers, and experimentalists.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              {[
-                { step: "01", title: "Brainstorm", desc: "Find interesting problems in AI reasoning and learning" },
-                { step: "02", title: "Experiment", desc: "Run controlled experiments to test hypotheses" },
-                { step: "03", title: "Implement", desc: "Build reproducible results and benchmarks" },
-                { step: "04", title: "Document", desc: "Publish findings as papers and blog posts" },
-              ].map((item) => (
-                <div key={item.step} className="glass-card p-5 flex flex-col gap-2">
-                  <span className="text-xs font-mono text-blue-400">{item.step}</span>
-                  <span className="font-semibold">{item.title}</span>
-                  <p className="text-secondary text-xs">{item.desc}</p>
+      {/* Pullquote */}
+      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page py-16 sm:py-20">
+          <blockquote
+            className="border-l-4 pl-8 text-2xl font-medium leading-snug sm:text-3xl"
+            style={{ borderColor: 'var(--accent)' }}
+          >
+            What started as one person building quirky side projects is now a community of
+            researchers publishing at <em className="em-serif">the world's top AI venues.</em>
+          </blockquote>
+        </div>
+      </section>
+
+      {/* How we work */}
+      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page py-16 sm:py-20">
+          <span className="section-label">Method</span>
+          <h2 className="mb-12 text-3xl font-bold sm:text-4xl">How we work</h2>
+          <div className="grid gap-10 sm:grid-cols-2">
+            {steps.map((step, i) => (
+              <div key={step.title} className="flex gap-5">
+                <span
+                  className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                  style={{ background: 'var(--accent)', color: 'var(--bg)' }}
+                >
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold">{step.title}</h3>
+                  <p className="mt-2 text-[0.9375rem] text-secondary">{step.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Latest research */}
-        <section className="container mx-auto px-4 sm:px-6 py-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="flex items-baseline justify-between mb-8">
-              <h2 className="text-3xl sm:text-4xl font-bold">Latest Research</h2>
-              <Link to="/research" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
-                View all →
-              </Link>
-            </div>
-            <ResearchGrid limit={3} />
+      {/* CTA */}
+      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+        <div className="container-page py-20 text-center sm:py-24">
+          <span className="section-label">Get in touch</span>
+          <h2 className="mx-auto max-w-2xl text-3xl font-bold sm:text-5xl">
+            Research with us
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-lg text-secondary">
+            We collaborate with researchers, engineers, and supporters who care about
+            high-signal, independent AI research. No pitch, no commitment, 15 minutes.
+          </p>
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <Link to="/contact" className="btn-primary">
+              Book a call
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <a href="mailto:sai@turilabs.in" className="btn-ghost">
+              sai@turilabs.in
+            </a>
           </div>
-        </section>
-
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

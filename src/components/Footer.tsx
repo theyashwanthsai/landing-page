@@ -1,32 +1,48 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Twitter, BookOpen, Newspaper } from 'lucide-react';
+import { Github, Twitter } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="mt-16 sm:mt-24 backdrop-blur-xl border border-gray-10">
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-            <img src="/images/favicon.png" className="w-10 h-10 feature-icon" alt="TuriLabs Logo" />
-            <span className="font-bold text-primary">TuriLabs</span>
+    <footer className="mt-24 border-t" style={{ borderColor: 'var(--border)' }}>
+      <div className="container-page py-12">
+        <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+          <Link to="/" className="flex items-center gap-2.5">
+            <img src="/images/favicon.png" className="h-7 w-7" alt="Turi Labs logo" />
+            <span className="font-bold tracking-tight">Turi Labs</span>
           </Link>
-          <div className="flex gap-6">
-            {[
-              { icon: Github, link: "https://github.com/turi-labs" },
-              { icon: Twitter, link: "https://x.com/turilabs" },
-              { icon: BookOpen, link: "/research" },
-              { icon: Newspaper, link: "/newsletter" }
-            ].map((social, i) => (
-              <a key={i} href={social.link} className="social-icon">
-                <social.icon className="w-6 h-6" />
-              </a>
-            ))}
+
+          <nav className="flex flex-wrap items-center gap-6 text-sm">
+            <Link to="/research" className="nav-link">Research</Link>
+            <Link to="/blogs" className="nav-link">Blog</Link>
+            <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
+          </nav>
+
+          <div className="flex items-center gap-5">
+            <a
+              href="https://github.com/turi-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a
+              href="https://x.com/turilabs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+              aria-label="X"
+            >
+              <Twitter className="h-5 w-5" />
+            </a>
           </div>
         </div>
-        <div className="mt-8 text-center text-muted">
-          © 2026 TuriLabs. All rights reserved.
-        </div>
+
+        <p className="mt-10 text-sm text-faint">
+          © 2026 Turi Labs. An independent AI research lab.
+        </p>
       </div>
     </footer>
   );
