@@ -4,20 +4,20 @@
 
 /*
   Turi Labs design tokens.
-  Palette: Pompadour #f8769C, Lavender #A58CF4, Soft White #FAFAFA, Jet Black #0D0D0D.
+  Palette: Plasma Pink #FF4D8A, Lavender #A58CF4, Moon Dust #E9E9F0, Deep Space #0F1A2F.
   Everything else is an rgba variant of these.
 */
 :root {
-  --bg: #FAFAFA;
-  --ink: #0D0D0D;
-  --accent: #f8769C;
+  --bg: #E9E9F0;
+  --ink: #0F1A2F;
+  --accent: #FF4D8A;
   --lavender: #A58CF4;
 
-  --border: rgba(13, 13, 13, 0.12);
-  --border-strong: rgba(13, 13, 13, 0.25);
-  --muted: rgba(13, 13, 13, 0.72);
-  --faint: rgba(13, 13, 13, 0.55);
-  --surface: rgba(248, 118, 156, 0.05);
+  --border: rgba(15, 26, 47, 0.12);
+  --border-strong: rgba(15, 26, 47, 0.25);
+  --muted: rgba(15, 26, 47, 0.72);
+  --faint: rgba(15, 26, 47, 0.55);
+  --surface: rgba(255, 77, 138, 0.05);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
