@@ -25,7 +25,7 @@ export function AboutPage() {
         <p>
           Turi Labs started as one person building quirky, experimental AI projects. Friends
           wanted in, then friends of friends. Today it is a closed community of nine part-time
-          researchers with six papers accepted at NeurIPS, ICLR, and ICML workshops.
+          researchers with six A* conference workshop accepts at NeurIPS, ICLR, and ICML.
         </p>
         <p>
           We all maintain full-time careers. Turi Labs is where our collective obsession with AI

@@ -4,19 +4,20 @@
 
 /*
   Turi Labs design tokens.
-  Three hex values only: bg, accent, white. Everything else is an rgba variant.
+  Palette: Pompadour #f8769C, Lavender #A58CF4, Soft White #FAFAFA, Jet Black #0D0D0D.
+  Everything else is an rgba variant of these.
 */
 :root {
-  --bg: #0a0a0a;
-  --accent: #a78bfa;
-  --white: #ffffff;
+  --bg: #FAFAFA;
+  --ink: #0D0D0D;
+  --accent: #f8769C;
+  --lavender: #A58CF4;
 
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --muted: rgba(255, 255, 255, 0.72);
-  --faint: rgba(255, 255, 255, 0.5);
-  --surface: rgba(255, 255, 255, 0.04);
-  --accent-soft: rgba(167, 139, 250, 0.12);
+  --border: rgba(13, 13, 13, 0.12);
+  --border-strong: rgba(13, 13, 13, 0.25);
+  --muted: rgba(13, 13, 13, 0.72);
+  --faint: rgba(13, 13, 13, 0.55);
+  --surface: rgba(248, 118, 156, 0.05);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
@@ -29,7 +30,7 @@
 
   body {
     background: var(--bg);
-    color: var(--white);
+    color: var(--ink);
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.6;
@@ -37,8 +38,8 @@
   }
 
   ::selection {
-    background: var(--accent);
-    color: var(--bg);
+    background: var(--lavender);
+    color: var(--ink);
   }
 
   h1, h2, h3, h4 {
@@ -108,7 +109,7 @@
     justify-content: center;
     gap: 0.5rem;
     border: 1px solid var(--border-strong);
-    color: var(--white);
+    color: var(--ink);
     padding: 0.7rem 1.4rem;
     border-radius: 8px;
     font-weight: 600;
@@ -127,7 +128,7 @@
   }
 
   .nav-link:hover {
-    color: var(--white);
+    color: var(--ink);
   }
 
   .pill {
@@ -140,13 +141,15 @@
     font-size: 0.8125rem;
     font-weight: 500;
     color: var(--muted);
+    background: var(--bg);
   }
 
   .pill-dot {
     width: 6px;
     height: 6px;
     border-radius: 999px;
-    background: var(--accent);
+    background: var(--lavender);
+    border: 1px solid var(--accent);
     flex-shrink: 0;
   }
 
@@ -158,19 +161,8 @@
     color: var(--accent);
   }
 
-  .venue-tag-muted {
-    color: var(--faint);
-  }
-
-  .card {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.75rem;
-  }
-
   .link-plain {
-    color: var(--white);
+    color: var(--ink);
     transition: color 0.15s ease;
   }
 
@@ -196,25 +188,25 @@
   }
 
   .prose h1 {
-    color: var(--white);
+    color: var(--ink);
     font-size: 2rem;
     margin: 2.5rem 0 1.25rem;
   }
 
   .prose h2 {
-    color: var(--white);
+    color: var(--ink);
     font-size: 1.5rem;
     margin: 2.25rem 0 1rem;
   }
 
   .prose h3 {
-    color: var(--white);
+    color: var(--ink);
     font-size: 1.25rem;
     margin: 2rem 0 0.75rem;
   }
 
   .prose h4 {
-    color: var(--white);
+    color: var(--ink);
     font-size: 1.0625rem;
     margin: 1.75rem 0 0.5rem;
   }
@@ -242,12 +234,12 @@
   }
 
   .prose strong {
-    color: var(--white);
+    color: var(--ink);
     font-weight: 600;
   }
 
   .prose blockquote {
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--lavender);
     padding-left: 1.25rem;
     margin: 1.5rem 0;
     font-style: italic;
@@ -303,7 +295,7 @@
   }
 
   .prose th {
-    color: var(--white);
+    color: var(--ink);
     font-weight: 600;
   }
 }

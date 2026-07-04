@@ -14,7 +14,7 @@ export function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl"
-      style={{ borderColor: 'var(--border)', background: 'rgba(10, 10, 10, 0.75)' }}
+      style={{ borderColor: 'var(--border)', background: 'rgba(250, 250, 250, 0.8)' }}
     >
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
@@ -45,7 +45,7 @@ export function Navbar() {
       {open && (
         <nav
           className="border-t px-6 py-4 md:hidden"
-          style={{ borderColor: 'var(--border)', background: 'rgba(10, 10, 10, 0.95)' }}
+          style={{ borderColor: 'var(--border)', background: 'rgba(250, 250, 250, 0.97)' }}
         >
           <div className="flex flex-col gap-4">
             {links.map((link) => (

@@ -11,9 +11,7 @@ export function PublicationList({ items }: PublicationListProps) {
       {items.map((pub) => (
         <article key={pub.title} className="py-7 first:pt-0 last:pb-0">
           <div className="flex items-baseline gap-3 mb-2">
-            <span className={pub.status === 'accepted' ? 'venue-tag' : 'venue-tag venue-tag-muted'}>
-              {pub.venue}
-            </span>
+            <span className="venue-tag">{pub.venue}</span>
             {pub.note && <span className="text-xs text-faint">{pub.note}</span>}
           </div>
           {pub.link ? (

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { PublicationList } from './PublicationList';
-import { acceptedPublications } from '../data/publications';
+import { publications } from '../data/publications';
 
 const stats = [
-  { value: '6', label: 'Workshop papers accepted' },
+  { value: '6', label: 'A* conference workshop accepts' },
   { value: '3', label: 'A* conferences: NeurIPS, ICLR, ICML' },
   { value: '9', label: 'Part-time researchers' },
   { value: '100%', label: 'Independent and self-funded' },
@@ -62,7 +62,7 @@ const steps = [
   {
     title: 'Publish',
     description:
-      'Findings become papers, posters, and blog posts. Six have been accepted at NeurIPS, ICLR, and ICML workshops so far.',
+      'Findings become papers, posters, and blog posts. Six have landed as A* conference workshop accepts at NeurIPS, ICLR, and ICML so far.',
   },
 ];
 
@@ -70,30 +70,47 @@ export function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="container-page pt-24 pb-16 sm:pt-32 sm:pb-20">
-        <Link to="/research" className="pill mb-8 transition-colors hover:border-[var(--accent)]">
-          <span className="pill-dot" />
-          3 papers accepted at ICML 2026 workshops
-          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-        </Link>
+      <section className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+          <div>
+            <Link to="/research" className="pill mb-8 transition-colors hover:border-[var(--accent)]">
+              <span className="pill-dot" />
+              3 papers accepted at ICML 2026 workshops
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </Link>
 
-        <h1 className="max-w-3xl text-[clamp(2.5rem,6vw,4.25rem)] font-extrabold">
-          Independent AI research, <em className="em-serif">published where it counts.</em>
-        </h1>
+            <h1 className="text-[clamp(2.375rem,5vw,3.625rem)] font-extrabold">
+              Independent AI research, <em className="em-serif">published where it counts.</em>
+            </h1>
 
-        <p className="mt-6 max-w-xl text-lg text-secondary">
-          Turi Labs is a community of part-time researchers working on reinforcement learning,
-          agents, and evaluation. Six papers accepted at NeurIPS, ICLR, and ICML workshops so far.
-        </p>
+            <p className="mt-6 max-w-xl text-lg text-secondary">
+              Turi Labs is an indie AI research lab working on reinforcement learning, agents,
+              and evaluation. Six A* conference workshop accepts at NeurIPS, ICLR, and ICML so far.
+            </p>
 
-        <div className="mt-9 flex flex-wrap gap-4">
-          <Link to="/research" className="btn-primary">
-            Read the research
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-          <Link to="/contact" className="btn-ghost">
-            Work with us
-          </Link>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Link to="/research" className="btn-primary">
+                Read the research
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link to="/contact" className="btn-ghost">
+                Work with us
+              </Link>
+            </div>
+          </div>
+
+          <figure className="mx-auto w-full max-w-sm lg:max-w-none">
+            <img
+              src="/images/game_of_life_smaller.gif"
+              alt="Conway's Game of Life simulation"
+              className="w-full rounded-xl border"
+              style={{ borderColor: 'var(--border)' }}
+            />
+            <figcaption className="mt-3 text-center text-xs text-faint">
+              Conway's Game of Life. Simple rules, emergent complexity: the kind of pattern that
+              inspires how we pick research problems.
+            </figcaption>
+          </figure>
         </div>
 
         <dl
@@ -136,21 +153,22 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Selected publications */}
+      {/* Latest publications */}
       <section className="border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="container-page py-16 sm:py-20">
           <div className="mb-10 flex items-end justify-between gap-4">
             <div>
               <span className="section-label">Publications</span>
-              <h2 className="text-3xl font-bold sm:text-4xl">Peer-reviewed work</h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">Latest work</h2>
             </div>
             <Link to="/research" className="link-underline hidden text-sm sm:block">
-              View all research
+              View all publications
             </Link>
           </div>
-          <PublicationList items={acceptedPublications} />
-          <Link to="/research" className="link-underline mt-8 inline-block text-sm sm:hidden">
-            View all research
+          <PublicationList items={publications.slice(0, 2)} />
+          <Link to="/research" className="btn-ghost mt-10 inline-flex">
+            View all publications
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -175,11 +193,11 @@ export function HomePage() {
       </section>
 
       {/* Pullquote */}
-      <section className="border-t" style={{ borderColor: 'var(--border)' }}>
+      <section>
         <div className="container-page py-16 sm:py-20">
           <blockquote
             className="border-l-4 pl-8 text-2xl font-medium leading-snug sm:text-3xl"
-            style={{ borderColor: 'var(--accent)' }}
+            style={{ borderColor: 'var(--lavender)' }}
           >
             What started as one person building quirky side projects is now a community of
             researchers publishing at <em className="em-serif">the world's top AI venues.</em>

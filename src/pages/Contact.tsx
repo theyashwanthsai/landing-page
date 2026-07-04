@@ -37,7 +37,7 @@ export function ContactPage() {
       <section id="book" className="mt-16">
         <h2 className="mb-6 text-2xl font-bold">Book a call</h2>
         <iframe
-          src="https://cal.com/sai-yashwanth/15min?embed=true&theme=dark"
+          src="https://cal.com/sai-yashwanth/15min?embed=true&theme=light"
           title="Book a call with Turi Labs"
           className="w-full rounded-xl border-0"
           style={{ height: '700px' }}

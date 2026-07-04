@@ -4,7 +4,6 @@ export interface Publication {
   link: string;
   authors: string;
   venue: string;
-  status: 'accepted' | 'in-progress';
   note?: string;
 }
 
@@ -16,7 +15,6 @@ export const publications: Publication[] = [
     link: '',
     authors: 'Sagnik P, Sai Yashwanth',
     venue: 'ICML 2026 Workshop',
-    status: 'accepted',
     note: 'Poster',
   },
   {
@@ -27,7 +25,6 @@ export const publications: Publication[] = [
     link: '',
     authors: 'Dhatri C, Sai Yashwanth',
     venue: 'ICML 2026 Workshop',
-    status: 'accepted',
     note: 'Poster',
   },
   {
@@ -38,7 +35,6 @@ export const publications: Publication[] = [
     link: '',
     authors: 'Akshay Kumar, Sai Yashwanth',
     venue: 'ICML 2026 Workshop',
-    status: 'accepted',
     note: 'Poster',
   },
   {
@@ -48,7 +44,6 @@ export const publications: Publication[] = [
     link: 'https://arxiv.org/abs/2511.00025',
     authors: 'Sai Yashwanth',
     venue: 'ICLR 2026 Sci4DL Workshop',
-    status: 'accepted',
   },
   {
     title:
@@ -58,7 +53,6 @@ export const publications: Publication[] = [
     link: '',
     authors: 'Sai Yashwanth, Dhatri C',
     venue: 'ICLR 2026 Logical Reasoning Workshop',
-    status: 'accepted',
   },
   {
     title: 'Reasoning Under Pressure: LLMs in Competitive Pokémon Battles',
@@ -67,36 +61,5 @@ export const publications: Publication[] = [
     link: 'https://arxiv.org/abs/2508.01623',
     authors: 'Sai Yashwanth, Dhatri C',
     venue: 'NeurIPS 2025 ER Workshop',
-    status: 'accepted',
-  },
-  {
-    title: 'YaAF: Yet Another Agentic Framework',
-    description:
-      'A lean agentic framework with zero coupling for building custom AI agents. Benchmarked against industry standards like CrewAI.',
-    link: '',
-    authors: 'Vijayant, Sai Yashwanth',
-    venue: 'In progress',
-    status: 'in-progress',
-  },
-  {
-    title:
-      'Neural Nexus: Evaluating Strategic Reasoning in Large Language Models Through Competitive Board Games',
-    description: 'Evaluating LLM strategic reasoning through competitive board game environments.',
-    link: '',
-    authors: 'Siddharth Prakash',
-    venue: 'In progress',
-    status: 'in-progress',
-  },
-  {
-    title: 'Emergent Organization: Self-Forming and Self-Evolving Multi-Agent Teams',
-    description:
-      'Exploring agent teams that autonomously organize their structure and evolve their coordination strategies without human-defined roles.',
-    link: '',
-    authors: 'Srinivas, Sai Yashwanth',
-    venue: 'In progress',
-    status: 'in-progress',
   },
 ];
-
-export const acceptedPublications = publications.filter((p) => p.status === 'accepted');
-export const inProgressPublications = publications.filter((p) => p.status === 'in-progress');
