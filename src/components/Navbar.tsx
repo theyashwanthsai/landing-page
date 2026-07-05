@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 const links = [
   { to: '/research', label: 'Research' },
@@ -14,7 +15,7 @@ export function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl"
-      style={{ borderColor: 'var(--border)', background: 'rgba(233, 233, 240, 0.8)' }}
+      style={{ borderColor: 'var(--border)', background: 'var(--nav-bg)' }}
     >
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
@@ -22,30 +23,34 @@ export function Navbar() {
           <span className="text-[1.0625rem] font-bold tracking-tight">Turi Labs</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <NavLink key={link.to} to={link.to} className="nav-link">
-              {link.label}
-            </NavLink>
-          ))}
-          <Link to="/contact" className="btn-primary !py-2 !px-4 text-sm">
-            Contact
-          </Link>
-        </nav>
+        <div className="flex items-center gap-3">
+          <nav className="hidden items-center gap-8 md:flex">
+            {links.map((link) => (
+              <NavLink key={link.to} to={link.to} className="nav-link">
+                {link.label}
+              </NavLink>
+            ))}
+            <Link to="/contact" className="btn-primary !py-2 !px-4 text-sm">
+              Contact
+            </Link>
+          </nav>
 
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <ThemeToggle />
+
+          <button
+            className="md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
         <nav
           className="border-t px-6 py-4 md:hidden"
-          style={{ borderColor: 'var(--border)', background: 'rgba(233, 233, 240, 0.97)' }}
+          style={{ borderColor: 'var(--border)', background: 'var(--nav-bg-mobile)' }}
         >
           <div className="flex flex-col gap-4">
             {links.map((link) => (

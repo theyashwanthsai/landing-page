@@ -18,9 +18,38 @@
   --muted: rgba(15, 26, 47, 0.72);
   --faint: rgba(15, 26, 47, 0.55);
   --surface: rgba(255, 77, 138, 0.05);
+  --nav-bg: rgba(233, 233, 240, 0.8);
+  --nav-bg-mobile: rgba(233, 233, 240, 0.97);
+
+  --glow-1: rgba(255, 77, 138, 0.16);
+  --glow-2: rgba(165, 140, 244, 0.16);
+  --glow-3: rgba(165, 140, 244, 0.10);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
+
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0B0E14;
+  --ink: #F2F2F7;
+  --accent: #FF6B9D;
+  --lavender: #B8A6FF;
+
+  --border: rgba(242, 242, 247, 0.12);
+  --border-strong: rgba(242, 242, 247, 0.25);
+  --muted: rgba(242, 242, 247, 0.72);
+  --faint: rgba(242, 242, 247, 0.55);
+  --surface: rgba(255, 107, 157, 0.08);
+  --nav-bg: rgba(11, 14, 20, 0.8);
+  --nav-bg-mobile: rgba(11, 14, 20, 0.97);
+
+  --glow-1: rgba(255, 107, 157, 0.22);
+  --glow-2: rgba(184, 166, 255, 0.20);
+  --glow-3: rgba(184, 166, 255, 0.12);
+
+  color-scheme: dark;
 }
 
 @layer base {
@@ -29,12 +58,38 @@
   }
 
   body {
+    position: relative;
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(640px circle at 12% -8%, var(--glow-1), transparent 62%),
+      radial-gradient(560px circle at 88% 6%, var(--glow-2), transparent 60%),
+      radial-gradient(760px circle at 50% 115%, var(--glow-3), transparent 65%);
+    pointer-events: none;
+    transition: background 0.3s ease;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
   }
 
   ::selection {
