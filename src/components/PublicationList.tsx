@@ -32,6 +32,16 @@ export function PublicationList({ items }: PublicationListProps) {
           )}
           <p className="mt-1 text-sm text-faint">{pub.authors}</p>
           <p className="mt-2 text-[0.9375rem] text-secondary max-w-2xl">{pub.description}</p>
+          {pub.arxiv && (
+            <a
+              href={pub.arxiv}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline mt-3 inline-block text-sm"
+            >
+              arXiv
+            </a>
+          )}
         </article>
       ))}
     </div>

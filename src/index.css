@@ -216,6 +216,60 @@
     color: var(--accent);
   }
 
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--faint);
+  }
+
+  .filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+
+  .filter-pill:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .filter-pill-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+
+  .pub-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: var(--bg);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .pub-card:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 640px) {
+    .pub-card {
+      padding: 1.75rem;
+    }
+  }
+
   .link-plain {
     color: var(--ink);
     transition: color 0.15s ease;
