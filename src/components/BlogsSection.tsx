@@ -63,7 +63,7 @@ export function BlogsSection({ limit }: BlogsSectionProps) {
             {' · '}
             {post.readTime}
           </p>
-          <h3 className="mt-2 inline-flex items-start gap-1.5 text-xl font-bold leading-snug transition-colors group-hover:text-[var(--accent)]">
+          <h3 className="mt-2 inline-flex items-start gap-1.5 text-xl font-semibold leading-snug transition-colors group-hover:text-[var(--accent)]">
             {post.title}
             <ArrowRight
               className="mt-1.5 h-4 w-4 flex-shrink-0 opacity-0 transition-opacity group-hover:opacity-100"

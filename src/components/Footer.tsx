@@ -3,12 +3,12 @@ import { Github, Twitter } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t" style={{ borderColor: 'var(--border)' }}>
+    <footer className="mt-12 border-t" style={{ borderColor: 'var(--border)' }}>
       <div className="container-page py-12">
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src="/images/favicon.png" className="h-7 w-7" alt="Turi Labs logo" />
-            <span className="font-bold tracking-tight">Turi Labs</span>
+            <img src="/images/logo.png" className="h-7 w-7" alt="" />
+            <span className="font-semibold tracking-tight">Turi Labs</span>
           </Link>
 
           <nav className="flex flex-wrap items-center gap-6 text-sm">

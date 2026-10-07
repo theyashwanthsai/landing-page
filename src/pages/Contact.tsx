@@ -2,9 +2,9 @@ import { Github, Twitter } from 'lucide-react';
 
 export function ContactPage() {
   return (
-    <div className="container-page py-16 sm:py-20">
+    <div className="container-page pt-20 pb-8 sm:pt-28">
       <span className="section-label">Contact</span>
-      <h1 className="text-4xl font-extrabold sm:text-5xl">Talk to the lab</h1>
+      <h1 className="page-title">Talk to the lab</h1>
       <p className="mt-5 max-w-xl text-lg text-secondary">
         Collaborations, contributions, questions, or just curiosity. Email us, find us on
         socials, or book a 15-minute call below. No pitch, no commitment.
@@ -35,11 +35,11 @@ export function ContactPage() {
       </div>
 
       <section id="book" className="mt-16">
-        <h2 className="mb-6 text-2xl font-bold">Book a call</h2>
+        <h2 className="mb-6 text-2xl font-semibold">Book a call</h2>
         <iframe
           src="https://cal.com/sai-yashwanth/15min?embed=true&theme=light"
           title="Book a call with Turi Labs"
-          className="w-full rounded-xl border-0"
+          className="w-full rounded-2xl border"
           style={{ height: '700px' }}
         />
       </section>

@@ -2,9 +2,9 @@ import { BlogsSection } from '../components/BlogsSection';
 
 export function BlogsPage() {
   return (
-    <div className="container-page py-16 sm:py-20">
+    <div className="container-page pt-20 pb-8 sm:pt-28">
       <span className="section-label">Blog</span>
-      <h1 className="text-4xl font-extrabold sm:text-5xl">Notes from the lab</h1>
+      <h1 className="page-title">Notes from the lab</h1>
       <p className="mt-5 max-w-xl text-lg text-secondary">
         Insights, mental models, and milestones from our research journey.
       </p>

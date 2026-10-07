@@ -39,7 +39,7 @@ export function PitchPage() {
   if (error) {
     return (
       <div className="container-page py-20 text-center">
-        <h1 className="text-3xl font-bold">Content not found</h1>
+        <h1 className="text-3xl font-semibold">Content not found</h1>
         <p className="mt-4 text-secondary">{error}</p>
         <Link to="/" className="btn-primary mt-8 inline-flex">
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />

@@ -37,10 +37,10 @@ export function ResearchPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="container-page pt-16 pb-12 sm:pt-20">
+      <section className="container-page pt-20 pb-12 sm:pt-28">
         <span className="section-label">Research</span>
-        <h1 className="max-w-3xl text-4xl font-extrabold sm:text-5xl">
-          Work we publish <em className="em-serif">in the open.</em>
+        <h1 className="page-title max-w-4xl">
+          Work we publish <span className="em-serif">in the open.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-secondary">
           We pursue ideas driven by curiosity rather than profit. Our work spans reinforcement
@@ -49,12 +49,11 @@ export function ResearchPage() {
         </p>
 
         <dl
-          className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl border md:grid-cols-4"
-          style={{ borderColor: 'var(--border)', background: 'var(--border)' }}
+          className="grid-hairline mt-12 grid-cols-2 md:grid-cols-4"
         >
           {stats.map((stat) => (
-            <div key={stat.label} className="p-6" style={{ background: 'var(--bg)' }}>
-              <dd className="text-3xl font-extrabold tracking-tight">{stat.value}</dd>
+            <div key={stat.label} className="p-6">
+              <dd className="text-3xl font-semibold tracking-tight">{stat.value}</dd>
               <dt className="mt-1 text-sm text-faint">{stat.label}</dt>
             </div>
           ))}
@@ -98,7 +97,7 @@ export function ResearchPage() {
                         {pub.note && <span className="text-xs text-faint">{pub.note}</span>}
                       </div>
 
-                      <h3 className="mt-3 text-lg font-bold leading-snug sm:text-xl">
+                      <h3 className="mt-3 text-lg font-semibold leading-snug sm:text-xl">
                         <a
                           href={pub.link}
                           target="_blank"
@@ -161,7 +160,7 @@ export function ResearchPage() {
       {/* CTA */}
       <section className="border-t" style={{ borderColor: 'var(--border)' }}>
         <div className="container-page py-16 text-center sm:py-20">
-          <h2 className="mx-auto max-w-2xl text-3xl font-bold sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl text-3xl font-semibold sm:text-4xl">
             Working on something adjacent?
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-secondary">

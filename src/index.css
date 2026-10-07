@@ -3,53 +3,27 @@
 @tailwind utilities;
 
 /*
-  Turi Labs design tokens.
-  Palette: Plasma Pink #FF4D8A, Lavender #A58CF4, Moon Dust #E9E9F0, Deep Space #0F1A2F.
-  Everything else is an rgba variant of these.
+  Turi Labs design tokens. Light only: white surface, near-black ink,
+  one pink-purple accent pulled from the logo. No gradients, no shadows.
 */
 :root {
-  --bg: #E9E9F0;
-  --ink: #0F1A2F;
-  --accent: #FF4D8A;
-  --lavender: #A58CF4;
+  --bg: #FFFFFF;
+  --ink: #14111A;
+  --accent: #A83DC0;
+  --accent-soft: #F7EEFA;
+  --lavender: #D9B8E6;
 
-  --border: rgba(15, 26, 47, 0.12);
-  --border-strong: rgba(15, 26, 47, 0.25);
-  --muted: rgba(15, 26, 47, 0.72);
-  --faint: rgba(15, 26, 47, 0.55);
-  --surface: rgba(255, 77, 138, 0.05);
-  --nav-bg: rgba(233, 233, 240, 0.8);
-  --nav-bg-mobile: rgba(233, 233, 240, 0.97);
-
-  --glow-1: rgba(255, 77, 138, 0.16);
-  --glow-2: rgba(165, 140, 244, 0.16);
-  --glow-3: rgba(165, 140, 244, 0.10);
+  --border: #ECE7F0;
+  --border-strong: #D8D0DF;
+  --muted: #4A4553;
+  --faint: #8A8394;
+  --surface: #FBF8FC;
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-bg-mobile: #FFFFFF;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Newsreader', Georgia, serif;
 
   color-scheme: light;
-}
-
-.dark {
-  --bg: #0B0E14;
-  --ink: #F2F2F7;
-  --accent: #FF6B9D;
-  --lavender: #B8A6FF;
-
-  --border: rgba(242, 242, 247, 0.12);
-  --border-strong: rgba(242, 242, 247, 0.25);
-  --muted: rgba(242, 242, 247, 0.72);
-  --faint: rgba(242, 242, 247, 0.55);
-  --surface: rgba(255, 107, 157, 0.08);
-  --nav-bg: rgba(11, 14, 20, 0.8);
-  --nav-bg-mobile: rgba(11, 14, 20, 0.97);
-
-  --glow-1: rgba(255, 107, 157, 0.22);
-  --glow-2: rgba(184, 166, 255, 0.20);
-  --glow-3: rgba(184, 166, 255, 0.12);
-
-  color-scheme: dark;
 }
 
 @layer base {
@@ -58,7 +32,6 @@
   }
 
   body {
-    position: relative;
     background: var(--bg);
     color: var(--ink);
     font-family: var(--font-sans);
@@ -66,114 +39,85 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background:
-      radial-gradient(640px circle at 12% -8%, var(--glow-1), transparent 62%),
-      radial-gradient(560px circle at 88% 6%, var(--glow-2), transparent 60%),
-      radial-gradient(760px circle at 50% 115%, var(--glow-3), transparent 65%);
-    pointer-events: none;
-    transition: background 0.3s ease;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    pointer-events: none;
   }
 
   ::selection {
-    background: var(--lavender);
-    color: var(--ink);
+    background: var(--accent-soft);
+    color: var(--accent);
   }
 
   h1, h2, h3, h4 {
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
   }
 }
 
 @layer components {
   .container-page {
-    @apply mx-auto w-full max-w-5xl px-6;
+    @apply mx-auto w-full max-w-6xl px-6;
   }
 
-  .text-secondary {
-    color: var(--muted);
-  }
+  .text-secondary { color: var(--muted); }
+  .text-faint { color: var(--faint); }
+  .text-accent { color: var(--accent); }
 
-  .text-faint {
-    color: var(--faint);
-  }
-
-  .text-accent {
-    color: var(--accent);
-  }
-
-  /* Serif italic emphasis used in headlines */
+  /* Accent-colored emphasis inside headlines */
   .em-serif {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 500;
+    font-style: normal;
     color: var(--accent);
-    letter-spacing: -0.01em;
   }
 
   .section-label {
     display: block;
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
+    color: var(--faint);
+    margin-bottom: 1.25rem;
   }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--accent);
-    color: var(--bg);
-    padding: 0.7rem 1.4rem;
-    border-radius: 8px;
+  .page-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 600;
-    font-size: 0.9375rem;
-    transition: opacity 0.15s ease;
+    letter-spacing: -0.04em;
+    line-height: 1.04;
   }
 
-  .btn-primary:hover {
-    opacity: 0.88;
-  }
-
+  .btn-primary,
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    padding: 0.7rem 1.35rem;
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: #fff;
+    border: 1px solid var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .btn-ghost {
     border: 1px solid var(--border-strong);
     color: var(--ink);
-    padding: 0.7rem 1.4rem;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    transition: border-color 0.15s ease;
+    background: var(--bg);
   }
 
   .btn-ghost:hover {
     border-color: var(--accent);
+    color: var(--accent);
   }
 
   .nav-link {
@@ -182,29 +126,28 @@
     transition: color 0.15s ease;
   }
 
-  .nav-link:hover {
-    color: var(--ink);
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--accent);
   }
 
   .pill {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid var(--border-strong);
     border-radius: 999px;
     padding: 0.3rem 0.9rem;
     font-size: 0.8125rem;
     font-weight: 500;
-    color: var(--muted);
-    background: var(--bg);
+    color: var(--accent);
+    background: var(--accent-soft);
   }
 
   .pill-dot {
     width: 6px;
     height: 6px;
     border-radius: 999px;
-    background: var(--lavender);
-    border: 1px solid var(--accent);
+    background: var(--accent);
     flex-shrink: 0;
   }
 
@@ -219,12 +162,12 @@
   .tag {
     display: inline-flex;
     align-items: center;
-    border: 1px solid var(--border);
     border-radius: 999px;
     padding: 0.2rem 0.7rem;
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--faint);
+    color: var(--muted);
+    background: var(--surface);
   }
 
   .filter-pill {
@@ -235,39 +178,53 @@
     border-radius: 999px;
     padding: 0.4rem 1rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--muted);
     transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
   }
 
   .filter-pill:hover {
     border-color: var(--accent);
-    color: var(--ink);
+    color: var(--accent);
   }
 
-  .filter-pill-active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg);
+  .filter-pill-active,
+  .filter-pill-active:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
   }
 
   .pub-card {
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
     padding: 1.5rem;
     background: var(--bg);
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    transition: border-color 0.15s ease;
   }
 
   .pub-card:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-2px);
+    border-color: var(--accent);
   }
 
   @media (min-width: 640px) {
     .pub-card {
       padding: 1.75rem;
     }
+  }
+
+  /* Hairline-divided grid used for stats, focus areas, team */
+  .grid-hairline {
+    display: grid;
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--border);
+  }
+
+  .grid-hairline > * {
+    background: var(--bg);
   }
 
   .link-plain {
@@ -287,7 +244,7 @@
   }
 
   .link-underline:hover {
-    opacity: 0.8;
+    opacity: 0.75;
   }
 
   /* Markdown content (blog posts, one-pager) */
@@ -348,7 +305,7 @@
   }
 
   .prose blockquote {
-    border-left: 3px solid var(--lavender);
+    border-left: 2px solid var(--accent);
     padding-left: 1.25rem;
     margin: 1.5rem 0;
     font-style: italic;

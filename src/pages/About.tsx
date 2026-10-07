@@ -1,24 +1,12 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-const team = [
-  { name: 'Sai Yashwanth', role: 'Founder', link: 'https://saiyashwanth.tech' },
-  { name: 'Vijayant', role: 'Researcher', link: 'https://www.linkedin.com/in/vijayant-raj-singh-raghav/' },
-  { name: 'Dhatri C', role: 'Researcher', link: 'https://www.linkedin.com/in/dhatri-c-5b1b20297/' },
-  { name: 'Mayank Kashyap', role: 'Researcher', link: 'https://www.linkedin.com/in/mayank-kashyap-402065232/' },
-  { name: 'Siddharth Prakash', role: 'Researcher', link: 'https://www.linkedin.com/in/siddharth-prakash-771596241/' },
-  { name: 'Supratik', role: 'Researcher', link: 'https://www.linkedin.com/in/supratik-kar-99a99522b/' },
-  { name: 'Sagnik P', role: 'Researcher', link: '' },
-  { name: 'Srinivas', role: 'Researcher', link: '' },
-  { name: 'Akshay Kumar', role: 'Researcher', link: '' },
-];
-
 export function AboutPage() {
   return (
-    <div className="container-page py-16 sm:py-20">
+    <div className="container-page pt-20 pb-8 sm:pt-28">
       <span className="section-label">About</span>
-      <h1 className="text-4xl font-extrabold sm:text-5xl">
-        A lab built on <em className="em-serif">curiosity, not credentials.</em>
+      <h1 className="page-title max-w-3xl">
+        A lab built on <span className="em-serif">curiosity, not credentials.</span>
       </h1>
 
       <div className="mt-8 max-w-2xl space-y-5 text-lg text-secondary">
@@ -43,35 +31,9 @@ export function AboutPage() {
       <img
         src="/images/team.png"
         alt="The Turi Labs team"
-        className="mt-12 w-full max-w-2xl rounded-xl border"
+        className="mt-12 w-full max-w-2xl rounded-2xl border"
         style={{ borderColor: 'var(--border)' }}
       />
-
-      <section className="mt-16 border-t pt-16" style={{ borderColor: 'var(--border)' }}>
-        <h2 className="mb-8 text-2xl font-bold">The team</h2>
-        <div
-          className="grid gap-px overflow-hidden rounded-xl border sm:grid-cols-2 lg:grid-cols-3"
-          style={{ borderColor: 'var(--border)', background: 'var(--border)' }}
-        >
-          {team.map((member) => (
-            <div key={member.name} className="p-6" style={{ background: 'var(--bg)' }}>
-              {member.link ? (
-                <a
-                  href={member.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-plain font-semibold"
-                >
-                  {member.name}
-                </a>
-              ) : (
-                <span className="font-semibold">{member.name}</span>
-              )}
-              <p className="mt-1 text-sm text-faint">{member.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="mt-16 border-t pt-16 text-center" style={{ borderColor: 'var(--border)' }}>
         <p className="text-lg text-secondary">Want to collaborate or contribute?</p>

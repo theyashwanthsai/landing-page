@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 
 const links = [
   { to: '/research', label: 'Research' },
@@ -14,19 +13,19 @@ export function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-xl"
+      className="fixed top-0 left-0 right-0 z-50 border-b backdrop-blur-md"
       style={{ borderColor: 'var(--border)', background: 'var(--nav-bg)' }}
     >
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <img src="/images/favicon.png" className="h-8 w-8" alt="Turi Labs logo" />
-          <span className="text-[1.0625rem] font-bold tracking-tight">Turi Labs</span>
+          <img src="/images/logo.png" className="h-8 w-8" alt="" />
+          <span className="text-[1.0625rem] font-semibold tracking-tight">Turi Labs</span>
         </Link>
 
         <div className="flex items-center gap-3">
           <nav className="hidden items-center gap-8 md:flex">
             {links.map((link) => (
-              <NavLink key={link.to} to={link.to} className="nav-link">
+              <NavLink key={link.to} to={link.to} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
                 {link.label}
               </NavLink>
             ))}
@@ -34,8 +33,6 @@ export function Navbar() {
               Contact
             </Link>
           </nav>
-
-          <ThemeToggle />
 
           <button
             className="md:hidden"

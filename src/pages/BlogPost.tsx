@@ -77,7 +77,7 @@ export function BlogPost() {
   if (error || !blogPost) {
     return (
       <div className="container-page py-20 text-center">
-        <h1 className="text-3xl font-bold">Blog post not found</h1>
+        <h1 className="text-3xl font-semibold">Blog post not found</h1>
         <p className="mt-4 text-secondary">
           {error || 'The requested blog post could not be found.'}
         </p>
@@ -97,7 +97,7 @@ export function BlogPost() {
       </Link>
 
       <header className="mt-8 mb-12">
-        <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">{blogPost.title}</h1>
+        <h1 className="page-title !text-[clamp(2rem,5vw,3rem)]">{blogPost.title}</h1>
         <p className="mt-4 text-sm text-faint">
           {blogPost.author}
           {' · '}
