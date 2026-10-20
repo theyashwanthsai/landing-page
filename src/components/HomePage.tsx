@@ -3,11 +3,11 @@ import { ArrowRight } from 'lucide-react';
 import { PublicationList } from './PublicationList';
 import { publications } from '../data/publications';
 
-const stats = [
-  { value: '6', label: 'A* conference workshop accepts' },
-  { value: '3', label: 'A* conferences: NeurIPS, ICLR, ICML' },
-  { value: '9', label: 'Part-time researchers' },
-  { value: '100%', label: 'Independent and self-funded' },
+const backing = [
+  { kicker: 'Research grant', name: 'Thinking Machines Lab', detail: 'Funding for independent research' },
+  { kicker: 'Partner', name: 'Microsoft for Startups', detail: 'Azure credits and hosting' },
+  { kicker: 'Partner', name: 'Claude for Startups', detail: 'Claude Code for the team and API credits' },
+  { kicker: 'Published at', name: 'NeurIPS · ICLR · ICML', detail: 'Workshop papers at all three' },
 ];
 
 const news = [
@@ -77,7 +77,8 @@ export function HomePage() {
 
         <p className="mx-auto mt-7 max-w-2xl text-lg text-secondary">
           Turi Labs is an indie AI research lab working on reinforcement learning, agents,
-          and evaluation. Six A* conference workshop accepts at NeurIPS, ICLR, and ICML so far.
+          and evaluation, backed by a research grant from Thinking Machines Lab and published at
+          NeurIPS, ICLR, and ICML.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -104,10 +105,11 @@ export function HomePage() {
         </figure>
 
         <dl className="grid-hairline mt-16 grid-cols-2 text-left md:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label} className="p-6">
-              <dd className="text-3xl font-semibold tracking-tight">{stat.value}</dd>
-              <dt className="mt-1 text-sm text-faint">{stat.label}</dt>
+          {backing.map((item) => (
+            <div key={item.name} className="p-6">
+              <dt className="text-xs font-medium uppercase tracking-wider text-faint">{item.kicker}</dt>
+              <dd className="mt-2 text-lg font-semibold tracking-tight">{item.name}</dd>
+              <dd className="mt-1 text-sm text-faint">{item.detail}</dd>
             </div>
           ))}
         </dl>
