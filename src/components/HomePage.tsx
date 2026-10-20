@@ -4,7 +4,7 @@ import { PublicationList } from './PublicationList';
 import { publications } from '../data/publications';
 
 const backing = [
-  { kicker: 'Research grant', name: 'Thinking Machines Lab', wordmark: 'Thinking Machines', detail: '$5K in funding for independent research' },
+  { kicker: 'Research grant', name: 'Thinking Machines Lab', wordmark: 'Thinking Machines', detail: '$5K in research grants for independent research' },
   { kicker: 'Partner', name: 'Microsoft for Startups', logo: '/logos/microsoft.svg', detail: '$10K in Azure credits and hosting' },
   { kicker: 'Partner', name: 'Claude for Startups', logo: '/logos/claude.svg', detail: 'Claude Code for the team and API credits' },
   { kicker: 'Published at', name: 'NeurIPS · ICLR · ICML', count: '6', detail: 'Workshop papers across all three' },
