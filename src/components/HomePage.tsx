@@ -4,10 +4,10 @@ import { PublicationList } from './PublicationList';
 import { publications } from '../data/publications';
 
 const backing = [
-  { kicker: 'Research grant', name: 'Thinking Machines Lab', detail: 'Funding for independent research' },
-  { kicker: 'Partner', name: 'Microsoft for Startups', detail: 'Azure credits and hosting' },
-  { kicker: 'Partner', name: 'Claude for Startups', detail: 'Claude Code for the team and API credits' },
-  { kicker: 'Published at', name: 'NeurIPS · ICLR · ICML', detail: 'Workshop papers at all three' },
+  { kicker: 'Research grant', name: 'Thinking Machines Lab', wordmark: 'Thinking Machines', detail: 'Funding for independent research' },
+  { kicker: 'Partner', name: 'Microsoft for Startups', logo: '/logos/microsoft.svg', detail: 'Azure credits and hosting' },
+  { kicker: 'Partner', name: 'Claude for Startups', logo: '/logos/claude.svg', detail: 'Claude Code for the team and API credits' },
+  { kicker: 'Published at', name: 'NeurIPS · ICLR · ICML', count: '6', detail: 'Workshop papers across all three' },
 ];
 
 const news = [
@@ -108,7 +108,16 @@ export function HomePage() {
           {backing.map((item) => (
             <div key={item.name} className="p-6">
               <dt className="text-xs font-medium uppercase tracking-wider text-faint">{item.kicker}</dt>
-              <dd className="mt-2 text-lg font-semibold tracking-tight">{item.name}</dd>
+              <dd className="mt-4 flex h-8 items-center">
+                {item.logo && <img src={item.logo} alt="" className="h-7 w-7" />}
+                {item.wordmark && (
+                  <span className="text-[0.8125rem] font-semibold uppercase leading-tight tracking-[0.18em]">
+                    {item.wordmark}
+                  </span>
+                )}
+                {item.count && <span className="text-3xl font-semibold tracking-tight">{item.count}</span>}
+              </dd>
+              <dd className="mt-3 text-lg font-semibold tracking-tight">{item.name}</dd>
               <dd className="mt-1 text-sm text-faint">{item.detail}</dd>
             </div>
           ))}
