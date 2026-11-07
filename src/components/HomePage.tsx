@@ -70,39 +70,39 @@ export function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="container-page pt-20 pb-16 text-center sm:pt-28">
-        <h1 className="mx-auto max-w-5xl text-[clamp(2.25rem,5.4vw,4.25rem)] font-semibold">
-          Independent AI research, <span className="em-serif">published where it counts.</span>
-        </h1>
+      <section className="container-page pt-16 pb-16 sm:pt-24">
+        <div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
+          <div>
+            <h1 className="text-[clamp(2rem,4vw,3.25rem)] font-semibold">
+              Building for a world where billions of AIs live together with{' '}
+              <span className="em-serif">billions of humans.</span>
+            </h1>
 
-        <p className="mx-auto mt-7 max-w-2xl text-lg text-secondary">
-          Turi Labs is an indie AI research lab working on reinforcement learning, agents,
-          and evaluation, backed by a research grant from Thinking Machines Lab and published at
-          NeurIPS, ICLR, and ICML.
-        </p>
+            <p className="mt-5 max-w-xl text-lg text-secondary">
+              Turi Labs is an indie AI research lab working on reinforcement learning, agents,
+              evals, and self-learning systems.
+            </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link to="/research" className="btn-primary">
-            Read the research
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-          <Link to="/contact" className="btn-ghost">
-            Work with us
-          </Link>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link to="/research" className="btn-primary">
+                Read the research
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link to="/contact" className="btn-ghost">
+                Work with us
+              </Link>
+            </div>
+          </div>
+
+          <figure className="mx-auto w-full max-w-sm md:mx-0 md:justify-self-end">
+            <img
+              src="/images/game_of_life_smaller.gif"
+              alt="Conway's Game of Life simulation"
+              className="w-full rounded-2xl border"
+              style={{ borderColor: 'var(--border)' }}
+            />
+          </figure>
         </div>
-
-        <figure className="mx-auto mt-16 max-w-lg">
-          <img
-            src="/images/game_of_life_smaller.gif"
-            alt="Conway's Game of Life simulation"
-            className="w-full rounded-2xl border"
-            style={{ borderColor: 'var(--border)' }}
-          />
-          <figcaption className="mx-auto mt-4 max-w-xl text-xs text-faint">
-            Conway's Game of Life. Simple rules, emergent complexity: the kind of pattern that
-            inspires how we pick research problems.
-          </figcaption>
-        </figure>
 
         <dl className="grid-hairline mt-16 grid-cols-2 text-left md:grid-cols-4">
           {backing.map((item) => (
